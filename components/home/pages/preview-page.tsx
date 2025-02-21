@@ -11,7 +11,7 @@ import {
 
 const tabListData = [
   {
-    name: "1",
+    name: "Components",
     component: (
       <BoxGridLayout
         items={categories.map((category) => ({
@@ -24,8 +24,16 @@ const tabListData = [
     ),
   },
   {
-    name: "2",
-    component: <div>Component for tab 2</div>,
+    name: "Authentication",
+    component: <div className="my-44">Component for tab Auth</div>,
+  },
+  {
+    name: "Blocks",
+    component: <div className="my-44">Component for tab Blocks</div>,
+  },
+  {
+    name: "Templates",
+    component: <div className="my-44">Component for tab Templates</div>,
   },
 ];
 
@@ -34,7 +42,7 @@ const tabContentData: typeof tabListData = [...tabListData];
 const PreviewPage = () => {
   return (
     <>
-      <Tabs defaultValue="1">
+      <Tabs defaultValue="Components">
         <NavbarLayout>
           <TabsList className="bg-opacity-0 px-0 h-12 gap-x-2 ">
             {tabListData.map((item, idx) => (

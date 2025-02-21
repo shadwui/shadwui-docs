@@ -1,8 +1,9 @@
+import { Button } from '@/registry/components/button'
 import React from 'react'
 
 const CustomButton = () => {
   return (
-    <div>CustomButton</div>
+    <Button className='mt-2'>CustomButton</Button>
   )
 }
 
