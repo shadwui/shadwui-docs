@@ -28,17 +28,17 @@ export default function Header() {
         >
           <span className="sr-only">Shadw UI</span>
           <Image
-            src={"/logo-yt.png"}
+            src={"/logo-light.svg"}
             alt="Shadw UI logo"
-            width={10}
-            height={10}
+            width={180}
+            height={100}
             className="dark:hidden"
           />
           <Image
-            src={"/logo-yt.png"}
+            src={"/logo-dark.svg"}
             alt="Shadw UI logo"
-            width={10}
-            height={10}
+            width={180}
+            height={100}
             className="hidden dark:block"
           />
         </Link>
