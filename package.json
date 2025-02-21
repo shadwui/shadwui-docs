@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@remixicon/react": "^4.6.0",
@@ -16,6 +17,7 @@
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "shadcn": "2.4.0-canary.6",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
