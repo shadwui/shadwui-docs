@@ -92,3 +92,28 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
     </>
   );
 }
+
+interface ItemProps {
+  items: {
+    name: string;
+    slug: string;
+    components?: string;
+  }[];
+}
+
+export function BoxGridLayout({ items }: ItemProps) {
+  return (
+    <div className="relative my-8">
+      <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {items.map((item) => (
+          <Box
+            key={item.slug}
+            slug={item.slug}
+            name={item.name}
+            componentsCount={item.components?.length}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
