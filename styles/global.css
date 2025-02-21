@@ -155,19 +155,40 @@
     @apply bg-background text-foreground;
   }
 
-  /* Custom scrollbar styling. Thanks @pranathiperii. */
-  pre::-webkit-scrollbar {
-    width: 5px;
-  }
-  pre::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  pre::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 5px;
-  }
-  pre {
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6e4e4;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #fff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #e6e4e4;
+  cursor: pointer;
 }

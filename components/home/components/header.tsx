@@ -1,5 +1,6 @@
 import ExternalLink from "@/components/_components/external-link";
 import ThemeToggle from "@/components/_components/theam-toggler";
+import { githubUrl } from "@/utils/project-link";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,31 +26,25 @@ export default function Header() {
           aria-label="Home"
           className="outline-ring/30 dark:outline-ring/40 rounded-full outline-offset-2 focus-visible:outline-2"
         >
-          <span className="sr-only">Origin UI</span>
+          <span className="sr-only">Shadw UI</span>
           <Image
             src={"/logo-yt.png"}
-            alt="Origin UI logo"
+            alt="Shadw UI logo"
             width={10}
             height={10}
             className="dark:hidden"
           />
           <Image
             src={"/logo-yt.png"}
-            alt="Origin UI logo"
+            alt="Shadw UI logo"
             width={10}
             height={10}
             className="hidden dark:block"
           />
         </Link>
         <div className="flex items-center gap-4 sm:gap-8">
-          <ExternalLink
-            text="GitHub"
-            href="https://github.com/sahilkumardev/shadwui-doc"
-          />
-          <ExternalLink
-            text="Follow us"
-            href="https://github.com/sahilkumardev/shadwui-doc"
-          />
+          <ExternalLink text="GitHub" href={githubUrl} />
+          <ExternalLink text="Follow us" href={githubUrl} />
           <ThemeToggle />
         </div>
       </div>

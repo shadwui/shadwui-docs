@@ -1,11 +1,13 @@
 import React from "react";
 import Footer from "../home/components/footer";
 import Header from "../home/components/header";
+// import Background from "../home/components/background";
 
 const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div
-      className="
+    <div className="overflow-hidden px-4 supports-[overflow:clip]:overflow-clip sm:px-6">
+      <div
+        className="
       before:bg-[linear-gradient(to_bottom,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] 
 
       after:bg-[linear-gradient(to_bottom,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] 
@@ -21,10 +23,12 @@ const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
       after:w-px
 
       relative mx-auto w-full max-w-6xl"
-    >
-      <Header />
-      {children}
-      <Footer />
+      >
+        {/* <Background /> */}
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </div>
   );
 };
