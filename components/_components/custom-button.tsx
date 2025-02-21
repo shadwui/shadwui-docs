@@ -1,10 +1,13 @@
-import { Button } from '@/registry/components/button'
-import React from 'react'
+import { Button } from "@/registry/components/button";
+import Link from "next/link";
+import React from "react";
 
-const CustomButton = () => {
+const CustomButton = ({ title, link }: { title: string , link: string}) => {
   return (
-    <Button className='mt-2'>CustomButton</Button>
-  )
-}
+    <Link href={link}>
+      <Button>{title}</Button>
+    </Link>
+  );
+};
 
-export default CustomButton
+export default CustomButton;
