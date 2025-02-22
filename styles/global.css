@@ -99,30 +99,37 @@
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
   }
+
   @keyframes collapsible-down {
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-collapsible-content-height);
     }
   }
+
   @keyframes collapsible-up {
     from {
       height: var(--radix-collapsible-content-height);
     }
+
     to {
       height: 0;
     }
@@ -138,6 +145,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -151,12 +159,12 @@
   * {
     @apply border-border outline-ring/30;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 
 }
-
 
 
 @layer utilities {
@@ -165,7 +173,7 @@
     initial-value: 4s;
     inherits: true;
   }
-  
+
   @property --animation-direction {
     syntax: '<custom-ident>';
     initial-value: forwards;
@@ -180,24 +188,19 @@
     from {
       transform: translateY(0);
     }
+
     to {
-      transform: translateY(calc(-50% - 1rem)); /* Adjusted for gap compensation */
+      transform: translateY(calc(-50% - 1rem));
+      /* Adjusted for gap compensation */
     }
   }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+@theme {
+  --color-chai: #FF7700;
+  --color-chai-light: #ff851a;
+}
 
 
 ::-webkit-scrollbar {

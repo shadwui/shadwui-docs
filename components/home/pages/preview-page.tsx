@@ -1,31 +1,21 @@
 import React from "react";
 import NavbarLayout from "../components/navbar-layout";
-import { BoxGridLayout } from "@/components/_components/box";
-import { categories } from "@/utils/components";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/registry/components/tab";
+import { AuthTab, BoxTab } from "../components/tabs-components";
 
 const tabListData = [
   {
     name: "Components",
-    component: (
-      <BoxGridLayout
-        items={categories.map((category) => ({
-          ...category,
-          components: category.components
-            ?.map((component) => component.name)
-            .join(", "),
-        }))}
-      />
-    ),
+    component: <BoxTab />,
   },
   {
     name: "Authentication",
-    component: <div className="my-44">Component for tab Auth</div>,
+    component: <AuthTab />,
   },
   {
     name: "Blocks",
@@ -42,7 +32,7 @@ const tabContentData: typeof tabListData = [...tabListData];
 const PreviewPage = () => {
   return (
     <>
-      <Tabs defaultValue="Components">
+      <Tabs defaultValue="Authentication">
         <NavbarLayout>
           <TabsList className="bg-opacity-0 px-0 h-12 gap-x-2 ">
             {tabListData.map((item, idx) => (
