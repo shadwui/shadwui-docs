@@ -7,19 +7,19 @@ const people = [
     id: 1,
     name: "John Doe",
     designation: "Software Engineer",
-    image: "/logo-yt.png",
+    image: "/owner.jpg",
   },
   {
     id: 2,
     name: "Robert Johnson",
     designation: "Product Manager",
-    image: "/logo-yt.png",
+    image: "/avatars/profile-female-3.png",
   },
   {
     id: 3,
     name: "Jane Smith",
     designation: "Data Scientist",
-    image: "/logo-yt.png",
+    image: "/avatars/male.png",
   },
 ];
 

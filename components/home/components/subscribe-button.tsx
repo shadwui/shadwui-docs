@@ -117,7 +117,7 @@ function Form() {
 export function SubscribeButton() {
   return (
     <>
-      <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-14 sm:px-8 mt-32">
+      <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-14 sm:px-8 mt-40">
         <Illustration
           className="absolute top-0 left-0 -translate-x-1/2"
           aria-hidden="true"

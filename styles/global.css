@@ -157,6 +157,49 @@
 
 }
 
+
+
+@layer utilities {
+  @property --animation-duration {
+    syntax: '<time>';
+    initial-value: 4s;
+    inherits: true;
+  }
+  
+  @property --animation-direction {
+    syntax: '<custom-ident>';
+    initial-value: forwards;
+    inherits: true;
+  }
+
+  .animate-scroll-infinite {
+    animation: scroll var(--animation-duration) var(--animation-direction) linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-50% - 1rem)); /* Adjusted for gap compensation */
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ::-webkit-scrollbar {
   width: 0.4vw;
 }

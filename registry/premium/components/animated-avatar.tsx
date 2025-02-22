@@ -14,13 +14,13 @@ export const AnimatedAvatar = ({
   return (
     <>
       {items.map((item) => (
-        <div className="-mr-2 relative group" key={item.name}>
+        <div className="-mr-3 relative group" key={item.name}>
           <Image
             height={100}
             width={100}
             src={item.image}
             alt={item.name}
-            className="object-cover !m-0 !p-0 object-top rounded-full size-9 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 hover:cursor-pointer hover:scale-110"
+            className="object-cover object-top rounded-full size-9 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 hover:scale-110"
           />
         </div>
       ))}
