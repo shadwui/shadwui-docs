@@ -10,7 +10,7 @@ export const InfiniteMovingCards = ({
   direction = "up",
   speed = "normal",
   pauseOnHover = true,
-  className
+  className,
 }: {
   items: {
     socialMedia?: string;
@@ -30,7 +30,7 @@ export const InfiniteMovingCards = ({
 
   useLayoutEffect(() => {
     initializeAnimation();
-  }, []);
+  });
 
   function initializeAnimation() {
     if (!containerRef.current || !scrollerRef.current) return;
@@ -125,7 +125,9 @@ export const InfiniteMovingCards = ({
                 <Image
                   height={100}
                   width={100}
-                  src={`/social/${item.socialMedia}.svg` || "/social/linkedin.svg"}
+                  src={
+                    `/social/${item.socialMedia}.svg` || "/social/linkedin.svg"
+                  }
                   alt={item.name}
                   className="w-6 h-6 rounded-full"
                 />
