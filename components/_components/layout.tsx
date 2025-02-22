@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../home/components/footer";
 import Header from "../home/components/header";
+import Background from "../home/components/background";
 // import Background from "../home/components/background";
 
 const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
@@ -24,7 +25,7 @@ const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
 
       relative mx-auto w-full max-w-6xl"
       >
-        {/* <Background /> */}
+        <Background />
         <Header />
         {children}
         <Footer />

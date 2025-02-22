@@ -2,17 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-type Star = {
-  x: number;
-  y: number;
-  size: number;
-  speed: number;
-  opacity: number;
-  pulse: number;
-};
-
-const NUM_STARS = 200;
-
 export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number>(0);
@@ -24,7 +13,6 @@ export default function Background() {
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
-    // Move DPR calculation inside useEffect to avoid SSR issues
     const DPR = window.devicePixelRatio || 1;
     let width = window.innerWidth;
     let height = window.innerHeight;
@@ -43,51 +31,11 @@ export default function Background() {
     const resizeHandler = () => setCanvasSize();
     window.addEventListener("resize", resizeHandler);
 
-    const stars: Star[] = Array(NUM_STARS)
-      .fill(null)
-      .map(() => ({
-        x: Math.random() * width,
-        y: Math.random() * (height * 0.8),
-        size: Math.random() * 1,
-        speed: 0.1 + Math.random() * 0.2,
-        opacity: Math.random() * 0.5 + 0.5,
-        pulse: Math.random() * Math.PI,
-      }));
-
     let lastTime = 0;
     const animate = (currentTime: number) => {
-      const deltaTime = currentTime - lastTime;
       lastTime = currentTime;
 
       ctx.clearRect(0, 0, width, height);
-
-      stars.forEach((star) => {
-        star.pulse += 0.02;
-        const currentOpacity = star.opacity * (0.7 + 0.3 * Math.sin(star.pulse));
-
-        const gradient = ctx.createRadialGradient(
-          star.x,
-          star.y,
-          0,
-          star.x,
-          star.y,
-          star.size * 3
-        );
-        gradient.addColorStop(0, `rgba(255, 255, 255, ${currentOpacity})`);
-        gradient.addColorStop(0.5, `rgba(200, 220, 255, ${currentOpacity * 0.5})`);
-        gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
-        ctx.fill();
-
-        star.x -= star.speed * (deltaTime / 16);
-        if (star.x < 0) {
-          star.x = width;
-          star.y = Math.random() * (height * 0.8);
-        }
-      });
 
       const centerX = width / 2;
       const centerY = height / 0.57;
