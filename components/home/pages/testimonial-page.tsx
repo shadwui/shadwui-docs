@@ -62,7 +62,7 @@ const TestimonialPage = () => {
             Loved by thousands of people
           </h1>
           <p className="leading-8">
-            Here's what some of our users have to say about Shadw UI
+            Here&apos;s what some of our users have to say about Shadw UI
           </p>
         </div>
 
