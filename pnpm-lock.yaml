@@ -50,6 +50,9 @@ importers:
       shadcn:
         specifier: 2.4.0-canary.6
         version: 2.4.0-canary.6(typescript@5.7.3)
+      tailwind-merge:
+        specifier: ^3.0.1
+        version: 3.0.1
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.0.7)
