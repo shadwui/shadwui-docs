@@ -6,7 +6,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/components/tab";
-import { AuthTab, BoxTab } from "../components/tabs-components";
+import {
+  AuthTab,
+  BlockTab,
+  BoxTab,
+  TemplateTab,
+} from "../components/tabs-components";
 
 const tabListData = [
   {
@@ -19,11 +24,11 @@ const tabListData = [
   },
   {
     name: "Blocks",
-    component: <div className="my-44">Component for tab Blocks</div>,
+    component: <BlockTab />,
   },
   {
     name: "Templates",
-    component: <div className="my-44">Component for tab Templates</div>,
+    component: <TemplateTab />,
   },
 ];
 
