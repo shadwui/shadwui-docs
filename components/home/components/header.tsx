@@ -30,14 +30,14 @@ export default function Header() {
           <Image
             src={"/logo-light.svg"}
             alt="Shadw UI logo"
-            width={180}
+            width={160}
             height={100}
             className="dark:hidden"
           />
           <Image
             src={"/logo-dark.svg"}
             alt="Shadw UI logo"
-            width={180}
+            width={160}
             height={100}
             className="hidden dark:block"
           />
