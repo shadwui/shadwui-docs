@@ -1,7 +1,6 @@
 import { InfiniteMovingCards } from "@/registry/premium/components/infinite-moving-card";
 import TheamBorder from "@/registry/premium/components/theam-border";
 import React from "react";
-
 const socialTestimonials = [
   {
     name: "Sarah Thompson",
@@ -9,7 +8,7 @@ const socialTestimonials = [
     image: "/avatars/male.png",
     socialMedia: "youtube",
     description:
-      "Just hit 10K followers using this platform's analytics tools 🚀 The audience insights helped me double my engagement rate in 3 weeks! #GameChanger",
+      "Just hit 10K followers using this platform&apos;s analytics tools 🚀 The audience insights helped me double my engagement rate in 3 weeks! #GameChanger",
   },
   {
     name: "Priya K.",
@@ -17,7 +16,7 @@ const socialTestimonials = [
     image: "/avatars/profile-female-3.png",
     socialMedia: "linkedin",
     description:
-      "Collaboration features helped me partner with 15+ developers worldwide 🌍 Finally a platform that understands tech creators' needs!",
+      "Collaboration features helped me partner with 15+ developers worldwide 🌍 Finally a platform that understands tech creators&apos; needs!",
   },
   {
     name: "Michael Chen",
@@ -25,7 +24,7 @@ const socialTestimonials = [
     image: "/owner.jpg",
     socialMedia: "x",
     description:
-      "From 500 to 50K followers in 6 months! The content scheduler is a lifesaver for managing multiple client accounts. Best investment I've made 💯",
+      "From 500 to 50K followers in 6 months! The content scheduler is a lifesaver for managing multiple client accounts. Best investment I&apos;ve made 💯",
   },
   {
     name: "Emily R.",
@@ -36,7 +35,7 @@ const socialTestimonials = [
       "The community features helped me connect with 200+ wellness creators. Finally found a platform that actually supports growth, not just vanity metrics 🌱",
   },
   {
-    name: "James O'Connor",
+    name: "James O&apos;kumar",
     username: "@TravelWithJames",
     image: "/avatars/profile-female-2.png",
     socialMedia: "instagram",
@@ -49,10 +48,9 @@ const socialTestimonials = [
     socialMedia: "instagram",
     image: "/avatars/profile-female-4.png",
     description:
-      "500K foodies in my network and counting! The recipe video builder boosted my content quality 10x 🍳 Don't sleep on this platform!",
+      "500K foodies in my network and counting! The recipe video builder boosted my content quality 10x 🍳 Don&apos;t sleep on this platform!",
   },
 ];
-
 const TestimonialPage = () => {
   return (
     <>

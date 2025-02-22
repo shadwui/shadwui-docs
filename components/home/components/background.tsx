@@ -30,11 +30,8 @@ export default function Background() {
     setCanvasSize();
     const resizeHandler = () => setCanvasSize();
     window.addEventListener("resize", resizeHandler);
-
-    let lastTime = 0;
+ 
     const animate = (currentTime: number) => {
-      lastTime = currentTime;
-
       ctx.clearRect(0, 0, width, height);
 
       const centerX = width / 2;

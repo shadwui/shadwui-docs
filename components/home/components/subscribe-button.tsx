@@ -6,7 +6,6 @@ import { subscribe } from "./subscribe-action";
 import { Button } from "@/registry/components/button";
 import { Input } from "@/registry/components/input";
 import { cn } from "@/registry/lib/utils";
-import TheamBorder from "@/registry/premium/components/theam-border";
 
 // Add type for form state
 type FormStatus = "idle" | "loading" | "success" | "error";
