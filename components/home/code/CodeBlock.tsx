@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
-import { getHighlighter } from "shiki";
+import {createHighlighter} from "shiki";
 
 interface CodeBlockProps {
   code: string;
@@ -31,7 +31,7 @@ const CodeBlock = ({
     const processCode = async () => {
       const shikiTheme = isDark ? "github-dark" : "github-light";
       try {
-        const highlighter = await getHighlighter({
+        const highlighter = await createHighlighter({
           themes: [shikiTheme],
           langs: [language],
         });
