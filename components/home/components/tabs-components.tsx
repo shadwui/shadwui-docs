@@ -7,8 +7,8 @@ import CodePreview from "../code/code-preview";
 import { auths } from "@/utils/auths";
 import { blocks } from "@/utils/blocks";
 import { templates } from "@/utils/templates";
-import { Heading } from "@/registry/components/heading";
-import TheamBorder from "@/registry/premium/components/theam-border";
+import { Heading } from "@/registry/src/components/ui/heading";
+import TheamBorder from "@/registry/src/premium/components/theam-border";
 
 export const BoxTab = () => {
   return (

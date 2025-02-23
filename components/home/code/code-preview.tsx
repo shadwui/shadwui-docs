@@ -6,15 +6,15 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/registry/components/card";
-import { cn } from "@/registry/lib/utils";
+} from "@/registry/src/components/ui/card";
+import { cn } from "@/registry/src/lib/utils";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/components/tab";
-import { DotPattern } from "@/registry/components/dot-pattern";
+} from "@/registry/src/components/ui/tab";
+import { DotPattern } from "@/registry/src/components/ui/dot-pattern";
 import { Separator } from "@radix-ui/react-separator";
 import CopyCode from "./copy-code";
 
@@ -28,22 +28,20 @@ interface CodePreviewProps {
 }
 
 const CodePreview = async ({
-  // sourcePath,
   componentName,
-  minimumCodeHeight,
+  minimumCodeHeight = "500px",
   copyButton = false,
-  codeBlockMaximumHeight,
+  codeBlockMaximumHeight = "500px",
   packageSource = "npx default code",
 }: CodePreviewProps) => {
-  // const Component = await readComponentPath(sourcePath, componentName);
-  // const source = await readComponentSource(sourcePath, componentName);
-
-  // const capitalizeComponentName =
-  //   componentName.charAt(0).toUpperCase() + componentName.slice(1);
-  // const cardComponentName = capitalizeComponentName.split("-").join(" ");
-
-  const source = "<div>Hello </div> "; 
-
+  const source = `
+  <div>Hello </div>
+  <div>Hello </div>
+  <div>Hello </div><div>Hello </div>
+  <div>Hello </div>
+  <div>Hello </div>
+  <div>Hello </div>
+  `;
   const cardComponentName = componentName;
 
   return (
@@ -53,13 +51,13 @@ const CodePreview = async ({
           <TabsList className="pb-0 h-10 rounded-md bg-hidden">
             <TabsTrigger
               value="preview"
-              className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden"
+              className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
             >
               Preview
             </TabsTrigger>
             <TabsTrigger
               value="code"
-              className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden"
+              className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
             >
               Code
             </TabsTrigger>
@@ -83,7 +81,11 @@ const CodePreview = async ({
         <CardContent className="p-0">
           <TabsContent
             value="preview"
-            className={`p-0 mt-0 relative flex items-center justify-center min-h-[${minimumCodeHeight}]`}
+            className="p-0 mt-0 relative flex items-center justify-center"
+            style={{
+              minHeight: minimumCodeHeight,
+              maxHeight: codeBlockMaximumHeight,
+            }}
           >
             <DotPattern
               className={cn(
@@ -93,7 +95,8 @@ const CodePreview = async ({
               width={20}
             />
             <div
-              className={`w-full backdrop-blur-[1.5px] bg-transparent dark:bg-transparent dark:border-gray-800/10 flex items-center justify-center min-h-[${minimumCodeHeight}] p-10`}
+              className="w-full backdrop-blur-[1.5px] bg-slate-100 dark:bg-transparent dark:border-gray-800/10 flex items-center justify-center p-10"
+              style={{ minHeight: minimumCodeHeight }}
             >
               {/* <Component /> */} Hello Comp
             </div>

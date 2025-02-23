@@ -1,5 +1,5 @@
-import { InfiniteMovingCards } from "@/registry/premium/components/infinite-moving-card";
-import TheamBorder from "@/registry/premium/components/theam-border";
+import { InfiniteMovingCards } from "@/registry/src/premium/components/infinite-moving-card";
+import TheamBorder from "@/registry/src/premium/components/theam-border";
 import React from "react";
 const socialTestimonials = [
   {

@@ -1,5 +1,5 @@
 import CustomButton from "@/components/_components/custom-button";
-import { AnimatedAvatar } from "@/registry/premium/components/animated-avatar";
+import { AnimatedAvatar } from "@/registry/src/premium/components/animated-avatar";
 import React from "react";
 
 const people = [

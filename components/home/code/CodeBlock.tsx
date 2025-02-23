@@ -3,14 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
-import {createHighlighter} from "shiki";
+import { createHighlighter } from "shiki";
 
 interface CodeBlockProps {
   code: string;
   language: string;
   maximumHeight?: string;
   highlightedLines?: number[];
-  minimumCodeHeight? : string
+  minimumCodeHeight?: string;
 }
 
 const CodeBlock = ({
@@ -18,12 +18,12 @@ const CodeBlock = ({
   language,
   highlightedLines = [],
   maximumHeight = "250px",
-  minimumCodeHeight
+  minimumCodeHeight,
 }: CodeBlockProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [linesHtml, setLinesHtml] = useState<string[]>([]);
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     let isMounted = true;
@@ -72,9 +72,9 @@ const CodeBlock = ({
     >
       <div
         style={{ maxHeight }}
-        className={`overflow-auto transition-all min-h-[${minimumCodeHeight}] duration-300 pb-10 ${
-          !isExpanded && "mask-bottom"
-        }`}
+        className={`overflow-auto transition-all min-h-[${
+          minimumCodeHeight || "auto"
+        }] duration-300 pb-10 ${!isExpanded && "mask-bottom"}`}
       >
         <pre className="p-2 text-sm font-mono leading-6">
           {linesHtml.map((lineHtml, index) => (

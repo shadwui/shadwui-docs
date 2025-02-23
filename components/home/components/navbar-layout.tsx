@@ -1,4 +1,4 @@
-import TheamBorder from "@/registry/premium/components/theam-border";
+import TheamBorder from "@/registry/src/premium/components/theam-border";
 import React from "react";
 
 interface NavbarLayoutProps {

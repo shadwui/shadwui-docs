@@ -1,6 +1,6 @@
 "use client";
 
-import { Input } from "@/registry/components/input";
+import { Input } from "@/registry/src/components/ui/input";
 import CopyButton from "./CopyButton";
 import { useRef } from "react";
 

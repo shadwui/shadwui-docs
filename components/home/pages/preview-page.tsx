@@ -5,7 +5,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/components/tab";
+} from "@/registry/src/components/ui/tab";
 import {
   AuthTab,
   BlockTab,

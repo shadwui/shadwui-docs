@@ -1,4 +1,4 @@
-import { Button } from "@/registry/components/button";
+import { Button } from "@/registry/src/components/ui/button";
 import Link from "next/link";
 import React from "react";
 

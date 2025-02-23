@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/registry/components/card";
-import { cn } from "@/registry/lib/utils";
+import { Card, CardContent, CardHeader } from "@/registry/src/components/ui/card";
+import { cn } from "@/registry/src/lib/utils";
 import Image from "next/image";
 import React, { useLayoutEffect, useState } from "react";
 

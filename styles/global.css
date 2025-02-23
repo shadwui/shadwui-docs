@@ -203,6 +203,17 @@
 }
 
 
+.expend-code {
+  background: rgb(207, 207, 207);
+  background: linear-gradient(0deg, rgba(207, 207, 207, 1) 0%, rgba(207, 207, 207, 1) 60%, rgba(207, 207, 207, 1) 100%);
+}
+
+.expend-code-dark {
+  background: rgb(30, 41, 57);
+  background: linear-gradient(0deg, rgba(30, 41, 57, 1) 0%, rgba(30, 41, 57, 0.7987788865546218) 60%, rgba(30, 41, 57, 0.4038209033613446) 100%);
+}
+
+
 ::-webkit-scrollbar {
   width: 0.4vw;
 }

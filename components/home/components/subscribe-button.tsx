@@ -3,9 +3,9 @@
 import { RiLoader3Line, RiNavigationLine } from "@remixicon/react";
 import { useId, useState } from "react";
 import { subscribe } from "./subscribe-action";
-import { Button } from "@/registry/components/button";
-import { Input } from "@/registry/components/input";
-import { cn } from "@/registry/lib/utils";
+import { Button } from "@/registry/src/components/ui/button";
+import { Input } from "@/registry/src/components/ui/input";
+import { cn } from "@/registry/src/lib/utils";
 
 // Add type for form state
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -116,7 +116,7 @@ function Form() {
 export function SubscribeButton() {
   return (
     <>
-      <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-14 sm:px-8 mt-40">
+      <div className="dark relative overflow-hidden rounded-xl bg-fd-muted-foreground dark:bg-zinc-900 px-4 py-14 sm:px-8 mt-40">
         <Illustration
           className="absolute top-0 left-0 -translate-x-1/2"
           aria-hidden="true"
