@@ -39,9 +39,14 @@ export const templates: ComponentTemplate[] = [
     ],
   },
   {
-    slug: "badge",
-    name: "Badge",
-    components: [{ name: "comp-413" }],
+    slug: "view",
+    name: "View All",
+    components: [
+      { name: "comp-390" },
+      { name: "comp-391" },
+      { name: "comp-392" },
+      { name: "comp-393" },
+    ],
   },
 ];
 

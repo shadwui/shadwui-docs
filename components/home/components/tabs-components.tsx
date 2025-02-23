@@ -7,6 +7,8 @@ import CodePreview from "../code/code-preview";
 import { auths } from "@/utils/auths";
 import { blocks } from "@/utils/blocks";
 import { templates } from "@/utils/templates";
+import { Heading } from "@/registry/components/heading";
+import TheamBorder from "@/registry/premium/components/theam-border";
 
 export const BoxTab = () => {
   return (
@@ -31,34 +33,29 @@ export const AuthTab = () => {
         }))}
       />
 
-      <div>
-        <h1>Documentation</h1>
-        <p>
-          Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque
-          eaque consequatur quo voluptate autem laborum quod cupiditate.
-          Distinctio eum voluptas officia facilis modi. Pariatur tenetur
-          incidunt minus ex dolorem cupiditate. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Neque eaque consequatur quo voluptate
-          autem laborum quod cupiditate. Distinctio eum voluptas officia facilis
-          modi. Pariatur tenetur incidunt minus ex dolorem cupiditate. Lorem
-          ipsum, dolor sit amet consectetur adipisicing elit. Neque eaque
-          consequatur quo voluptate autem laborum quod cupiditate. Distinctio
-          eum voluptas officia facilis modi. Pariatur tenetur incidunt minus ex
-          dolorem cupiditate. ipsum, dolor sit amet consectetur adipisicing
-          elit. Neque eaque consequatur quo voluptate autem laborum quod
-          cupiditate. Distinctio eum voluptas officia facilis modi. Pariatur
-          tenetur incidunt minus ex dolorem cupiditate.
-        </p>
+      <TheamBorder />
+      <div className="py-10">
+        <Heading className="text-center font-heading" variant="h1">
+          Documentation Soon...
+        </Heading>
       </div>
 
-      <div>
-        <h4>Login form for authentication</h4>
-        <CodePreview />
+      <TheamBorder />
+      <div className="py-12">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Login 01"}
+          copyButton={true}
+        />
       </div>
 
-      <div>
-        <h4>Register form for authentication</h4>
-        <CodePreview />
+      <TheamBorder />
+      <div className="pt-10">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Register 01"}
+          copyButton={true}
+        />
       </div>
     </div>
   );
@@ -67,15 +64,24 @@ export const AuthTab = () => {
 export const BlockTab = () => {
   return (
     <div>
-      <div>
-        <h4>Register form for authentication</h4>
-        <CodePreview />
+      <div className="pb-10 pt-6">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Block 01"}
+          copyButton={true}
+        />
       </div>
 
-      <div>
-        <h4>Register form for authentication</h4>
-        <CodePreview />
+      <TheamBorder />
+      <div className="py-10">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Block 02"}
+          copyButton={true}
+        />
       </div>
+
+      <TheamBorder />
 
       <BoxGridLayout
         items={blocks.map((block) => ({
@@ -90,15 +96,34 @@ export const BlockTab = () => {
 export const TemplateTab = () => {
   return (
     <div>
-      <div>
-        <h4>Register form for Template one</h4>
-        <CodePreview />
+      <div className="pb-10 pt-6">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Template 01"}
+          copyButton={true}
+        />
       </div>
 
-      <div>
-        <h4>Register form for Template Two.</h4>
-        <CodePreview />
+      <TheamBorder />
+      <div className="py-10">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Template 02"}
+          copyButton={true}
+        />
       </div>
+
+      <TheamBorder />
+
+      <div className="py-10">
+        <CodePreview
+          minimumCodeHeight="500px"
+          componentName={"Template 03"}
+          copyButton={true}
+        />
+      </div>
+
+      <TheamBorder />
 
       <BoxGridLayout
         items={templates.map((template) => ({

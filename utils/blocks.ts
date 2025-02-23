@@ -44,17 +44,8 @@ export const blocks: ComponentBlock[] = [
     components: [{ name: "comp-413" }],
   },
   {
-    slug: "sadasf",
-    name: "aa",
-    components: [
-      { name: "comp-267" },
-      { name: "comp-268" },
-      { name: "comp-269" },
-    ],
-  },
-  {
-    slug: "as",
-    name: "afsdasd",
+    slug: "textarea",
+    name: "Hmmm",
     components: [
       { name: "comp-390" },
       { name: "comp-391" },
@@ -63,13 +54,18 @@ export const blocks: ComponentBlock[] = [
     ],
   },
   {
-    slug: "jhasdfj",
-    name: "ahsj",
+    slug: "input",
+    name: "Blocks",
     components: [{ name: "comp-413" }],
   },
   {
-    slug: "aass",
-    name: "afsadasd",
+    slug: "coming",
+    name: "Badge",
+    components: [{ name: "comp-413" }],
+  },
+  {
+    slug: "view",
+    name: "View All",
     components: [
       { name: "comp-390" },
       { name: "comp-391" },

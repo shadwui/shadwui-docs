@@ -15,12 +15,12 @@ import {
 
 const tabListData = [
   {
-    name: "Components",
-    component: <BoxTab />,
-  },
-  {
     name: "Authentication",
     component: <AuthTab />,
+  },
+  {
+    name: "Components",
+    component: <BoxTab />,
   },
   {
     name: "Blocks",

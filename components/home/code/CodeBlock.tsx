@@ -10,6 +10,7 @@ interface CodeBlockProps {
   language: string;
   maximumHeight?: string;
   highlightedLines?: number[];
+  minimumCodeHeight? : string
 }
 
 const CodeBlock = ({
@@ -17,6 +18,7 @@ const CodeBlock = ({
   language,
   highlightedLines = [],
   maximumHeight = "250px",
+  minimumCodeHeight
 }: CodeBlockProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { theme } = useTheme();
@@ -70,7 +72,7 @@ const CodeBlock = ({
     >
       <div
         style={{ maxHeight }}
-        className={`overflow-auto transition-all duration-300 pb-10 ${
+        className={`overflow-auto transition-all min-h-[${minimumCodeHeight}] duration-300 pb-10 ${
           !isExpanded && "mask-bottom"
         }`}
       >

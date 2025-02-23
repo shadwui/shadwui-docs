@@ -28,20 +28,20 @@ export const auths: ComponentAuth[] = [
       { name: "comp-269" },
     ],
   },
+
   {
-    slug: "avatar",
-    name: "Avatar",
+    slug: "coming",
+    name: "Badge",
+    components: [{ name: "comp-413" }],
+  },  {
+    slug: "view",
+    name: "View All",
     components: [
       { name: "comp-390" },
       { name: "comp-391" },
       { name: "comp-392" },
       { name: "comp-393" },
     ],
-  },
-  {
-    slug: "badge",
-    name: "Badge",
-    components: [{ name: "comp-413" }],
   },
 ];
 

@@ -292,6 +292,16 @@ export const categories: ComponentCategory[] = [
       { name: "comp-365" },
     ],
   },
+  {
+    slug: "view",
+    name: "View All",
+    components: [
+      { name: "comp-390" },
+      { name: "comp-391" },
+      { name: "comp-392" },
+      { name: "comp-393" },
+    ],
+  },
 ];
 
 export function getCategory(slug: string): ComponentCategory | undefined {
