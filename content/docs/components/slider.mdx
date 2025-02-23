@@ -1,0 +1,82 @@
+---
+title: Slider
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Slider component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Slider component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `slider.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          "use client"
+
+          import * as React from "react"
+          import * as SliderPrimitive from "@radix-ui/react-slider"
+          import { Check } from "lucide-react"
+
+          import { cn } from "@/lib/utils"
+
+          const Slider = React.forwardRef<
+            React.ElementRef<typeof SliderPrimitive.Root>,
+            React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+          >(({ className, ...props }, ref) => (
+            <SliderPrimitive.Root
+              ref={ref}
+              className={cn(
+                "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+                className
+              )}
+              {...props}
+            >
+              <SliderPrimitive.Indicator
+                className={cn("flex items-center justify-center text-current")}
+              >
+                <Check className="h-4 w-4" />
+              </SliderPrimitive.Indicator>
+            </SliderPrimitive.Root>
+          ))
+          Slider.displayName = SliderPrimitive.Root.displayName
+
+          export { Slider }
+
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/sliders/"
+  files={[
+    "slider-01",
+    "slider-02",
+    "slider-03",
+    "slider-04",
+    "slider-05",
+    "slider-06",
+    "slider-07",
+    "slider-08",
+    "slider-09",
+    "slider-10",
+    "slider-11",
+    "slider-12",
+    "slider-13",
+    "slider-14",
+    "slider-15",
+    "slider-16",
+    "slider-17",
+    "slider-18",
+    "slider-19"
+  ]}
+/>

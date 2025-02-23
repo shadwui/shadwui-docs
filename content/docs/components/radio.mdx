@@ -1,0 +1,82 @@
+---
+title: Radio
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Radio component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Radio component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `radio.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          "use client"
+
+          import * as React from "react"
+          import * as RadioPrimitive from "@radix-ui/react-radio"
+          import { Check } from "lucide-react"
+
+          import { cn } from "@/lib/utils"
+
+          const Radio = React.forwardRef<
+            React.ElementRef<typeof RadioPrimitive.Root>,
+            React.ComponentPropsWithoutRef<typeof RadioPrimitive.Root>
+          >(({ className, ...props }, ref) => (
+            <RadioPrimitive.Root
+              ref={ref}
+              className={cn(
+                "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+                className
+              )}
+              {...props}
+            >
+              <RadioPrimitive.Indicator
+                className={cn("flex items-center justify-center text-current")}
+              >
+                <Check className="h-4 w-4" />
+              </RadioPrimitive.Indicator>
+            </RadioPrimitive.Root>
+          ))
+          Radio.displayName = RadioPrimitive.Root.displayName
+
+          export { Radio }
+
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/radios/"
+  files={[
+    "radio-01",
+    "radio-02",
+    "radio-03",
+    "radio-04",
+    "radio-05",
+    "radio-06",
+    "radio-07",
+    "radio-08",
+    "radio-09",
+    "radio-10",
+    "radio-11",
+    "radio-12",
+    "radio-13",
+    "radio-14",
+    "radio-15",
+    "radio-16",
+    "radio-17",
+    "radio-18",
+    "radio-19"
+  ]}
+/>

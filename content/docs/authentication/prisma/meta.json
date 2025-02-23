@@ -1,0 +1,8 @@
+{
+  "title": "Prisma",
+  "pages": [
+  "database",
+  "model",
+  "next-auth"
+  ]
+}

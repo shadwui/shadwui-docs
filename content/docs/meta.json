@@ -1,0 +1,46 @@
+{
+  "title": "Docs Meta json",
+  "pages": [
+    "---Overview---",
+    "index",
+    "installation",
+    
+
+    "---Authentication---",
+    "authentication/mongodb",
+    "authentication/prisma",
+    "authentication/neon",
+
+
+    "---Components---",
+    "components/alert",
+    "components/badge",
+    "components/banner",
+    "components/breadcrumb",
+    "components/button",
+    "components/checkbox",
+    "components/heading",
+    "components/input",
+    "components/notification",
+    "components/radio",
+    "components/select",
+    "components/slider",
+    "components/switch",
+    "components/textarea",
+
+    
+    "---Block---",
+    "blocks/landing",
+    "blocks/footer",
+
+    "---Templates---",
+    "templates/modern",
+    "templates/classic",
+
+    
+    
+    "---Link---",
+    "[Github](https://github.com)",
+    "[Portfolio](https://sahilkumardev.shadwui.com)"
+  ]
+}

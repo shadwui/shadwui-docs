@@ -1,0 +1,74 @@
+---
+title: Textarea
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Textarea component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Textarea component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `textarea.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+        import * as React from "react"
+
+        import { cn } from "@/lib/utils"
+
+        const Textarea = React.forwardRef<
+          HTMLTextAreaElement,
+          React.ComponentProps<"textarea">
+        >(({ className, ...props }, ref) => {
+          return (
+            <textarea
+              className={cn(
+                "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                className
+              )}
+              ref={ref}
+              {...props}
+            />
+          )
+        })
+        Textarea.displayName = "Textarea"
+
+        export { Textarea }
+
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/textareas/"
+  files={[
+    "textarea-01",
+    "textarea-02", 
+    "textarea-03",
+    "textarea-04",
+    "textarea-05",
+    "textarea-06",
+    "textarea-07",
+    "textarea-08",
+    "textarea-09",
+    "textarea-10",
+    "textarea-11",
+    "textarea-12",
+    "textarea-13",
+    "textarea-14",
+    "textarea-15",
+    "textarea-16",
+    "textarea-17",
+    "textarea-18",
+    "textarea-19"
+  ]}
+/>

@@ -1,0 +1,8 @@
+{
+  "title": "MongoDB",
+  "pages": [
+  "database",
+  "model",
+  "next-auth"
+  ]
+}

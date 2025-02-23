@@ -1,0 +1,127 @@
+---
+title: Switch
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Switch component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Switch component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `switch.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          import * as React from "react"
+          import { cn } from "@/lib/utils"
+
+          const Card = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn(
+                "rounded-lg border bg-card text-card-foreground shadow-sm",
+                className
+              )}
+              {...props}
+            />
+          ))
+          Card.displayName = "Card"
+
+          const CardHeader = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("flex flex-col space-y-1.5 p-6", className)}
+              {...props}
+            />
+          ))
+          CardHeader.displayName = "CardHeader"
+
+          const CardTitle = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn(
+                "text-2xl font-semibold leading-none tracking-tight",
+                className
+              )}
+              {...props}
+            />
+          ))
+          CardTitle.displayName = "CardTitle"
+
+          const CardDescription = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("text-sm text-muted-foreground", className)}
+              {...props}
+            />
+          ))
+          CardDescription.displayName = "CardDescription"
+
+          const CardContent = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+          ))
+          CardContent.displayName = "CardContent"
+
+          const CardFooter = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("flex items-center p-6 pt-0", className)}
+              {...props}
+            />
+          ))
+          CardFooter.displayName = "CardFooter"
+
+          export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/switchs/"
+  files={[
+    "switch-01",
+    "switch-02", 
+    "switch-03",
+    "switch-04",
+    "switch-05",
+    "switch-06",
+    "switch-07",
+    "switch-08",
+    "switch-09",
+    "switch-10",
+    "switch-11",
+    "switch-12",
+    "switch-13",
+    "switch-14",
+    "switch-15",
+    "switch-16",
+    "switch-17"
+  ]}
+/>

@@ -1,0 +1,125 @@
+---
+title: Banner
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Banner component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Banner component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `banner.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          import * as React from "react"
+          import { cn } from "@/lib/utils"
+
+          const Card = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn(
+                "rounded-lg border bg-card text-card-foreground shadow-sm",
+                className
+              )}
+              {...props}
+            />
+          ))
+          Card.displayName = "Card"
+
+          const CardHeader = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("flex flex-col space-y-1.5 p-6", className)}
+              {...props}
+            />
+          ))
+          CardHeader.displayName = "CardHeader"
+
+          const CardTitle = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn(
+                "text-2xl font-semibold leading-none tracking-tight",
+                className
+              )}
+              {...props}
+            />
+          ))
+          CardTitle.displayName = "CardTitle"
+
+          const CardDescription = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("text-sm text-muted-foreground", className)}
+              {...props}
+            />
+          ))
+          CardDescription.displayName = "CardDescription"
+
+          const CardContent = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+          ))
+          CardContent.displayName = "CardContent"
+
+          const CardFooter = React.forwardRef<
+            HTMLDivElement,
+            React.HTMLAttributes<HTMLDivElement>
+          >(({ className, ...props }, ref) => (
+            <div
+              ref={ref}
+              className={cn("flex items-center p-6 pt-0", className)}
+              {...props}
+            />
+          ))
+          CardFooter.displayName = "CardFooter"
+
+          export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/banners/"
+  files={[
+    "banner-01",
+    "banner-02", 
+    "banner-03",
+    "banner-04",
+    "banner-05",
+    "banner-06",
+    "banner-07",
+    "banner-08",
+    "banner-09",
+    "banner-10",
+    "banner-11",
+    "banner-12",
+    "banner-13",
+    "banner-14",
+    "banner-15"
+  ]}
+/>

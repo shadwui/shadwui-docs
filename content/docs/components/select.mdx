@@ -1,0 +1,76 @@
+---
+title: Select
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Select component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Select component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `select.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          "use client"
+
+          import * as React from "react"
+          import * as SelectPrimitive from "@radix-ui/react-select"
+          import { Check } from "lucide-react"
+
+          import { cn } from "@/lib/utils"
+
+          const Select = React.forwardRef<
+            React.ElementRef<typeof SelectPrimitive.Root>,
+            React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root>
+          >(({ className, ...props }, ref) => (
+            <SelectPrimitive.Root
+              ref={ref}
+              className={cn(
+                "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+                className
+              )}
+              {...props}
+            >
+              <SelectPrimitive.Indicator
+                className={cn("flex items-center justify-center text-current")}
+              >
+                <Check className="h-4 w-4" />
+              </SelectPrimitive.Indicator>
+            </SelectPrimitive.Root>
+          ))
+          Select.displayName = SelectPrimitive.Root.displayName
+
+          export { Select }
+
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/selects/"
+  files={[
+    "select-01",
+    "select-02",
+    "select-03",
+    "select-04",
+    "select-05",
+    "select-06",
+    "select-07",
+    "select-08",
+    "select-09",
+    "select-10",
+    "select-11",
+    "select-12",
+    "select-13"
+  ]}
+/>

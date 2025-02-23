@@ -1,0 +1,80 @@
+---
+title: Badge
+---
+
+import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+
+
+## Overview
+The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+
+## Installation
+Step to add the Badge component to your project.
+
+<Steps>
+  <Step>
+    ### Copy and paste the following code into your project.
+    Create a new file called `badge.tsx` in `component/ui` and add the following code.
+
+    <CodeBlockWrapper>
+        ```typescript
+          import * as React from "react"
+          import { cva, type VariantProps } from "class-variance-authority"
+
+          import { cn } from "@/lib/utils"
+
+          const badgeVariants = cva(
+            "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+            {
+              variants: {
+                variant: {
+                  default:
+                    "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+                  secondary:
+                    "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+                  destructive:
+                    "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+                  outline: "text-foreground",
+                },
+              },
+              defaultVariants: {
+                variant: "default",
+              },
+            }
+          )
+
+          export interface BadgeProps
+            extends React.HTMLAttributes<HTMLDivElement>,
+              VariantProps<typeof badgeVariants> {}
+
+          function Badge({ className, variant, ...props }: BadgeProps) {
+            return (
+              <div className={cn(badgeVariants({ variant }), className)} {...props} />
+            )
+          }
+
+          export { Badge, badgeVariants }
+        ```
+    </CodeBlockWrapper>
+
+  </Step> 
+</Steps>
+
+## Examples
+<ComponentPage 
+  sourcePath="components/badges/"
+  files={[
+    "badge-01",
+    "badge-02", 
+    "badge-03",
+    "badge-04",
+    "badge-05",
+    "badge-06",
+    "badge-07",
+    "badge-08",
+    "badge-09",
+    "badge-10",
+    "badge-11",
+    "badge-12"
+  ]}
+/>

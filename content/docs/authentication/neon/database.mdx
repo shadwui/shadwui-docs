@@ -1,0 +1,49 @@
+---
+title: Database
+description: Step to setup a mongodb database in your project.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+## Overview
+
+MongoDB is a NoSQL database that stores data in a JSON-like format. It is a popular choice for big data and real-time web applications.
+
+## Database Connection Setup
+
+<Steps>
+  <Step>
+    ### Installation
+    To install MongoDB, you can use the following command:
+   
+    ```code
+    npm install mongodb
+    ```
+  </Step>
+
+  <Step>
+    ### Database Setup
+    To connect to the MongoDB database, you need to create a connection string. 
+    You can do this by following these steps:
+
+    1. Create a new file called `database.js` in your project root.
+    2. Add the following code to the file:
+
+    ```code
+    code of data base file
+    ```
+
+  </Step>
+
+  <Step>
+  ### Mongoose Setup
+  To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), you need to create a connection string. You can do this by following these steps:
+   
+   1. Open a mongoose and create a cluster and get the connection string.
+   2. Add the following string in the `.env.local` file to root directory of project:-
+   
+   ```.env.local
+    MONGO_URI=<Paste Your Connection String>
+   ```
+  </Step>
+</Steps>
