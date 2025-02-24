@@ -1,12 +1,13 @@
 export interface ComponentTemplate {
-  slug: string;
+  slug?: string;
+  image: string;
   name: string;
   components: { name: string }[];
 }
 
 export const templates: ComponentTemplate[] = [
   {
-    slug: "accordion",
+image: "accordion",
     name: "Accordion",
     components: [
       { name: "comp-334" },
@@ -20,7 +21,7 @@ export const templates: ComponentTemplate[] = [
     ],
   },
   {
-    slug: "alert",
+image: "alert",
     name: "Alert",
     components: [
       { name: "comp-267" },
@@ -29,7 +30,7 @@ export const templates: ComponentTemplate[] = [
     ],
   },
   {
-    slug: "avatar",
+image: "avatar",
     name: "Avatar",
     components: [
       { name: "comp-390" },
@@ -39,7 +40,7 @@ export const templates: ComponentTemplate[] = [
     ],
   },
   {
-    slug: "view",
+image: "view",
     name: "View All",
     components: [
       { name: "comp-390" },

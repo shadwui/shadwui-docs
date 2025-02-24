@@ -25,7 +25,7 @@ const people = [
 
 const HeroPage = () => {
   return (
-    <div className="max-w-4xl max-sm:text-center mb-10">
+    <div className="max-w-4xl max-sm:text-center my-10">
       <h1 className="text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
         One click Auth & Built in React & Tailwind CSS Components 
       </h1>

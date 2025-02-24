@@ -102,7 +102,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li key={idx}>
-            <Card className="w-full dark:bg-current bg-gray-100 px-5 py-4 dark:shadow-lg">
+            <Card className="w-full dark:bg-[#18181B] bg-gray-100 px-5 py-4 dark:shadow-lg">
               <CardHeader className="flex-row justify-between p-0 space-y-0">
                 <div className="flex items-center gap-x-3">
                   <Image
@@ -114,7 +114,7 @@ export const InfiniteMovingCards = ({
                   />
 
                   <div>
-                    <h4 className="text-lg font-medium text-black leading-5 font-heading">
+                    <h4 className="text-lg font-medium leading-5 font-heading">
                       {item.name}
                     </h4>
                     <p className="text-gray-500 line-clamp-1 text-sm text-left">
@@ -134,7 +134,7 @@ export const InfiniteMovingCards = ({
               </CardHeader>
 
               <CardContent className="p-0 pt-4">
-                <p className="text-black">{`${item.description}`}</p>
+                <p>{`${item.description}`}</p>
               </CardContent>
             </Card>
           </li>

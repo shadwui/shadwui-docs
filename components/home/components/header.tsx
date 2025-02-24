@@ -13,7 +13,7 @@ export default function Header() {
         before:-inset-x-32
         before:bottom-0 
         before:h-px
-        relative mb-14"
+        relative"
     >
       <div
         className="before:bg-ring/50 after:bg-ring/50 before:absolute before:-bottom-px before:-left-12 before:z-10 before:-ml-px before:size-[3px] after:absolute after:-right-12 after:-bottom-px after:z-10 after:-mr-px after:size-[3px]"

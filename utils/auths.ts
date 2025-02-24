@@ -1,27 +1,25 @@
 export interface ComponentAuth {
   slug: string;
   name: string;
+  image: string;
   components: { name: string }[];
 }
 
 export const auths: ComponentAuth[] = [
   {
-    slug: "accordion",
-    name: "Accordion",
+    slug: "docs/authentication/mongodb/database",
+    name: "MongoDb",
+    image: "accordion",
     components: [
       { name: "comp-334" },
       { name: "comp-335" },
       { name: "comp-336" },
-      { name: "comp-337" },
-      { name: "comp-338" },
-      { name: "comp-339" },
-      { name: "comp-340" },
-      { name: "comp-341" },
     ],
   },
   {
-    slug: "alert",
-    name: "Alert",
+    slug: "docs/authentication/neon/database",
+    name: "Neon",
+    image: "alert",
     components: [
       { name: "comp-267" },
       { name: "comp-268" },
@@ -31,16 +29,18 @@ export const auths: ComponentAuth[] = [
 
   {
     slug: "coming",
-    name: "Badge",
+    image: "coming",
+    name: "Prisma",
     components: [{ name: "comp-413" }],
-  },  {
-    slug: "view",
+  },
+  {
+    slug: "docs/authentication/mongodb/database",
     name: "View All",
+    image: "view",
     components: [
       { name: "comp-390" },
       { name: "comp-391" },
       { name: "comp-392" },
-      { name: "comp-393" },
     ],
   },
 ];

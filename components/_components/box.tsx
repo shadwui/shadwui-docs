@@ -6,18 +6,20 @@ type BoxProps = {
   name: string;
   componentsCount?: number;
   isEasing?: boolean;
+  image?: string;
 };
 
 export function Box({
   slug,
+  image,
   name,
   componentsCount,
   isEasing = false,
 }: BoxProps) {
   const href = `/${slug}`;
-  const imageBasePath = `/thumbs/${slug}`;
+  const imageBasePath = `/thumbs/${image}`;
   const alt = isEasing ? "Tailwind CSS easing classes" : `${name} components`;
-  const isComingSoon = componentsCount === undefined && !isEasing;
+  const isComingSoon = image === "coming";
 
   return (
     <div className="space-y-3 text-center">
@@ -98,6 +100,7 @@ interface ItemProps {
     name: string;
     slug: string;
     components?: string;
+    image?: string;
   }[];
 }
 
@@ -107,10 +110,11 @@ export function BoxGridLayout({ items }: ItemProps) {
       <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {items.map((item) => (
           <Box
-            key={item.slug}
+            key={item.name}
             slug={item.slug}
             name={item.name}
             componentsCount={item.components?.length}
+            image={item.image}
           />
         ))}
       </div>
