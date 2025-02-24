@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";

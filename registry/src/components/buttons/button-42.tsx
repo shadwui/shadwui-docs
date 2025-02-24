@@ -1,6 +1,6 @@
 // Dependencies: npm install @remixicon/react
 
-// import { Button } from "@/components/ui/button";
+// import { Button } from "@/registry/src/components/ui/button";
 // import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
 export default function ButtonDemo() {

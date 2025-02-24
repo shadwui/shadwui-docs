@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 
 export default function NotificationDemo() {
   return (

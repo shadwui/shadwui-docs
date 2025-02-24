@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { ArrowRight, CircleCheck, X } from "lucide-react";
 
 export default function NotificationDemo() {

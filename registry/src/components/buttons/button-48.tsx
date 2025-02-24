@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { CircleUserRound } from "lucide-react";
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";

@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { CircleCheck, X } from "lucide-react";
 import { toast } from "sonner";
 

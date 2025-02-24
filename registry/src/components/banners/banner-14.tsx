@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/registry/src/components/ui/card";
 import { ArrowRight, CircleCheck, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { useState } from "react";
 import Link from "next/link";
 

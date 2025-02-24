@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { Minus, Plus, Volume, Volume1, Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 

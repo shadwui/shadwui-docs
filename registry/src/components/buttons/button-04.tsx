@@ -1,6 +1,6 @@
 // Dependencies: npm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { Archive } from "lucide-react";
 
 export default function ButtonDemo() {

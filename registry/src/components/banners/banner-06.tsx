@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/registry/src/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { Eclipse, X } from "lucide-react";
 import { useState } from "react";
 

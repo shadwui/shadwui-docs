@@ -1,7 +1,7 @@
  
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 // import { ToastAction } from "@/components/ui/toast";
 // import { useToast } from "@/hooks/use-toast";
 

@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/src/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
