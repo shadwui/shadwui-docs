@@ -1,7 +1,7 @@
 "use client";
 
 import { Label } from "@/registry/src/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/registry/src/components/ui/textarea";
 import { ChangeEvent, useRef } from "react";
 
 export default function TextareaDemo() {
