@@ -3,7 +3,7 @@
 "use client";
 
 import { Label } from "@/registry/src/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/registry/src/components/ui/slider";
 import { Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 

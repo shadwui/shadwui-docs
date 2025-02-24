@@ -1,6 +1,6 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "@/registry/src/components/ui/input";
 import { Label } from "@/registry/src/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/registry/src/components/ui/radio-group";
 import { useEffect, useRef, useState } from "react";

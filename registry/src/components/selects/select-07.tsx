@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/registry/src/components/ui/select";
 import Image from "next/image";
 
 export default function SelectDemo() {

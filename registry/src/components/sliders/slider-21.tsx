@@ -2,7 +2,7 @@
 
 import { Button } from "@/registry/src/components/ui/button";
 import { Label } from "@/registry/src/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/registry/src/components/ui/slider";
 import { useState } from "react";
 
 export default function SliderDemo() {

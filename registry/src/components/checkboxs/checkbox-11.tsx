@@ -1,7 +1,7 @@
 "use client";
 
 import { Checkbox } from "@/registry/src/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/registry/src/components/ui/input";
 import { Label } from "@/registry/src/components/ui/label";
 import { useEffect, useRef, useState } from "react";
 

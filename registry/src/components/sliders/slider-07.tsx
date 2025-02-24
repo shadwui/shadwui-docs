@@ -1,5 +1,5 @@
 import { Label } from "@/registry/src/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/registry/src/components/ui/slider";
 import { cn } from "@/lib/utils";
 
 export default function SliderDemo() {

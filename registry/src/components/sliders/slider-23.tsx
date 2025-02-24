@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/registry/src/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/registry/src/components/ui/input";
 import { Label } from "@/registry/src/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/registry/src/components/ui/slider";
 
 
 const items = [
