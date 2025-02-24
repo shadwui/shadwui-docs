@@ -6,7 +6,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/registry/src/components/ui/breadcrumb";
 
 const BreadcrumbDemo = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/registry/src/components/ui/card";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/registry/src/components/ui/breadcrumb";
 
 const BreadcrumbDemo = () => {
   return (
