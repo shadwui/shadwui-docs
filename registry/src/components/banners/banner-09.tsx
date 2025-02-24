@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/registry/src/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TicketPercent, X } from "lucide-react";
 import { useState, useEffect } from "react";
