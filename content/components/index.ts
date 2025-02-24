@@ -3,7 +3,7 @@ import CodePreview from "@/components/home/code/code-preview";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import CodeBlock from "@/components/home/code/CodeBlock";
 import { Tab, Tabs as DocTabs } from "fumadocs-ui/components/tabs";
-import { CodeBlockWrapper } from "./CodeWrapper"; 
+import { CodeBlockWrapper } from "./CodeWrapper";
 import {
   Tabs,
   TabsContent,

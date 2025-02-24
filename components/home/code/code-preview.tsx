@@ -16,47 +16,42 @@ import {
 } from "@/registry/src/components/ui/tab";
 import { DotPattern } from "@/registry/src/components/ui/dot-pattern";
 import { Separator } from "@radix-ui/react-separator";
-import CopyCode from "./copy-code"; 
-// import { readComponentSource, readComponentPath } from "@/utils/read-component";
+import CopyCode from "./copy-code";
+import { readComponentSource, readComponentPath } from "@/utils/read-component";
 
 interface CodePreviewProps {
-  sourcePath?: string;
+  sourcePath: string;
   copyButton?: boolean;
   packageSource?: string;
-  componentName?: string;
+  componentName: string;
   codeBlockMaximumHeight?: string;
   minimumCodeHeight?: string;
 }
 
 const CodePreview = async ({
-  // sourcePath,
+  sourcePath,
   componentName,
   minimumCodeHeight = "500px",
   copyButton = false,
   codeBlockMaximumHeight = "500px",
   packageSource = "npx default code",
 }: CodePreviewProps) => {
-  const sourceCode = `
-  
-  div ajs
-  as
-  as
-  as`;
+  if (!sourcePath || !componentName) {
+    return (
+      <div>
+        No Source Path {sourcePath} and Component Name Defined{componentName}
+      </div>
+    );
+  }
 
-  const cardComponentName = componentName;
+  const resolvedPath = `registry/${sourcePath}`;
 
-  // const Components = await readComponentPath(
-  //   "src/components/alerts",
-  //   componentName as string
-  // );
-  // console.log("====================================");
-  // console.log("Components", Components);
-  // console.log("====================================");
+  const Component = await readComponentPath(sourcePath!, componentName!);
+  const sourceCode = await readComponentSource(resolvedPath, componentName!);
 
-  // const sourceCode = await readComponentSource(
-  //   sourcePath as string,
-  //   componentName as string
-  // );z
+  const capitalizeComponentName =
+    componentName.charAt(0).toUpperCase() + componentName.slice(1);
+  const cardComponentName = capitalizeComponentName.split("-").join(" ");
 
   return (
     <Tabs defaultValue="preview">
@@ -112,7 +107,7 @@ const CodePreview = async ({
               className="w-full backdrop-blur-[1.5px] bg-slate-100 dark:bg-transparent dark:border-gray-800/10 flex items-center justify-center p-10"
               style={{ minHeight: minimumCodeHeight }}
             >
-              {/* <Component /> */} Hello Comp
+              <Component />
             </div>
           </TabsContent>
 
