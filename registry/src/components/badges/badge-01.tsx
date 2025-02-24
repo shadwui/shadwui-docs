@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import React from "react";
+ import React from "react";
+import { Badge } from "@/registry/src/components/ui/badge";
 
 const BadgeDemo = () => {
   return <Badge>Shadwui</Badge>;

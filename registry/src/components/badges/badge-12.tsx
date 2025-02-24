@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/registry/src/components/ui/badge";
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
