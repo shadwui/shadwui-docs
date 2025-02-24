@@ -16,7 +16,8 @@ import {
 } from "@/registry/src/components/ui/tab";
 import { DotPattern } from "@/registry/src/components/ui/dot-pattern";
 import { Separator } from "@radix-ui/react-separator";
-import CopyCode from "./copy-code";
+import CopyCode from "./copy-code"; 
+// import { readComponentSource, readComponentPath } from "@/utils/read-component";
 
 interface CodePreviewProps {
   sourcePath?: string;
@@ -28,21 +29,34 @@ interface CodePreviewProps {
 }
 
 const CodePreview = async ({
+  // sourcePath,
   componentName,
   minimumCodeHeight = "500px",
   copyButton = false,
   codeBlockMaximumHeight = "500px",
   packageSource = "npx default code",
 }: CodePreviewProps) => {
-  const source = `
-  <div>Hello </div>
-  <div>Hello </div>
-  <div>Hello </div><div>Hello </div>
-  <div>Hello </div>
-  <div>Hello </div>
-  <div>Hello </div>
-  `;
+  const sourceCode = `
+  
+  div ajs
+  as
+  as
+  as`;
+
   const cardComponentName = componentName;
+
+  // const Components = await readComponentPath(
+  //   "src/components/alerts",
+  //   componentName as string
+  // );
+  // console.log("====================================");
+  // console.log("Components", Components);
+  // console.log("====================================");
+
+  // const sourceCode = await readComponentSource(
+  //   sourcePath as string,
+  //   componentName as string
+  // );z
 
   return (
     <Tabs defaultValue="preview">
@@ -72,7 +86,7 @@ const CodePreview = async ({
           </CardTitle>
           <div className="flex items-center justify-center gap-x-2">
             {copyButton && <CopyCode packageCode={packageSource!} />}
-            <CopyButton componentSource={source!} />
+            <CopyButton componentSource={sourceCode!} />
           </div>
         </CardHeader>
 
@@ -105,7 +119,7 @@ const CodePreview = async ({
           <TabsContent value="code" className="p-0 mt-0">
             <CodeBlock
               minimumCodeHeight={minimumCodeHeight}
-              code={source!}
+              code={sourceCode!}
               maximumHeight={codeBlockMaximumHeight}
               language="javascript"
             />

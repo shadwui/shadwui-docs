@@ -62,6 +62,7 @@ const CodeBlock = ({
   }, [code, language, isDark]);
 
   const codeLines = code.split("\n");
+  // const codeLines = code
   const maxHeight = isExpanded ? "none" : maximumHeight;
 
   return (
