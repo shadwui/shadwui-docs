@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/src/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";

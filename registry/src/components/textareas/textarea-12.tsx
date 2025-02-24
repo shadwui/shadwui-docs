@@ -1,5 +1,5 @@
 import { Button } from "@/registry/src/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/src/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function TextareaDemo() {

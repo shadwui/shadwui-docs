@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/src/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/src/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
