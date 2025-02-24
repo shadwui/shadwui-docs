@@ -3,7 +3,7 @@
 "use client";
 
 import { Button } from "@/registry/src/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/src/components/ui/tooltip";
 import { Plus } from "lucide-react";
 
 export default function ButtonDemo() {

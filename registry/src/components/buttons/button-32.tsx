@@ -1,6 +1,6 @@
 // Dependencies: npm install @radix-ui/react-toggle-group
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { ToggleGroup, ToggleGroupItem } from "@/registry/src/components/ui/toggle-group";
 
 export default function ButtonDemo() {
   return (
