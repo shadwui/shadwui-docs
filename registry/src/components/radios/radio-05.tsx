@@ -2,7 +2,7 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/registry/src/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/src/components/ui/radio-group";
 import { useEffect, useRef, useState } from "react";
 
 export default function RadioDemo() {

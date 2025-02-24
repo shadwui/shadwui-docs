@@ -1,5 +1,5 @@
 import { Label } from "@/registry/src/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/src/components/ui/radio-group";
 
 const items = [
   { id: "radio-15-r1", value: "r1", label: "Hobby", price: "$9/mo" },

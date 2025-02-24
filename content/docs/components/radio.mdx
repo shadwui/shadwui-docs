@@ -1,63 +1,128 @@
 ---
 title: Radio
+description: Displays a callout for user attention.
 ---
 
-import { ComponentPage, Steps, Step, CodeBlock, CodeBlockWrapper } from "../../components/index"
+import {
+  Tab,
+  DocTabs,
+  Tabs,
+  TabsList,
+  TabsContent,
+  TabsTrigger,
+  Step,
+  Steps,
+  CodeBlock,
+  Separator,
+  BannerDemo,
+  CodePreview,
+  ComponentPage,
+  CodeBlockWrapper,
+} from "../../components/index";
 
+## Preview
+The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+<CodePreview
+  sourcePath="src/default"
+  componentName={"alert"}
+  minimumCodeHeight="300px"
+/>
 
-## Overview
-The Radio component is used to display important messages to users. It comes with several sub components to structure the content effectively.
-
-## Installation
-Step to add the Radio component to your project.
-
-<Steps>
-  <Step>
-    ### Copy and paste the following code into your project.
-    Create a new file called `radio.tsx` in `component/ui` and add the following code.
-
-    <CodeBlockWrapper>
-        ```typescript
-          "use client"
-
-          import * as React from "react"
-          import * as RadioPrimitive from "@radix-ui/react-radio"
-          import { Check } from "lucide-react"
-
-          import { cn } from "@/lib/utils"
-
-          const Radio = React.forwardRef<
-            React.ElementRef<typeof RadioPrimitive.Root>,
-            React.ComponentPropsWithoutRef<typeof RadioPrimitive.Root>
-          >(({ className, ...props }, ref) => (
-            <RadioPrimitive.Root
-              ref={ref}
-              className={cn(
-                "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
-                className
-              )}
-              {...props}
-            >
-              <RadioPrimitive.Indicator
-                className={cn("flex items-center justify-center text-current")}
-              >
-                <Check className="h-4 w-4" />
-              </RadioPrimitive.Indicator>
-            </RadioPrimitive.Root>
-          ))
-          Radio.displayName = RadioPrimitive.Root.displayName
-
-          export { Radio }
-
+## Installation 
+<Tabs defaultValue="cli">
+  <TabsList className="pb-0 h-10 rounded-md bg-hidden">
+    <TabsTrigger
+      value="cli"
+      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+    >
+      CLI
+    </TabsTrigger>
+    <TabsTrigger
+      value="manual"
+      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+    >
+      Manual
+    </TabsTrigger>
+  </TabsList>
+  <Separator />
+  <TabsContent value="cli" className="p-0 mt-0">
+    <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
+      <Tab value="pnpm">
+        ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
         ```
-    </CodeBlockWrapper>
+      </Tab>
+      <Tab value="npm">
+        ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        ```
+      </Tab>
+      <Tab value="bun">
+        ```bash
+        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        ```
+      </Tab>
+    </DocTabs>
+  </TabsContent>
 
-  </Step> 
-</Steps>
+  <TabsContent value="manual" className="p-0 mt-0">
+   <Steps>
+    <Step>
+      **Install the following dependencies:**
+
+      <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
+        <Tab value="pnpm">
+          ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          ```
+        </Tab>
+        <Tab value="npm">
+          ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          ```
+        </Tab>
+        <Tab value="yarn">
+          ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          ```
+        </Tab>
+        <Tab value="bun">
+          ```bash
+          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          ```
+        </Tab>
+      </DocTabs>
+
+    </Step>
+    <Step>
+      **Copy and paste the following code into your project.**
+
+      ```typescript
+      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+      ```
+
+    </Step>
+
+     <Step>
+        **Update the import paths to match your project setup.**
+    </Step>
+   </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+```jsx
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+```
 
 ## Examples
 <ComponentPage 
-  sourcePath="components/radios/"
+  sourcePath="src/components/radios"
   files={[
     "radio-01",
     "radio-02",
