@@ -4,7 +4,7 @@ import { githubUrl } from "@/utils/project-link";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header({ docHeader = false }: { docHeader?: boolean }) {
   return (
     <header
       className="
@@ -20,7 +20,11 @@ export default function Header() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
+      <div
+        className={`mx-auto flex h-[72px] w-full items-center justify-between gap-3 ${
+          docHeader ? "max-w-7xl" : "max-w-6xl"
+        }`}
+      >
         <Link
           href="/"
           aria-label="Home"

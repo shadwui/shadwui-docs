@@ -31,10 +31,15 @@ export default async function Page(props: {
         style: "clerk",
         single: false,
       }}
+      // breadcrumb={{
+      //   enabled: true,
+      //   includeSeparator: true,
+      //   includePage: true,
+      // }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
-      <DocsBody className="">
+      <DocsBody>
         <MDX components={{ ...defaultMdxComponents }} />
       </DocsBody>
     </DocsPage>

@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "../home/components/footer";
 import Header from "../home/components/header";
 import Background from "../home/components/background";
-// import Background from "../home/components/background";
 
 const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
   return (

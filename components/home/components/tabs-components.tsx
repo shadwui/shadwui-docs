@@ -43,8 +43,9 @@ export const AuthTab = () => {
       <TheamBorder />
       <div className="py-12">
         <CodePreview
+          sourcePath="src/auth/login"
+          componentName={"login-form-01"}
           minimumCodeHeight="500px"
-          componentName={"Login 01"}
           copyButton={true}
         />
       </div>
@@ -52,8 +53,9 @@ export const AuthTab = () => {
       <TheamBorder />
       <div className="pt-10">
         <CodePreview
+          sourcePath="src/auth/register"
+          componentName={"register-form-01"}
           minimumCodeHeight="500px"
-          componentName={"Register 01"}
           copyButton={true}
         />
       </div>
@@ -66,8 +68,9 @@ export const BlockTab = () => {
     <div>
       <div className="pb-10 pt-6">
         <CodePreview
+          sourcePath="src/blocks/footer"
+          componentName={"footer-01"}
           minimumCodeHeight="500px"
-          componentName={"Block 01"}
           copyButton={true}
         />
       </div>
@@ -75,8 +78,9 @@ export const BlockTab = () => {
       <TheamBorder />
       <div className="py-10">
         <CodePreview
+          sourcePath="src/blocks/header"
+          componentName={"header-01"}
           minimumCodeHeight="500px"
-          componentName={"Block 02"}
           copyButton={true}
         />
       </div>
@@ -98,8 +102,9 @@ export const TemplateTab = () => {
     <div>
       <div className="pb-10 pt-6">
         <CodePreview
+          sourcePath="src/templates/testimonials"
+          componentName={"testimonial-01"}
           minimumCodeHeight="500px"
-          componentName={"Template 01"}
           copyButton={true}
         />
       </div>
@@ -107,8 +112,9 @@ export const TemplateTab = () => {
       <TheamBorder />
       <div className="py-10">
         <CodePreview
+          sourcePath="src/templates/testimonials"
+          componentName={"testimonial-02"}
           minimumCodeHeight="500px"
-          componentName={"Template 02"}
           copyButton={true}
         />
       </div>
@@ -117,8 +123,9 @@ export const TemplateTab = () => {
 
       <div className="py-10">
         <CodePreview
+          sourcePath="src/templates/landings"
+          componentName={"landing-01"}
           minimumCodeHeight="500px"
-          componentName={"Template 03"}
           copyButton={true}
         />
       </div>
