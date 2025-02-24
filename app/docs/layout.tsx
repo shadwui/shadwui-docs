@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { baseOptions } from "@/app/layout.config";
 import { source } from "@/lib/source";
 import Header from "@/components/home/components/header";
+import "../../styles/docs.css"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -11,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       {...baseOptions}
       nav={{
         component: (
-          <div className="overflow-hidden px-4 supports-[overflow:clip]:overflow-clip sm:px-6">
+          <div className="overflow-hidden supports-[overflow:clip]:overflow-clip">
             <Header />
           </div>
         ),

@@ -25,9 +25,9 @@ const people = [
 
 const HeroPage = () => {
   return (
-    <div className="max-w-4xl max-sm:text-center my-10">
+    <div className="max-w-4xl max-sm:text-center mb-10 mt-14">
       <h1 className="text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
-        One click Auth & Built in React & Tailwind CSS Components 
+        One click Auth & Built in React & Tailwind CSS Components
       </h1>
       <p className="text-muted-foreground mb-4 text-base">
         A collection of sleek, UI components, built using Tailwind CSS and React

@@ -1,5 +1,5 @@
 export interface ComponentBlock {
-  slug?: string;
+  slug: string;
   name: string;
   image: string;
   components: { name: string }[];
@@ -7,7 +7,8 @@ export interface ComponentBlock {
 
 export const blocks: ComponentBlock[] = [
   {
- image: "accordion",
+    image: "accordion",
+    slug: "accordion",
     name: "Accordion",
     components: [
       { name: "comp-334" },
@@ -21,7 +22,8 @@ export const blocks: ComponentBlock[] = [
     ],
   },
   {
- image: "alert",
+    image: "alert",
+    slug: "accordion",
     name: "Alert",
     components: [
       { name: "comp-267" },
@@ -30,7 +32,8 @@ export const blocks: ComponentBlock[] = [
     ],
   },
   {
- image: "avatar",
+    image: "avatar",
+    slug: "accordion",
     name: "Avatar",
     components: [
       { name: "comp-390" },
@@ -40,13 +43,16 @@ export const blocks: ComponentBlock[] = [
     ],
   },
   {
- image: "badge",
+    slug: "accordion",
+    image: "badge",
     name: "Badge",
     components: [{ name: "comp-413" }],
   },
   {
- image: "textarea",
+    image: "textarea",
     name: "Hmmm",
+    slug: "accordion",
+
     components: [
       { name: "comp-390" },
       { name: "comp-391" },
@@ -55,21 +61,27 @@ export const blocks: ComponentBlock[] = [
     ],
   },
   {
- image: "input",
+    image: "input",
+    slug: "accordion",
+
     name: "Blocks",
     components: [{ name: "comp-413" }],
   },
   {
- image: "coming",
+    image: "coming",
     name: "Landing",
+    slug: "accordion",
+
     components: [{ name: "comp-413" }],
   },
   {
- image: "view",
+    image: "view",
     name: "View All",
+    slug: "accordion",
     components: [
       { name: "comp-390" },
       { name: "comp-391" },
+
       { name: "comp-392" },
       { name: "comp-393" },
     ],
