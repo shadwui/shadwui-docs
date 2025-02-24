@@ -29,11 +29,11 @@ export default async function Page(props: {
       }}
       tableOfContent={{
         style: "clerk",
-        single: true,
+        single: false,
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
       <DocsBody className="">
         <MDX components={{ ...defaultMdxComponents }} />
       </DocsBody>
