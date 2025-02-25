@@ -11,7 +11,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-2  ">
           <Eclipse

@@ -21,10 +21,10 @@ import {
 } from "../../components/index";
 
 ## Preview
-The Alert component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+The `Alert` component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
-  sourcePath="src/default"
-  componentName={"alert"}
+  sourcePath="src/components/alerts"
+  componentName={"alert-09"}
   minimumCodeHeight="300px"
 />
 
@@ -33,13 +33,13 @@ The Alert component is used to display important messages to users. It comes wit
   <TabsList className="pb-0 h-10 rounded-md bg-hidden">
     <TabsTrigger
       value="cli"
-      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
     >
       CLI
     </TabsTrigger>
     <TabsTrigger
       value="manual"
-      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
     >
       Manual
     </TabsTrigger>
@@ -49,22 +49,22 @@ The Alert component is used to display important messages to users. It comes wit
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/card.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/card.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/card.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/card.json
         ```
       </Tab>
     </DocTabs>
@@ -72,39 +72,91 @@ The Alert component is used to display important messages to users. It comes wit
 
   <TabsContent value="manual" className="p-0 mt-0">
    <Steps>
+     
     <Step>
-      **Install the following dependencies:**
+      **Add the `Card` to this path `component/shadwui/card.tsx`**
 
-      <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-        <Tab value="pnpm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="npm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="yarn">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="bun">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-      </DocTabs>
-
-    </Step>
-    <Step>
-      **Copy and paste the following code into your project.**
-
+      <CodeBlockWrapper>
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+      import * as React from "react"
+
+      import { cn } from "@/lib/utils"
+
+      const Card = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div
+          ref={ref}
+          className={cn(
+            "rounded-xl border bg-card text-card-foreground shadow",
+            className
+          )}
+          {...props}
+        />
+      ))
+      Card.displayName = "Card"
+
+      const CardHeader = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div
+          ref={ref}
+          className={cn("flex flex-col space-y-1.5 p-6", className)}
+          {...props}
+        />
+      ))
+      CardHeader.displayName = "CardHeader"
+
+      const CardTitle = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div
+          ref={ref}
+          className={cn("font-semibold leading-none tracking-tight", className)}
+          {...props}
+        />
+      ))
+      CardTitle.displayName = "CardTitle"
+
+      const CardDescription = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div
+          ref={ref}
+          className={cn("text-sm text-muted-foreground", className)}
+          {...props}
+        />
+      ))
+      CardDescription.displayName = "CardDescription"
+
+      const CardContent = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+      ))
+      CardContent.displayName = "CardContent"
+
+      const CardFooter = React.forwardRef<
+        HTMLDivElement,
+        React.HTMLAttributes<HTMLDivElement>
+      >(({ className, ...props }, ref) => (
+        <div
+          ref={ref}
+          className={cn("flex items-center p-6 pt-0", className)}
+          {...props}
+        />
+      ))
+      CardFooter.displayName = "CardFooter"
+
+      export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
       ```
+      </CodeBlockWrapper>
 
     </Step>
 
@@ -117,22 +169,110 @@ The Alert component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Card, CardContent } from "@/components/shadwui/card"
+```
+
+```jsx
+<Card className="py-4 w-96">
+  <CardContent className="py-0">
+    <h5>
+      Get the most out of your app with real-time updates and analytics.
+    </h5>
+
+    <Link href="#" className="font-medium underline hover:no-underline">
+      Upgrade
+    </Link>
+  </CardContent>
+</Card>
 ```
 
 ## Examples
-<ComponentPage
+### 01
+<CodePreview
   sourcePath="src/components/alerts"
-  files={[
-    "alert-01",
-    "alert-02",
-    "alert-03",
-    "alert-04",
-    "alert-05",
-    "alert-06",
-    "alert-07",
-    "alert-08",
-    "alert-09",
-    "alert-10",
-  ]}
+  componentName={"alert-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
 />
+
+### 02
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/alerts"
+  componentName={"alert-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+## Options
+| component         |      Description                                                               |   Example Output                  |
+| -------------     | ------------------------------------------------------------------------------ | --------------------------------- |
+| `Card`            | A container with rounded corners, border, background, and shadow.              | `<Card>Content</Card>`            |
+| `CardTitle`       | A styled title with font-semibold and tracking-tight.                          | `<CardTitle>Title</CardTitle>`    |
+| `CardHeader`      | A flex container with padding, typically used for the card's header section.   | `<CardHeader>Header</CardHeader>` |
+| `CardDescription` | A text description with smaller font and muted foreground color.               | `<CardDescription>Description</CardDescription>`   |
+| `CardContent`     | A container with padding, used for the main content of the card.               | `<CardContent>Main content here</CardContent>`       |
+| `CardFooter`      | A flex container with padding, typically used for the card's footer section.   | `<CardFooter>Footer content</CardFooter>`        |
