@@ -12,6 +12,10 @@
     "authentication/neon",
 
 
+    "---Typography---",
+    "typography/heading",
+
+
     "---Components---",
     "components/alert",
     "components/badge",
@@ -30,17 +34,20 @@
 
     
     "---Block---",
-    "blocks/landing",
+    "blocks/hero",
+    "blocks/navbar",
     "blocks/footer",
 
-    "---Templates---",
-    "templates/modern",
-    "templates/classic",
 
-    
+    "---Templates---",
+    "templates/template-01",
+    "templates/template-02",
+
+
     
     "---Link---",
     "[Github](https://github.com)",
+    "[Agency](https://axisbuddy.com)",
     "[Portfolio](https://sahilkumardev.shadwui.com)"
   ]
 }
