@@ -1,5 +1,7 @@
-import ComponentPage from "@/components/home/code/component-page";
-import CodePreview from "@/components/home/code/code-preview";
+import dynamic from "next/dynamic";
+
+// import ComponentPage from "@/components/home/code/component-page";
+// import CodePreview from "@/components/home/code/code-preview";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import CodeBlock from "@/components/home/code/CodeBlock";
 import { Tab, Tabs as DocTabs } from "fumadocs-ui/components/tabs";
@@ -12,7 +14,9 @@ import {
 } from "@/registry/src/components/ui/tab";
 import { Separator } from "@/registry/src/components/ui/separator";
 
-import BannerDemo from "@/registry/src/components/alerts/alert-01";
+const ComponentPage = dynamic(() => import("@/components/home/code/component-page"))
+const CodePreview = dynamic(() => import("@/components/home/code/code-preview"))
+
 
 export {
   Tab,
@@ -25,7 +29,6 @@ export {
   Steps,
   CodeBlock,
   Separator,
-  BannerDemo,
   CodePreview,
   ComponentPage,
   CodeBlockWrapper,
