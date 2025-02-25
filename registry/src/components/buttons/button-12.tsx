@@ -1,10 +1,13 @@
 import { Button } from "@/registry/src/components/ui/button";
+import { Card, CardContent } from "@/registry/src/components/ui/card";
 
 export default function ButtonDemo() {
   return (
-    <div className="inline-flex items-center gap-2">
-      <Button variant="ghost">Cancel</Button>
-      <Button>Save</Button>
-    </div>
+    <Card>
+      <CardContent className="py-6">
+        <Button variant="ghost">Cancel</Button>
+        <Button>Save</Button>
+      </CardContent>
+    </Card>
   );
 }

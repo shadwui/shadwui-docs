@@ -24,7 +24,7 @@ import {
 The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
   sourcePath="src/default"
-  componentName={"alert"}
+  componentName={"button"}
   minimumCodeHeight="300px"
 />
 
@@ -47,24 +47,24 @@ The Badge component is used to display important messages to users. It comes wit
   <Separator />
   <TabsContent value="cli" className="p-0 mt-0">
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-      <Tab value="pnpm">
+       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/button.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/button.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/button.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/button.json
         ```
       </Tab>
     </DocTabs>
@@ -78,34 +78,93 @@ The Badge component is used to display important messages to users. It comes wit
       <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
         <Tab value="pnpm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          pnpm add @radix-ui/react-slot
           ```
         </Tab>
         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          npm install @radix-ui/react-slot
           ```
         </Tab>
         <Tab value="yarn">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          yarn add @radix-ui/react-slot
           ```
         </Tab>
         <Tab value="bun">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          bun add @radix-ui/react-slot
           ```
         </Tab>
       </DocTabs>
 
     </Step>
     <Step>
-      **Copy and paste the following code into your project.**
+      **Add the `Button` to this path `component/shadwui/button.tsx`**
+      <CodeBlockWrapper>
 
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-      ```
+      import * as React from "react"
+      import { Slot } from "@radix-ui/react-slot"
+      import { cva, type VariantProps } from "class-variance-authority"
 
+      import { cn } from "@/lib/utils"
+
+      const buttonVariants = cva(
+        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+        {
+          variants: {
+            variant: {
+              default: "bg-primary text-primary-foreground hover:bg-primary/90",
+              destructive:
+                "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+              outline:
+                "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+              secondary:
+                "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+              ghost: "hover:bg-accent hover:text-accent-foreground",
+              link: "text-primary underline-offset-4 hover:underline",
+            },
+            size: {
+              default: "h-10 px-4 py-2",
+              sm: "h-9 rounded-md px-3",
+              lg: "h-11 rounded-md px-8",
+              icon: "h-10 w-10",
+            },
+          },
+          defaultVariants: {
+            variant: "default",
+            size: "default",
+          },
+        }
+      )
+
+      export interface ButtonProps
+        extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+          VariantProps<typeof buttonVariants> {
+        asChild?: boolean
+      }
+
+      const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+        ({ className, variant, size, asChild = false, ...props }, ref) => {
+          const Comp = asChild ? Slot : "button"
+          return (
+            <Comp
+              className={cn(buttonVariants({ variant, size, className }))}
+              ref={ref}
+              {...props}
+            />
+          )
+        }
+      )
+      Button.displayName = "Button"
+
+      export { Button, buttonVariants }
+      
+      ```
+    
+      </CodeBlockWrapper>
+    
     </Step>
 
      <Step>
@@ -117,27 +176,158 @@ The Badge component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+import { Button } from "@/components/shadwui/button"
+```
+
+```tsx
+<Button variant="outline">Button</Button>
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/buttons"
+  componentName={"button-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/buttons"
   files={[
-    "button-01",
-    "button-02", 
-    "button-03",
-    "button-04",
-    "button-05",
-    "button-06",
-    "button-07",
-    "button-08",
-    "button-09",
-    "button-10",
     "button-11",
     "button-12",
     "button-13",
     "button-14",
-    "button-15"
+    "button-15",
+    "button-16",
+    "button-17",
+    "button-18",
+    "button-19",
+    "button-20",
+    "button-21",
+    "button-22",
+    "button-23",
+    "button-24",
+    "button-25",
+    "button-26",
+    "button-27",
+    "button-28",
+    "button-29",
+    "button-30",
+    "button-31",
+    "button-32",
+    "button-33",
+    "button-34",
+    "button-35",
+    "button-36",
+    "button-37",
+    "button-38",
+    "button-39",
+    "button-40",
+    "button-41",
+    "button-42",
+    "button-43",
+    "button-44",
+    "button-45",
+    "button-46",
+    "button-47",
+    "button-48",
+    "button-49",
+    "button-50",
+    "button-51"
   ]}
 />
+
+## Options
+
+### Variants
+| Variant      | Description                                                                 | Example Output                                         |
+| ------------ | --------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `default`    | Primary button with background and foreground colors.                       | `<Button>Default Button</Button>`                      |
+| `destructive`| Button indicating a destructive action, with distinct styling.              | `<Button variant="destructive">Delete</Button>`        |
+| `outline`    | Button with a border and background, suitable for secondary actions.        | `<Button variant="outline">Outline Button</Button>`    |
+| `secondary`  | Button with secondary background and foreground colors.                     | `<Button variant="secondary">Secondary Button</Button>`|
+| `ghost`      | Button with minimal styling, often used for less prominent actions.         | `<Button variant="ghost">Ghost Button</Button>`        |
+| `link`       | Button styled as a textual link.                                            | `<Button variant="link">Link Button</Button>`          |
+
+### Sizes
+| Size     | Description                         | Example Output                                 |
+| -------- | ----------------------------------- | ---------------------------------------------- |
+| `default`| Standard button size.               | `<Button size="default">Default Size</Button>` |
+| `sm`     | Small button size.                  | `<Button size="sm">Small Button</Button>`      |
+| `lg`     | Large button size.                  | `<Button size="lg">Large Button</Button>`      |
+| `icon`   | Square button, typically for icons. | `<Button size="icon">Icon Button</Button>`     |
