@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+// import { ChevronDown } from "lucide-react";
 
 import {
   Breadcrumb,
@@ -8,12 +8,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/registry/src/components/ui/breadcrumb";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from "@/registry/src/components/ui/dropdown-menu";
 
 const BreadcrumbDemo = () => {
   return (
@@ -24,7 +24,7 @@ const BreadcrumbDemo = () => {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1">
               Components
               <ChevronDown className="h-4 w-4" />
@@ -34,7 +34,7 @@ const BreadcrumbDemo = () => {
               <DropdownMenuItem>Themes</DropdownMenuItem>
               <DropdownMenuItem>GitHub</DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/registry/src/components/ui/tooltip";
 import { RotateCcw } from "lucide-react";
 
 export default function SliderDemo() {

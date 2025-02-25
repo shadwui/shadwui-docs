@@ -17,7 +17,7 @@
 //   PopoverContent,
 //   PopoverTrigger,
 // } from "@/components/ui/popover";
-// import { cn } from "@/lib/utils";
+// import { cn } from "@/registry/src/lib/utils";
 
 // const frameworks = [
 //   {

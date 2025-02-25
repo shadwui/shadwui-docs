@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Toggle } from "@/components/ui/toggle";
+import { Toggle } from "@/registry/src/components/ui/toggle";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/src/components/ui/tooltip";
 import { Bookmark } from "lucide-react";
 import { useState } from "react";

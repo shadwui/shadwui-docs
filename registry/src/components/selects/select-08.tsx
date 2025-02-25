@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/src/components/ui/select";
-import { cn } from "@/lib/utils";
+import { cn } from "@/registry/src/lib/utils";
 
 const Square = ({
   className,

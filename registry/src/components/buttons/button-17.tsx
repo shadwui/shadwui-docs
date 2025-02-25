@@ -7,7 +7,7 @@ export default function ButtonDemo() {
       <div className="me-0.5 flex aspect-square h-full p-1.5">
         <Image
           className="h-auto w-full rounded-full"
-          src={"/avatar-shadwui.jpg"}
+          src={"/avatars/profile-female-1.png"}
           alt="Profile image"
           width={24}
           height={24}

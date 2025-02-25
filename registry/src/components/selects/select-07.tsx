@@ -24,7 +24,7 @@ export default function SelectDemo() {
           <SelectItem value="s1">
             <Image
               className="size-5 rounded"
-              src={"/avatar-shadwui.jpg"}
+              src={"/avatars/profile-female-1.png"}
               alt="Frank Allison"
               width={20}
               height={20}
@@ -34,7 +34,7 @@ export default function SelectDemo() {
           <SelectItem value="s2">
             <Image
               className="size-5 rounded"
-              src={"/avatar-shadwui.jpg"}
+              src={"/avatars/profile-female-1.png"}
               alt="Xavier Guerra"
               width={20}
               height={20}
@@ -44,7 +44,7 @@ export default function SelectDemo() {
           <SelectItem value="s3">
             <Image
               className="size-5 rounded"
-              src={"/avatar-shadwui.jpg"}
+              src={"/avatars/profile-female-1.png"}
               alt="Anne Kelley"
               width={20}
               height={20}
