@@ -11,7 +11,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4 bg-blue-400 bg-opacity-20 text-blue-700 dark:bg-opacity-10 dark:text-blue-600">
+    <Card className="py-4 bg-blue-400 bg-opacity-20 text-blue-700 dark:bg-opacity-10 dark:text-blue-600 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <Info
@@ -21,9 +21,9 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className="space-y-2">
-            <p className="text-sm">
+            <h5 className="text-sm">
               Your request was completed without any issues. Great job!
-            </p>
+            </h5>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
               <ArrowRight

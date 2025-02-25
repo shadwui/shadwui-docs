@@ -11,7 +11,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4 bg-red-400 bg-opacity-20 text-red-700 dark:bg-opacity-10 dark:text-red-600">
+    <Card className="py-4 bg-red-400 bg-opacity-20 text-red-700 dark:bg-opacity-10 dark:text-red-600 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <CircleAlert
@@ -21,10 +21,10 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className="space-y-2">
-            <p className="text-sm">
+            <h5 className="text-sm">
               We couldn&lsquo;t complete your request. Please try again or check
               your connection.
-            </p>
+            </h5>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
               <ArrowRight

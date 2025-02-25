@@ -11,7 +11,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-2  ">
           <Eclipse
@@ -21,10 +21,10 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className="space-y-2">
-            <p>
+            <h5>
               It&lsquo;s live and ready to use! Start exploring the latest
               addition to your toolkit.
-            </p>
+            </h5>
             <div className="flex gap-2 max-md:flex-wrap">
               <Button size="sm" className="text-sm">
                 Download

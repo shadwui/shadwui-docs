@@ -68,7 +68,7 @@ export default function BannerDemo() {
   if (!isVisible || timeLeft.isExpired) return null;
 
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <div
@@ -79,11 +79,11 @@ export default function BannerDemo() {
           </div>
           <div className="space-y-2">
             <div className="space-y-0.5">
-              <p className="text-sm font-medium">Black Friday Sale!</p>
-              <p className="text-sm text-muted-foreground">
+              <h5 className="text-sm font-medium">Black Friday Sale!</h5>
+              <h6 className="text-sm text-muted-foreground">
                 It kicks off today and is available for just 24
                 hours—don&lsquo;t miss out!
-              </p>
+              </h6>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">
               <div className="flex items-center divide-x divide-primary-foreground rounded-lg bg-primary/15 text-sm tabular-nums">

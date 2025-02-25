@@ -1,11 +1,10 @@
 import { Card, CardContent } from "@/registry/src/components/ui/card";
-import Link from "next/link";
-
 import { ArrowRight, Eclipse } from "lucide-react";
+import Link from "next/link";
 
 export default function BannerDemo() {
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0">
         <div className="flex grow gap-2">
           <Eclipse
@@ -15,7 +14,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className=" ">
-            <h6 className=" font-normal">
+            <h6 className="font-normal">
               We just added something awesome to make your experience even
               better.
             </h6>

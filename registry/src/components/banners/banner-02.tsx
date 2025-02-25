@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function BannerDemo() {
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0">
-        <p>
+        <h5>
           Get the most out of your app with real-time updates and analytics.
-        </p>
+        </h5>
 
         <Link href="#" className="font-medium underline hover:no-underline">
           Upgrade

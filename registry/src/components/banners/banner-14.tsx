@@ -12,7 +12,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4 bg-emerald-400 bg-opacity-20 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600">
+    <Card className="py-4 bg-emerald-400 bg-opacity-20 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <CircleCheck
@@ -22,9 +22,9 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className="space-y-2">
-            <p className="text-sm">
+            <h5 className="text-sm">
               Your request was completed without any issues. Great job!
-            </p>
+            </h5>
             <Link
               href="#"
               className="group whitespace-nowrap text-sm font-medium"

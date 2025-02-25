@@ -5,6 +5,7 @@
 .contentlayer
 .content-collections
 .source
+imp-docs.md
 
 # test & build
 /coverage

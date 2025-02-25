@@ -12,7 +12,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="bg-amber-400 bg-opacity-20 py-4 text-amber-700 dark:bg-opacity-10 dark:text-amber-600">
+    <Card className="bg-amber-400 bg-opacity-20 py-4 text-amber-700 dark:bg-opacity-10 dark:text-amber-600 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <TriangleAlert
@@ -22,10 +22,10 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div className="space-y-2">
-            <p className="text-sm">
+            <h5 className="text-sm">
               There&lsquo;s something that might require your action. Please
               review the details.
-            </p>
+            </h5>
             <Link
               href="#"
               className="group whitespace-nowrap text-sm font-medium"

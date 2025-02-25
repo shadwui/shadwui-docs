@@ -22,11 +22,11 @@ export default function BannerDemo() {
           </div>
           <div className="space-y-2">
             <div className="space-y-0.5">
-              <p>Boost your experience</p>
-              <p className="text-sm text-muted-foreground">
+              <h5>Boost your experience</h5>
+              <h6 className="text-sm text-muted-foreground">
                 The new feature is live! Try it out and let us know what you
                 think.
-              </p>
+              </h6>
             </div>
             <div className="flex gap-2 max-md:flex-wrap">
               <Button size="sm" className="text-sm">

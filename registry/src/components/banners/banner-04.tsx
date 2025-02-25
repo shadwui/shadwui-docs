@@ -1,8 +1,8 @@
 "use client";
 
 import { Card, CardContent } from "@/registry/src/components/ui/card";
-import { ArrowRight, Eclipse, X } from "lucide-react";
 import { Button } from "@/registry/src/components/ui/button";
+import { ArrowRight, Eclipse, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <Card className="py-4">
+    <Card className="py-4 w-96">
       <CardContent className="py-0 flex">
         <div className="flex grow gap-2">
           <Eclipse
@@ -22,7 +22,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
           <div>
-            <p>We just added some thing to make your experience even better.</p>
+            <h5>We just added some thing to make your experience even better.</h5>
             <Link
               href="#"
               className="group whitespace-nowrap text-sm font-medium"

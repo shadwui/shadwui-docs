@@ -5,7 +5,7 @@ export default function BannerDemo() {
   return (
     <Card className="py-4">
       <CardContent className="py-0 flex">
-        <p className="text-center text-sm">
+        <h5 className="text-center text-sm">
           <span className="mr-1 leading-none">📫</span> Subscribe to our
           newsletter and get 10% off your first order!
           <span className="mx-1 text-muted-foreground">·</span>
@@ -15,7 +15,7 @@ export default function BannerDemo() {
           >
             Subscribe
           </Link>
-        </p>
+        </h5>
       </CardContent>
     </Card>
   );
