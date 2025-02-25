@@ -1,6 +1,6 @@
 ---
 title: Checkbox
-description: Displays a callout for user attention.
+description: A control that allows the user to toggle between checked and not checked.
 ---
 
 import {
@@ -21,10 +21,9 @@ import {
 } from "../../components/index";
 
 ## Preview
-The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
   sourcePath="src/default"
-  componentName={"alert"}
+  componentName={"checkbox"}
   minimumCodeHeight="300px"
 />
 
@@ -49,22 +48,22 @@ The Badge component is used to display important messages to users. It comes wit
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/checkbox.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/checkbox.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/checkbox.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/checkbox.json
         ```
       </Tab>
     </DocTabs>
@@ -78,22 +77,22 @@ The Badge component is used to display important messages to users. It comes wit
       <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
         <Tab value="pnpm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          pnpm add @radix-ui/react-checkbox
           ```
         </Tab>
         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          npx install @radix-ui/react-checkbox
           ```
         </Tab>
         <Tab value="yarn">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          yarn add @radix-ui/react-checkbox
           ```
         </Tab>
         <Tab value="bun">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          bun add @radix-ui/react-checkbox
           ```
         </Tab>
       </DocTabs>
@@ -102,10 +101,41 @@ The Badge component is used to display important messages to users. It comes wit
     <Step>
       **Copy and paste the following code into your project.**
 
+      <CodeBlockWrapper>
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-      ```
+      "use client"
 
+      import * as React from "react"
+      import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+      import { Check } from "lucide-react"
+
+      import { cn } from "@/lib/utils"
+
+      const Checkbox = React.forwardRef<
+        React.ElementRef<typeof CheckboxPrimitive.Root>,
+        React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+      >(({ className, ...props }, ref) => (
+        <CheckboxPrimitive.Root
+          ref={ref}
+          className={cn(
+            "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+            className
+          )}
+          {...props}
+        >
+          <CheckboxPrimitive.Indicator
+            className={cn("flex items-center justify-center text-current")}
+          >
+            <Check className="h-4 w-4" />
+          </CheckboxPrimitive.Indicator>
+        </CheckboxPrimitive.Root>
+      ))
+      Checkbox.displayName = CheckboxPrimitive.Root.displayName
+
+      export { Checkbox }
+
+      ```
+      </CodeBlockWrapper>
     </Step>
 
      <Step>
@@ -117,23 +147,98 @@ The Badge component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+import { Checkbox } from "@/components/shadwui/checkbox"
+```
+
+```tsx
+<Checkbox />
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/checkboxs"
+  componentName={"checkbox-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/checkboxs"
   files={[
-    "checkbox-01",
-    "checkbox-02", 
-    "checkbox-03",
-    "checkbox-04",
-    "checkbox-05",
-    "checkbox-06",
-    "checkbox-07",
-    "checkbox-08",
-    "checkbox-09",
-    "checkbox-10",
     "checkbox-11",
     "checkbox-12",
     "checkbox-13",
@@ -143,3 +248,18 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
     "checkbox-17"
   ]}
 />
+
+
+## Options
+| Prop             | Type                                             | Default |
+| ---------------- | ------------------------------------------------ | ------- |
+| `asChild`        | `boolean`                                        | `false` |
+| `defaultChecked` | `boolean \| 'indeterminate'`                     | `false` |
+| `checked`        | `boolean \| 'indeterminate'`                     |         |
+| `onCheckedChange`| `(checked: boolean \| 'indeterminate') => void`  |         |
+| `disabled`       | `boolean`                                        | `false` |
+| `required`       | `boolean`                                        | `false` |
+| `name`           | `string`                                         |         |
+| `value`          | `string`                                         |         |
+| `className`      | `string`                                         |         |
+| `...props`       |                                                  |         |

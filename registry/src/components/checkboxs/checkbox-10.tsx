@@ -12,9 +12,9 @@ export default function CheckboxDemo() {
             (Sublabel)
           </span>
         </Label>
-        <p id="checkbox-08-description" className="text-xs text-muted-foreground">
+        <h5 id="checkbox-08-description" className="text-xs text-muted-foreground">
           You can use this checkbox with a label and a description.
-        </p>
+        </h5>
       </div>
     </div>
   );

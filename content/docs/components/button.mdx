@@ -33,13 +33,13 @@ The Badge component is used to display important messages to users. It comes wit
   <TabsList className="pb-0 h-10 rounded-md bg-hidden">
     <TabsTrigger
       value="cli"
-      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
     >
       CLI
     </TabsTrigger>
     <TabsTrigger
       value="manual"
-      className="rounded-sm px-2 py-1.5 data-[state=active]:text-chai data-[state=active]:underline data-[state=active]:underline-offset-10 data-[state=active]:decoration-3 hover:cursor-pointer data-[state=active]:bg-hidden data-[state=active]:shadow-none"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
     >
       Manual
     </TabsTrigger>
