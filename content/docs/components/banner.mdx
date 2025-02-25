@@ -16,6 +16,7 @@ import {
   Separator,
   BannerDemo,
   CodePreview,
+  ComponentPage,
   CodeBlockWrapper,
 } from "../../components/index";
 
@@ -266,50 +267,22 @@ import { Card, CardContent } from "@/components/shadwui/card"
   minimumCodeHeight="250px"
 />
 
-### 11
-<CodePreview
+### more...
+<ComponentPage 
   sourcePath="src/components/banners"
-  componentName={"banner-11"}
-  codeBlockMaximumHeight="250px"
-  minimumCodeHeight="250px"
+  files={[
+    "banner-11",
+    "banner-12",
+    "banner-13",
+    "banner-14",
+    "banner-15",
+  ]}
 />
-
-### 12
-<CodePreview
-  sourcePath="src/components/banners"
-  componentName={"banner-12"}
-  codeBlockMaximumHeight="250px"
-  minimumCodeHeight="250px"
-/>
-
-### 13
-<CodePreview
-  sourcePath="src/components/banners"
-  componentName={"banner-13"}
-  codeBlockMaximumHeight="250px"
-  minimumCodeHeight="250px"
-/>
-
-### 14
-<CodePreview
-  sourcePath="src/components/banners"
-  componentName={"banner-14"}
-  minimumCodeHeight="250px"
-  codeBlockMaximumHeight="250px"
-/>
-
-### 15
-<CodePreview
-  sourcePath="src/components/banners"
-  componentName={"banner-15"}
-  minimumCodeHeight="250px" 
-  codeBlockMaximumHeight="250px"
-/>
-
+ 
 ## Options
 
 | component         |      Description                                                               |   Example Output                                     |
-| -------------     | ------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| ----------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------- |
 | `Card`            | A container with rounded corners, border, background, and shadow.              | `<Card>Content</Card>`                               |
 | `CardTitle`       | A styled title with font-semibold and tracking-tight.                          | `<CardTitle>Title</CardTitle>`                       |
 | `CardHeader`      | A flex container with padding, typically used for the card's header section.   | `<CardHeader>Header</CardHeader>`                    |

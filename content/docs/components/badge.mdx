@@ -1,6 +1,6 @@
 ---
 title: Badge
-description: Displays a callout for user attention.
+description: Displays a badge or a component that looks like a badge.
 ---
 
 import {
@@ -24,7 +24,7 @@ import {
 The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
   sourcePath="src/default"
-  componentName={"alert"}
+  componentName={"badge"}
   minimumCodeHeight="300px"
 />
 
@@ -47,24 +47,24 @@ The Badge component is used to display important messages to users. It comes wit
   <Separator />
   <TabsContent value="cli" className="p-0 mt-0">
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-      <Tab value="pnpm">
+     <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/badge.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/badge.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/badge.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/badge.json
         ```
       </Tab>
     </DocTabs>
@@ -73,39 +73,50 @@ The Badge component is used to display important messages to users. It comes wit
   <TabsContent value="manual" className="p-0 mt-0">
    <Steps>
     <Step>
-      **Install the following dependencies:**
+      **Add the `Badge` to this path `component/shadwui/badge.tsx`**
 
-      <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-        <Tab value="pnpm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="npm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="yarn">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="bun">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-      </DocTabs>
-
-    </Step>
-    <Step>
-      **Copy and paste the following code into your project.**
-
+      <CodeBlockWrapper>
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-      ```
+      import * as React from "react"
+      import { cva, type VariantProps } from "class-variance-authority"
 
+      import { cn } from "@/lib/utils"
+
+      const badgeVariants = cva(
+        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+        {
+          variants: {
+            variant: {
+              default:
+                "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+              secondary:
+                "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+              destructive:
+                "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+              outline: "text-foreground",
+            },
+          },
+          defaultVariants: {
+            variant: "default",
+          },
+        }
+      )
+
+      export interface BadgeProps
+        extends React.HTMLAttributes<HTMLDivElement>,
+          VariantProps<typeof badgeVariants> {}
+
+      function Badge({ className, variant, ...props }: BadgeProps) {
+        return (
+          <div className={cn(badgeVariants({ variant }), className)} {...props} />
+        )
+      }
+
+      export { Badge, badgeVariants }
+
+      ```
+      </CodeBlockWrapper>
+      
     </Step>
 
      <Step>
@@ -117,24 +128,107 @@ The Badge component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+import { Badge } from "@/components/shadwui/badge"
+```
+
+```tsx
+<Badge variant="outline">Shadwui</Badge>
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-01"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/badges"
+  componentName={"badge-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/badges"
   files={[
-    "badge-01",
-    "badge-02", 
-    "badge-03",
-    "badge-04",
-    "badge-05",
-    "badge-06",
-    "badge-07",
-    "badge-08",
-    "badge-09",
-    "badge-10",
     "badge-11",
     "badge-12"
   ]}
 />
+
+## Options
+| Component     | Description                                                                 | Example Output                                           |
+| ------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `default`     | A badge with primary background and foreground colors.                      | `<Badge>Default Badge</Badge>`                           |
+| `secondary`   | A badge with secondary background and foreground colors.                    | `<Badge variant="secondary">Secondary Badge</Badge>`     |
+| `destructive` | A badge with destructive background and foreground colors.                  | `<Badge variant="destructive">Destructive Badge</Badge>` |
+| `outline`     | A badge with no background and default foreground color.                    | `<Badge variant="outline">Outline Badge</Badge>`         |
