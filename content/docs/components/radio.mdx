@@ -23,8 +23,8 @@ import {
 ## Preview
 The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
-  sourcePath="src/default"
-  componentName={"alert"}
+  sourcePath="src/components/radios"
+  componentName={"radio-15"}
   minimumCodeHeight="300px"
 />
 
@@ -49,22 +49,22 @@ The Badge component is used to display important messages to users. It comes wit
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/radio-group.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/radio-group.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/radio-group.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/radio-group.json
         ```
       </Tab>
     </DocTabs>
@@ -78,22 +78,22 @@ The Badge component is used to display important messages to users. It comes wit
       <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
         <Tab value="pnpm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          pnpm add @radix-ui/react-radio-group
           ```
         </Tab>
         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          npx install @radix-ui/react-radio-group
           ```
         </Tab>
         <Tab value="yarn">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          yarn add @radix-ui/react-radio-group
           ```
         </Tab>
         <Tab value="bun">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          bun add @radix-ui/react-radio-group
           ```
         </Tab>
       </DocTabs>
@@ -102,9 +102,55 @@ The Badge component is used to display important messages to users. It comes wit
     <Step>
       **Copy and paste the following code into your project.**
 
+      <CodeBlockWrapper>
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+      "use client"
+
+      import * as React from "react"
+      import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
+      import { Circle } from "lucide-react"
+
+      import { cn } from "@/lib/utils"
+
+      const RadioGroup = React.forwardRef<
+        React.ElementRef<typeof RadioGroupPrimitive.Root>,
+        React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+      >(({ className, ...props }, ref) => {
+        return (
+          <RadioGroupPrimitive.Root
+            className={cn("grid gap-2", className)}
+            {...props}
+            ref={ref}
+          />
+        )
+      })
+      RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
+
+      const RadioGroupItem = React.forwardRef<
+        React.ElementRef<typeof RadioGroupPrimitive.Item>,
+        React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
+      >(({ className, ...props }, ref) => {
+        return (
+          <RadioGroupPrimitive.Item
+            ref={ref}
+            className={cn(
+              "aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+              className
+            )}
+            {...props}
+          >
+            <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
+              <Circle className="h-2.5 w-2.5 fill-current text-current" />
+            </RadioGroupPrimitive.Indicator>
+          </RadioGroupPrimitive.Item>
+        )
+      })
+      RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
+
+      export { RadioGroup, RadioGroupItem }
+
       ```
+      </CodeBlockWrapper>
 
     </Step>
 
@@ -121,19 +167,90 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/radios"
+  componentName={"radio-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/radios"
   files={[
-    "radio-01",
-    "radio-02",
-    "radio-03",
-    "radio-04",
-    "radio-05",
-    "radio-06",
-    "radio-07",
-    "radio-08",
-    "radio-09",
-    "radio-10",
     "radio-11",
     "radio-12",
     "radio-13",
@@ -145,3 +262,6 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
     "radio-19"
   ]}
 />
+
+
+## Options
