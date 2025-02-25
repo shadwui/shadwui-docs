@@ -10,9 +10,22 @@
       "description": "A simple button UI component.",
       "files": [
         {
-          "path": "registry/components/button.tsx",
+          "path": "registry/src/components/ui/button.tsx",
           "type": "registry:component",
           "target": "components/shadwui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "heading",
+      "type": "registry:block",
+      "title": "Heading",
+      "description": "A Collection of Responsive Headings",
+      "files": [
+        {
+          "path": "registry/src/components/ui/heading.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/heading.tsx"
         }
       ]
     }
