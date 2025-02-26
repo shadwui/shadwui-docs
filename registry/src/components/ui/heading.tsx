@@ -1,3 +1,16 @@
+import React from "react";
+
+/**
+ * Heading component that renders different HTML heading elements
+ * based on the 'variant' prop.
+ *
+ * @param {Object} props - Component props.
+ * @param {'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'} [props.variant='h4'] - The variant determining the HTML heading element to render.
+ * @param {string} [props.className] - Additional CSS classes.
+ * @param {React.ReactNode} props.children - The content to render.
+ * @returns {JSX.Element} The rendered heading component.
+ */
+
 interface HeadingProps {
   children: React.ReactNode;
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
