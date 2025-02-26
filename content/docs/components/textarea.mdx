@@ -24,7 +24,7 @@ import {
 The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
   sourcePath="src/default"
-  componentName={"alert"}
+  componentName={"textarea"}
   minimumCodeHeight="300px"
 />
 
@@ -49,22 +49,22 @@ The Badge component is used to display important messages to users. It comes wit
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/textarea.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/textarea.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/textarea.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/textarea.json
         ```
       </Tab>
     </DocTabs>
@@ -73,38 +73,35 @@ The Badge component is used to display important messages to users. It comes wit
   <TabsContent value="manual" className="p-0 mt-0">
    <Steps>
     <Step>
-      **Install the following dependencies:**
-
-      <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-        <Tab value="pnpm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="npm">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="yarn">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-        <Tab value="bun">
-          ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
-          ```
-        </Tab>
-      </DocTabs>
-
-    </Step>
-    <Step>
       **Copy and paste the following code into your project.**
 
+      <CodeBlockWrapper>
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+      import * as React from "react"
+
+      import { cn } from "@/lib/utils"
+
+      const Textarea = React.forwardRef<
+        HTMLTextAreaElement,
+        React.ComponentProps<"textarea">
+      >(({ className, ...props }, ref) => {
+        return (
+          <textarea
+            className={cn(
+              "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+              className
+            )}
+            ref={ref}
+            {...props}
+          />
+        )
+      })
+      Textarea.displayName = "Textarea"
+
+      export { Textarea }
+
       ```
+      </CodeBlockWrapper>
 
     </Step>
 
@@ -117,23 +114,98 @@ The Badge component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+import { Textarea } from "@/components/shadwui/textarea"
+```
+
+```tsx
+<Textarea />
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/textareas"
+  componentName={"textarea-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/textareas"
   files={[
-    "textarea-01",
-    "textarea-02", 
-    "textarea-03",
-    "textarea-04",
-    "textarea-05",
-    "textarea-06",
-    "textarea-07",
-    "textarea-08",
-    "textarea-09",
-    "textarea-10",
     "textarea-11",
     "textarea-12",
     "textarea-13",
@@ -145,3 +217,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
     "textarea-19"
   ]}
 />
+
+## Options
+| Component | Description | Example Usage |
+| --------- | ----------- | ------------- |
+| `Textarea` | A styled multiline text input field with customizable appearance. | `<Textarea placeholder="Enter your text here..." />` |

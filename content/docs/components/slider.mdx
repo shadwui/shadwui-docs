@@ -1,6 +1,6 @@
 ---
 title: Slider
-description: Displays a callout for user attention.
+description: An input where the user selects a value from within a given range.
 ---
 
 import {
@@ -20,11 +20,10 @@ import {
   CodeBlockWrapper,
 } from "../../components/index";
 
-## Preview
-The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
+## Preview 
 <CodePreview
-  sourcePath="src/default"
-  componentName={"alert"}
+  sourcePath="src/components/sliders"
+  componentName={"slider-18"}
   minimumCodeHeight="300px"
 />
 
@@ -47,24 +46,24 @@ The Badge component is used to display important messages to users. It comes wit
   <Separator />
   <TabsContent value="cli" className="p-0 mt-0">
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-      <Tab value="pnpm">
+       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/slider.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/slider.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/slider.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/slider.json
         ```
       </Tab>
     </DocTabs>
@@ -76,24 +75,24 @@ The Badge component is used to display important messages to users. It comes wit
       **Install the following dependencies:**
 
       <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-        <Tab value="pnpm">
+         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          pnpm add @radix-ui/react-slider
           ```
         </Tab>
         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          npx install @radix-ui/react-slider
           ```
         </Tab>
         <Tab value="yarn">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          yarn add @radix-ui/react-slider
           ```
         </Tab>
         <Tab value="bun">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          bun add @radix-ui/react-slider
           ```
         </Tab>
       </DocTabs>
@@ -102,10 +101,40 @@ The Badge component is used to display important messages to users. It comes wit
     <Step>
       **Copy and paste the following code into your project.**
 
-      ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-      ```
+      <CodeBlockWrapper>
 
+      ```typescript
+      "use client"
+
+      import * as React from "react"
+      import * as SliderPrimitive from "@radix-ui/react-slider"
+
+      import { cn } from "@/lib/utils"
+
+      const Slider = React.forwardRef<
+        React.ElementRef<typeof SliderPrimitive.Root>,
+        React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+      >(({ className, ...props }, ref) => (
+        <SliderPrimitive.Root
+          ref={ref}
+          className={cn(
+            "relative flex w-full touch-none select-none items-center",
+            className
+          )}
+          {...props}
+        >
+          <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
+            <SliderPrimitive.Range className="absolute h-full bg-primary" />
+          </SliderPrimitive.Track>
+          <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
+        </SliderPrimitive.Root>
+      ))
+      Slider.displayName = SliderPrimitive.Root.displayName
+
+      export { Slider }
+
+      ```
+      </CodeBlockWrapper>
     </Step>
 
      <Step>
@@ -117,23 +146,98 @@ The Badge component is used to display important messages to users. It comes wit
 
 ## Usage
 ```jsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
+import { Slider } from "@/components/shadwui/slider"
+```
+
+```tsx
+<Slider defaultValue={[33]} max={100} step={1} />
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-01"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/sliders"
+  componentName={"slider-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/sliders"
   files={[
-    "slider-01",
-    "slider-02",
-    "slider-03",
-    "slider-04",
-    "slider-05",
-    "slider-06",
-    "slider-07",
-    "slider-08",
-    "slider-09",
-    "slider-10",
     "slider-11",
     "slider-12",
     "slider-13",
@@ -142,6 +246,18 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
     "slider-16",
     "slider-17",
     "slider-18",
-    "slider-19"
+    "slider-19",
+    "slider-20",
+    "slider-21",
+    "slider-22",
+    "slider-23"
   ]}
 />
+
+## Options
+| Component         | Description                                                                                               | Example Usage                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `Slider`          | A component that allows users to select a value or range by sliding a thumb along a track.                | `<Slider defaultValue={[50]} />`                                                                                 |
+| `Slider.Track`    | Represents the total range of values and serves as the background over which the thumb slides.            | `<Slider.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary" />`               |
+| `Slider.Range`    | Displays the selected range when using a range slider.                                                    | `<Slider.Range className="absolute h-full bg-primary" />`                                                       |
+| `Slider.Thumb`    | The handle that the user drags along the track to set the value.                                          | `<Slider.Thumb className="block h-5 w-5 rounded-full border-2 border-primary bg-background" />`                 |

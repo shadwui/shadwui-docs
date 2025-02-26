@@ -1,6 +1,6 @@
 ---
 title: Switch
-description: Displays a callout for user attention.
+description: A control that allows the user to toggle between checked and not checked.
 ---
 
 import {
@@ -21,10 +21,9 @@ import {
 } from "../../components/index";
 
 ## Preview
-The Badge component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 <CodePreview
   sourcePath="src/default"
-  componentName={"alert"}
+  componentName={"switch"}
   minimumCodeHeight="300px"
 />
 
@@ -49,22 +48,22 @@ The Badge component is used to display important messages to users. It comes wit
     <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
       <Tab value="pnpm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        pnpm dlx shadcn@latest add http://shadwui.com/r/switch.json
         ```
       </Tab>
       <Tab value="npm">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/switch.json
         ```
       </Tab>
       <Tab value="yarn">
         ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        npx shadcn@latest add http://shadwui.com/r/switch.json
         ```
       </Tab>
       <Tab value="bun">
         ```bash
-        pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+        bunx --bun shadcn@latest add http://shadwui.com/r/switch.json
         ```
       </Tab>
     </DocTabs>
@@ -76,24 +75,24 @@ The Badge component is used to display important messages to users. It comes wit
       **Install the following dependencies:**
 
       <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
-        <Tab value="pnpm">
+        <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          pnpm add @radix-ui/react-switch
           ```
         </Tab>
         <Tab value="npm">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          npx install @radix-ui/react-switch
           ```
         </Tab>
         <Tab value="yarn">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          yarn add @radix-ui/react-switch
           ```
         </Tab>
         <Tab value="bun">
           ```bash
-          pnpm dlx shadcn@latest add http://localhost:3000/r/hello-world.json
+          bun add @radix-ui/react-switch
           ```
         </Tab>
       </DocTabs>
@@ -101,11 +100,41 @@ The Badge component is used to display important messages to users. It comes wit
     </Step>
     <Step>
       **Copy and paste the following code into your project.**
+      <CodeBlockWrapper>
 
       ```typescript
-      import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-      ```
+      "use client"
 
+      import * as React from "react"
+      import * as SwitchPrimitives from "@radix-ui/react-switch"
+
+      import { cn } from "@/lib/utils"
+
+      const Switch = React.forwardRef<
+        React.ElementRef<typeof SwitchPrimitives.Root>,
+        React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
+      >(({ className, ...props }, ref) => (
+        <SwitchPrimitives.Root
+          className={cn(
+            "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+            className
+          )}
+          {...props}
+          ref={ref}
+        >
+          <SwitchPrimitives.Thumb
+            className={cn(
+              "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
+            )}
+          />
+        </SwitchPrimitives.Root>
+      ))
+      Switch.displayName = SwitchPrimitives.Root.displayName
+
+      export { Switch }
+
+      ```
+      </CodeBlockWrapper>
     </Step>
 
      <Step>
@@ -121,19 +150,90 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
 ```
 
 ## Examples
+### 01
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-01"}
+  minimumCodeHeight="250px"
+  codeBlockMaximumHeight="250px"
+/>
+
+### 02
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-02"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 03
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-03"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 04
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-04"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 05
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-05"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 06
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-06"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 07
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-07"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 08
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-08"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 09
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-09"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### 10
+<CodePreview
+  sourcePath="src/components/switchs"
+  componentName={"switch-10"}
+  codeBlockMaximumHeight="250px"
+  minimumCodeHeight="250px"
+/>
+
+### more...
 <ComponentPage 
   sourcePath="src/components/switchs"
   files={[
-    "switch-01",
-    "switch-02", 
-    "switch-03",
-    "switch-04",
-    "switch-05",
-    "switch-06",
-    "switch-07",
-    "switch-08",
-    "switch-09",
-    "switch-10",
     "switch-11",
     "switch-12",
     "switch-13",
@@ -143,3 +243,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/badge"
     "switch-17"
   ]}
 />
+
+## Options
+| Component | Description | Example Usage |
+| --------- | ----------- | ------------- |
+| `Switch`  | A toggle component that allows users to switch between two states, such as on and off. | `<Switch defaultChecked />` |
