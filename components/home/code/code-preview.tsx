@@ -93,7 +93,7 @@ const CodePreview = async ({
             className="p-0 mt-0 relative flex items-center justify-center"
             style={{
               minHeight: minimumCodeHeight,
-              maxHeight: codeBlockMaximumHeight,
+              // maxHeight: codeBlockMaximumHeight,
             }}
           >
             <DotPattern
