@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
 import { createHighlighter } from "shiki";
+import { convertRegistryPaths } from "@/lib/utils";
 
 interface CodeBlockProps {
   code: string;
@@ -40,9 +41,11 @@ const CodeBlock = ({
           lang: language,
           theme: shikiTheme,
         });
+        
+        const convertedPath = convertRegistryPaths(html || "")
 
         const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
+        const doc = parser.parseFromString(convertedPath, "text/html");
         const lineElements = doc.querySelectorAll(".line");
         const lines = Array.from(lineElements).map((el) => el.outerHTML);
 
@@ -90,7 +93,7 @@ const CodeBlock = ({
               } ${isDark ? "text-gray-100" : "text-gray-800"}`}
             >
               <span
-                className={`inline-block w-8 mr-4 text-right ${
+                className={`inline-block w-8 mr-4 text-right select-none ${
                   isDark ? "text-gray-500" : "text-gray-400"
                 }`}
               >
