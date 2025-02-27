@@ -1,5 +1,5 @@
 import ExternalLink from "@/components/_components/external-link";
-import ThemeToggle from "@/components/_components/theam-toggler";
+import ThemeToggle from "@/registry/src/default/theam-toggler";
 import { githubUrl } from "@/utils/project-link";
 import Image from "next/image";
 import Link from "next/link";

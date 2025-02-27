@@ -1,7 +1,7 @@
 {
   "title": "Docs Meta json",
   "pages": [
-    "---Overview---",
+    "---Getting Started---",
     "index",
     "install",
     "dark-mode",
@@ -14,8 +14,8 @@
 
     "---Authentication---",
     "authentication/mongodb",
-    "authentication/prisma",
     "authentication/neon",
+    "authentication/prisma",
 
 
     "---Typography---",

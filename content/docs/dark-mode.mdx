@@ -1,3 +1,245 @@
 ---
 title: Dark Mode
 ---
+
+   
+import { 
+  Separator,
+  Card,
+  Cards,
+  Callout,
+  Steps ,
+  Step,
+  CodePreview
+} from "../components/index";
+import { RiNextjsFill, RiReactjsFill } from "@remixicon/react";
+
+<Cards>
+  <Card 
+    href="#Nextjs" 
+    className="font-semibold text-center flex flex-col items-center justify-center py-5"
+  >
+    {<RiNextjsFill size={55}/>}
+    <span>Next.js</span>
+  </Card>
+  
+  <Card 
+    href="#vite" 
+    className="font-semibold text-center flex flex-col items-center justify-center py-5"
+  >
+    {<RiReactjsFill size={55}/>}
+    <span>Vite</span>
+  </Card>
+</Cards>
+
+<Separator className={"mt-10 -mb-5"}/>
+
+## Nextjs
+<Steps>
+  <Step>
+    ### Install next-themes
+
+    Start by installing `next-themes`:
+
+    ```bash
+    npm install next-themes
+    ```
+  </Step>
+
+  <Step>
+    ### Wrap your root layout
+
+    Add the `ThemeProvider` to your root layout.
+
+    ```ts title="app/layout.tsx"
+    import { ThemeProvider } from "next-themes"
+
+    export default function RootLayout({ children }: RootLayoutProps) {
+      return (
+        <>
+          <html lang="en" suppressHydrationWarning>
+            <head />
+            <body>
+              <ThemeProvider                // [!code highlight]
+                attribute="class"           // [!code highlight]
+                defaultTheme="system"       // [!code highlight]
+                enableSystem                // [!code highlight]
+                disableTransitionOnChange   // [!code highlight]
+              >                             // [!code highlight]
+                {children}
+              </ThemeProvider>              // [!code highlight]
+            </body> 
+          </html>
+        </>
+      )
+    }
+    ```
+  </Step>
+
+  <Step>
+    ### Add a mode toggle
+    Place a mode toggle on your site to toggle between light and dark mode.
+
+    Create the file `theam-toggler.tsx` in component folder.
+
+    <CodePreview
+      sourcePath="src/default"
+      componentName={"theam-toggler"}
+      minimumCodeHeight="250px"
+      codeBlockMaximumHeight="250px"
+    />    
+  </Step>
+  <Step>
+  ### Usage
+  
+  ```tsx
+  import ThemeToggle from "@/components/theam-toggler";
+  ```
+
+  ```tsx
+  <TheamToggler />
+  ```
+  </Step>
+
+  <Step>
+    **Now you can switch dark and light theam**
+  </Step>
+</Steps> 
+
+<Separator className="mt-10 -mb-5"/>
+
+## Vite 
+<Steps>
+ <Step>
+    ### Create a theme provider
+
+    ```tsx title="components/theme-provider.tsx"
+    import { createContext, useContext, useEffect, useState } from "react"
+
+    type Theme = "dark" | "light" | "system"
+
+    type ThemeProviderProps = {
+      children: React.ReactNode
+      defaultTheme?: Theme
+      storageKey?: string
+    }
+
+    type ThemeProviderState = {
+      theme: Theme
+      setTheme: (theme: Theme) => void
+    }
+
+    const initialState: ThemeProviderState = {
+      theme: "system",
+      setTheme: () => null,
+    }
+
+    const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
+
+    export function ThemeProvider({
+      children,
+      defaultTheme = "system",
+      storageKey = "vite-ui-theme",
+      ...props
+    }: ThemeProviderProps) {
+      const [theme, setTheme] = useState<Theme>(
+        () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+      )
+
+      useEffect(() => {
+        const root = window.document.documentElement
+
+        root.classList.remove("light", "dark")
+
+        if (theme === "system") {
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+            .matches
+            ? "dark"
+            : "light"
+
+          root.classList.add(systemTheme)
+          return
+        }
+
+        root.classList.add(theme)
+      }, [theme])
+
+      const value = {
+        theme,
+        setTheme: (theme: Theme) => {
+          localStorage.setItem(storageKey, theme)
+          setTheme(theme)
+        },
+      }
+
+      return (
+        <ThemeProviderContext.Provider {...props} value={value}>
+          {children}
+        </ThemeProviderContext.Provider>
+      )
+    }
+
+    export const useTheme = () => {
+      const context = useContext(ThemeProviderContext)
+
+      if (context === undefined)
+        throw new Error("useTheme must be used within a ThemeProvider")
+
+      return context
+    }
+    ```
+ </Step>
+
+  <Step>
+    ### Wrap your root layout
+
+    Add the `ThemeProvider` to your root layout.
+
+    ```tsx {1,5-7} title="App.tsx"
+    import { ThemeProvider } from "@/components/theme-provider"
+
+    function App() {
+      return (
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          {children}
+        </ThemeProvider>
+      )
+    }
+
+    export default App
+    ```
+  </Step>
+
+  <Step>
+    ### Add a mode toggle
+    Place a mode toggle on your site to toggle between light and dark mode.
+
+    Create the file `theam-toggler.tsx` in component folder.
+
+    <CodePreview
+      sourcePath="src/default"
+      componentName={"theam-toggler"}
+      minimumCodeHeight="250px"
+      codeBlockMaximumHeight="250px"
+    />    
+  </Step>
+
+  <Step>
+    ### Usage
+    
+    ```tsx
+    import ThemeToggle from "@/components/theam-toggler";
+    ```
+
+    ```tsx
+    <TheamToggler />
+    ```
+  </Step>
+
+  <Step>
+    **Now you can switch dark and light theam**
+  </Step>
+
+</Steps>
+
+## All Set 
