@@ -1,0 +1,56 @@
+---
+title: Installation
+description:  How to install dependencies and structure your app.
+---
+
+import { 
+  Separator,
+  Card,
+  Cards  
+} from "../components/index" 
+
+import Tabs from "../components/tabs"
+
+
+## Frameworks
+<Separator className={"-mt-4 mb-6"}/>
+
+<Tabs />
+
+## Typescript
+<Separator className={"-mt-4 mb-6"}/>
+This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
+
+However we provide a JavaScript version of the components as well. The JavaScript version is available.
+
+To opt-out of TypeScript, you can use the tsx flag in your `components.json` file.
+
+```json
+{
+  "style": "default",
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "src/app/globals.css",
+    "baseColor": "zinc",
+    "cssVariables": true
+  },
+  "rsc": false,
+  "tsx": false,
+  "aliases": {
+    "utils": "~/lib/utils",
+    "components": "~/components"
+  }
+}
+
+```
+
+To configure import aliases, you can use the following `jsconfig.json`:
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```

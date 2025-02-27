@@ -3,8 +3,14 @@
   "pages": [
     "---Overview---",
     "index",
+    "install",
+    "dark-mode",
+
     
-    "installation",
+    "---Installation---",
+    "installation/nextjs",
+    "installation/react",
+    "installation/manual",
 
     "---Authentication---",
     "authentication/mongodb",

@@ -1,3 +1,182 @@
 ---
-title: react
+title: Vite
 ---
+
+import { 
+  Separator,
+  Card,
+  Cards,
+  Callout,
+  Steps ,
+  Step,
+} from "../../components/index" 
+ 
+<Callout className="bg-fd-border">
+  Install and configure Vite
+</Callout>
+
+<Steps>
+  <Step>
+    ### Create project
+
+    Start by creating a new React project using `vite`:
+
+    ```bash
+    npm create vite@latest
+    ```
+  </Step>
+
+  <Step>
+    ### Add Tailwind and its configuration
+
+    Install `tailwindcss` and its peer dependencies, then generate your `tailwind.config.js` and `postcss.config.js` files:
+
+    ```bash
+    npm install -D tailwindcss postcss autoprefixer
+    ```
+
+    ```bash
+    npx tailwindcss init -p
+    ```
+
+    Add this import header in your main css file, `src/index.css` in our case:
+
+    ```js
+    @tailwind base; //[!code highlight]
+    @tailwind components; //[!code highlight]
+    @tailwind utilities; //[!code highlight]
+    /* ... */
+    ```
+
+    Configure the tailwind template paths in `tailwind.config.js`:
+
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"], //[!code highlight]
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
+    ```
+  </Step>
+
+  <Step>
+    ### Edit tsconfig.json file
+
+    The current version of Vite splits TypeScript configuration into three files, two of which need to be edited.
+    Add the `baseUrl` and `paths` properties to the `compilerOptions` section of the `tsconfig.json` and
+    `tsconfig.app.json` files:
+
+    ```ts {11-16} showLineNumbers
+    {
+      "files": [],
+      "references": [
+        {
+          "path": "./tsconfig.app.json"
+        },
+        {
+          "path": "./tsconfig.node.json"
+        }
+      ],
+      "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+          "@/*": ["./src/*"]
+        }
+      }
+    }
+    ```    
+  </Step>
+
+  <Step>
+    ### Edit tsconfig.app.json file
+
+    Add the following code to the `tsconfig.app.json` file to resolve paths, for your IDE:
+
+    ```ts {4-9} showLineNumbers
+    {
+      "compilerOptions": {
+        // ...
+        "baseUrl": ".",
+        "paths": {
+          "@/*": [
+            "./src/*"
+          ]
+        }
+        // ...
+      }
+    }
+    ```
+    </Step>
+
+  <Step>
+    ### Update vite.config.ts
+
+    Add the following code to the vite.config.ts so your app can resolve paths without error:
+
+    ```bash
+    npm install -D @types/node
+    ```
+
+    ```typescript
+    import path from "path"
+    import react from "@vitejs/plugin-react"
+    import { defineConfig } from "vite"
+
+    export default defineConfig({
+      plugins: [react()],
+      resolve: {
+        alias: {
+          "@": path.resolve(__dirname, "./src"),
+        },
+      },
+    })
+    ```
+  </Step>
+
+  <Step>
+    ### Now run this cli
+
+    You can now start adding components to your project.
+
+    ```bash
+    npx shadcn@latest add https://shadwui.com/button.json
+    ```
+  </Step>
+
+  <Step>
+    ### Configure components.json
+
+    You will be asked a few questions to configure `components.json`:
+
+    ```txt
+    You need to create a components.json file to add components. Proceed? ... yes
+    Which color would you like to use as the base color? » Neutral
+    Writing components.json.
+    ```
+  </Step>
+
+  <Step>
+    ### That's it
+    The command above will add the `Button` component to your project. You can then import it like this:
+
+    ```ts
+    import { Button } from "@/components/shadwui/button" // [!code highlight]
+    
+    export default function Home() {
+      return (
+        <div> 
+          <Button>Click me <Button> // [!code highlight] 
+        </div>
+      )
+    }
+    ```
+  </Step>
+
+  <Step>
+    **Now You can add the desired components**
+  </Step>
+
+</Steps>

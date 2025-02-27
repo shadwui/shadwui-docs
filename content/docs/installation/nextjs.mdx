@@ -1,3 +1,88 @@
 ---
-title: Nextjs
+title: Next.js
 ---
+
+import { 
+  Separator,
+  Card,
+  Cards,
+  Callout,
+  Steps ,
+  Step,
+} from "../../components/index" 
+
+<Callout className="bg-fd-border">
+  Install and configure Next.js
+</Callout>
+
+<Steps>
+  <Step>
+    ### Create next.js
+
+    Run the command to create a new Next.js project:
+
+    ```bash
+    npx create-next-app@latest
+    ```
+  </Step>
+
+  <Step>
+    ### Configure project
+
+    You will be asked a few questions to configure `project`:
+
+    ```tsx
+    √ What is your project named? ... test
+    √ Would you like to use TypeScript? ... No / `Yes`
+    √ Would you like to use ESLint? ... No / `Yes`
+    √ Would you like to use Tailwind CSS? ... No / `Yes`       
+    √ Would you like your code inside a `src/` directory? ... No / `Yes`
+    √ Would you like to use App Router? (recommended) ... No / `Yes`
+    √ Would you like to use Turbopack for `next dev`? ... No / `Yes`
+    √ Would you like to customize the import alias (`@/*` by default)? ... `No` / Yes
+    ```
+  </Step>
+
+  <Step>
+    ### Now run this cli
+
+    You can now start adding components to your project.
+
+    ```bash
+    npx shadcn@latest add https://shadwui.com/button.json
+    ```
+  </Step>
+
+  <Step>
+    ### Configure components.json
+
+    You will be asked a few questions to configure `components.json`:
+
+    ```txt
+    You need to create a components.json file to add components. Proceed? ... yes
+    Which color would you like to use as the base color? » Neutral
+    Writing components.json.
+    ```
+  </Step>
+
+  <Step>
+    ### That's it
+    The command above will add the `Button` component to your project. You can then import it like this:
+
+    ```ts
+    import { Button } from "@/components/shadwui/button" // [!code highlight]
+    
+    export default function Home() {
+      return (
+        <div> 
+          <Button>Click me <Button> // [!code highlight] 
+        </div>
+      )
+    }
+    ```
+  </Step>
+  <Step>
+    **Now You can add the desired components**
+  </Step>
+
+</Steps>
