@@ -5,9 +5,7 @@ export const AnimatedAvatar = ({
   items,
 }: {
   items: {
-    id: number;
     name: string;
-    designation: string;
     image: string;
   }[];
 }) => {

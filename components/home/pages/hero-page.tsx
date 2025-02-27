@@ -4,21 +4,15 @@ import React from "react";
 
 const people = [
   {
-    id: 1,
     name: "John Doe",
-    designation: "Software Engineer",
     image: "/owner.jpg",
   },
   {
-    id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
+    name: "no-content",
     image: "/avatars/profile-female-3.png",
   },
   {
-    id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
+    name: "no-no-content",
     image: "/avatars/male.png",
   },
 ];

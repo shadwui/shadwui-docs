@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "Shadwui UI - Beautiful UI components built with Tailwind CSS and React",
   description:
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
+    icons:{
+      
+    }
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
