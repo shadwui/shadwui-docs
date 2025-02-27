@@ -1,8 +1,12 @@
 {
   "title": "MongoDB",
   "pages": [
-  "database",
-  "model",
-  "next-auth"
+    "introduction",
+    "setup",
+    "database",
+    "api",
+    "frontend",
+    "route",
+    "model"
   ]
 }

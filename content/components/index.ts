@@ -13,6 +13,10 @@ import {
   TabsTrigger,
 } from "@/registry/src/components/ui/tab";
 import { Separator } from "@/registry/src/components/ui/separator";
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+
 
 const ComponentPage = dynamic(() => import("@/components/home/code/component-page"))
 const CodePreview = dynamic(() => import("@/components/home/code/code-preview"))
@@ -25,8 +29,11 @@ export {
   TabsList,
   TabsContent,
   TabsTrigger,
+  Card, 
+  Cards,
   Step,
   Steps,
+  Callout,
   CodeBlock,
   Separator,
   CodePreview,

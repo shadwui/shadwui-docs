@@ -199,7 +199,8 @@
 
 @theme {
   --color-chai: #FF7700;
-  --color-chai-light: #ff851a;
+  --color-chai-light: #ff851a; 
+  --color-light-dark: #242424;
 }
 
 

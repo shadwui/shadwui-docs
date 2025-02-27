@@ -1,0 +1,65 @@
+---
+title: Route Protection
+---
+
+---
+
+## 6. Route Protection
+
+### Client-Side Protection
+Add to this path `src/components/AuthGuard.tsx`
+
+```typescript
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
+export default function AuthGuard({ children, roles }: { 
+  children: React.ReactNode;
+  roles?: string[];
+}) {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push(`/auth/login?callbackUrl=${encodeURIComponent(router.asPath)}`);
+    } else if (status === 'authenticated' && roles?.length && !roles.includes(session.user.role!)) {
+      router.push('/auth/unauthorized');
+    }
+  }, [status, router, session, roles]);
+
+  if (status === 'loading') {
+    return <div>Loading authentication status...</div>;
+  }
+
+  return <>{children}</>;
+}
+```
+
+
+## Middleware
+Add to this path `src/middleware.ts`
+
+```tsx
+import { NextResponse } from 'next/server';
+import { getToken } from 'next-auth/jwt';
+
+export async function middleware(req: any) {
+  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+  const { pathname } = req.nextUrl;
+
+  // Protected routes
+  const protectedRoutes = ['/dashboard', '/profile'];
+  const isProtected = protectedRoutes.some(route => pathname.startsWith(route));
+
+  if (isProtected && !token) {
+    const url = new URL('/auth/login', req.url);
+    url.searchParams.set('callbackUrl', req.url);
+    return NextResponse.redirect(url);
+  }
+
+  return NextResponse.next();
+}
+```
+

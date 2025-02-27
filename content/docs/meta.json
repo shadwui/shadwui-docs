@@ -3,8 +3,8 @@
   "pages": [
     "---Overview---",
     "index",
-    "installation",
     
+    "installation",
 
     "---Authentication---",
     "authentication/mongodb",

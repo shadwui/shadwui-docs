@@ -5,6 +5,8 @@ export interface ComponentBlock {
   components: { name: string }[];
 }
 
+const mainSlug = "docs/blocks"
+
 export const blocks: ComponentBlock[] = [
   {
     image: "accordion",
@@ -77,7 +79,7 @@ export const blocks: ComponentBlock[] = [
   {
     image: "view",
     name: "View All",
-    slug: "accordion",
+    slug: `${mainSlug}`,
     components: [
       { name: "comp-390" },
       { name: "comp-391" },

@@ -5,6 +5,8 @@ export interface ComponentTemplate {
   components: { name: string }[];
 }
 
+const mainSlug = "docs/templates";
+
 export const templates: ComponentTemplate[] = [
   {
     slug: "accordion",
@@ -43,7 +45,7 @@ export const templates: ComponentTemplate[] = [
     ],
   },
   {
-    slug: "accordion",
+    slug: `${mainSlug}`,
     image: "view",
     name: "View All",
     components: [

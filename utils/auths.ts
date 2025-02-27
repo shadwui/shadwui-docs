@@ -5,6 +5,8 @@ export interface ComponentAuth {
   components: { name: string }[];
 }
 
+const mainSlug = "docs/authentication";
+
 export const auths: ComponentAuth[] = [
   {
     slug: "docs/authentication/mongodb/database",
@@ -34,7 +36,7 @@ export const auths: ComponentAuth[] = [
     components: [{ name: "comp-413" }],
   },
   {
-    slug: "docs/authentication/mongodb/database",
+    slug: `${mainSlug}`,
     name: "View All",
     image: "view",
     components: [

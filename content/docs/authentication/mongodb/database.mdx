@@ -11,39 +11,55 @@ MongoDB is a NoSQL database that stores data in a JSON-like format. It is a popu
 
 ## Database Connection Setup
 
-<Steps>
-  <Step>
-    ### Installation
-    To install MongoDB, you can use the following command:
-   
-    ```code
-    npm install mongodb
-    ```
-  </Step>
 
-  <Step>
-    ### Database Setup
-    To connect to the MongoDB database, you need to create a connection string. 
-    You can do this by following these steps:
+## Installation
+To install MongoDB, you can use the following command:
 
-    1. Create a new file called `database.js` in your project root.
-    2. Add the following code to the file:
+```code
+npm install mongodb
+```
 
-    ```code
-    code of data base file
-    ```
 
-  </Step>
+## Database Setup
+To connect to the MongoDB database, you need to create a connection string. 
+You can do this by following these steps:
 
-  <Step>
-  ### Mongoose Setup
-  To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), you need to create a connection string. You can do this by following these steps:
-   
-   1. Open a mongoose and create a cluster and get the connection string.
-   2. Add the following string in the `.env.local` file to root directory of project:-
-   
-   ```.env.local
-    MONGO_URI=<Paste Your Connection String>
-   ```
-  </Step>
-</Steps>
+1. Create a new file called `database.js` in your project root.
+2. Add the following code to the file:
+
+```tsx
+import { MongoClient } from 'mongodb';
+
+const uri = process.env.MONGODB_URI!;
+const options = {};
+
+declare global {
+  var _mongoClientPromise: Promise<MongoClient>;
+}
+
+let client: MongoClient;
+let clientPromise: Promise<MongoClient>;
+
+if (process.env.NODE_ENV === 'development') {
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, options);
+    global._mongoClientPromise = client.connect();
+  }
+  clientPromise = global._mongoClientPromise;
+} else {
+  client = new MongoClient(uri, options);
+  clientPromise = client.connect();
+}
+
+export default clientPromise;
+```
+
+## Mongoose Setup
+To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), you need to create a connection string. You can do this by following these steps:
+
+1. Open a mongoose and create a cluster and get the connection string.
+2. Add the following string in the `.env.local` file to root directory of project:-
+
+```.env.local
+MONGO_URI=<Paste Your Connection String>
+```

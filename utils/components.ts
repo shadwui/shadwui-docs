@@ -122,7 +122,7 @@ export const categories: ComponentCategory[] = [
   },
   {
     image: "view",
-    slug: `${mainSlug}/alert`,
+    slug: `${mainSlug}`,
     name: "View All",
     components: [
       { name: "comp-390" },

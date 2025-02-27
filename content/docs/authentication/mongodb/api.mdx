@@ -1,0 +1,193 @@
+---
+title: Api
+---
+
+## API Documentation
+
+
+## Login Form
+Add to this path `src/pages/api/auth/[...nextauth].ts`
+
+```tsx
+import NextAuth, { type DefaultSession } from 'next-auth';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
+import clientPromise from '../../../lib/mongodb';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
+import { z } from 'zod';
+import bcrypt from 'bcrypt';
+
+declare module 'next-auth' {
+  interface Session extends DefaultSession {
+    user: {
+      id: string;
+      email: string;
+      name?: string;
+      role?: string;
+    } & DefaultSession['user'];
+  }
+}
+
+export default NextAuth({
+  adapter: MongoDBAdapter(clientPromise),
+  providers: [
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
+    }),
+    CredentialsProvider({
+      id: 'credentials',
+      name: 'Email/Password',
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials) {
+        const schema = z.object({
+          email: z.string().email(),
+          password: z.string().min(6)
+        });
+        
+        const result = schema.safeParse(credentials);
+        if (!result.success) return null;
+        
+        const client = await clientPromise;
+        const user = await client.db().collection('users').findOne({ 
+          email: result.data.email 
+        });
+        
+        if (!user?.password) return null;
+        
+        const isValid = await bcrypt.compare(
+          result.data.password,
+          user.password
+        );
+        
+        return isValid ? {
+          id: user._id.toString(),
+          email: user.email,
+          name: user.name,
+          role: user.role
+        } : null;
+      }
+    })
+  ],
+  session: {
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60 // 30 days
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
+    encryption: true
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.id;
+        session.user.role = token.role;
+      }
+      return session;
+    }
+  },
+  pages: {
+    signIn: '/auth/login',
+    error: '/auth/error'
+  }
+});
+```
+
+
+## Register Form
+Add to this path `src/pages/api/register.ts`
+
+```tsx
+import { NextApiRequest, NextApiResponse } from 'next';
+import { z } from 'zod';
+import bcrypt from 'bcrypt';
+import clientPromise from '../../lib/mongodb';
+
+const schema = z.object({
+  email: z.string().email(),
+  password: z.string()
+    .min(8)
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/, {
+      message: "Password must contain at least one uppercase letter, one lowercase letter, and one number"
+    }),
+  confirmPassword: z.string()
+}).refine(data => data.password === data.confirmPassword, {
+  message: "Passwords do not match",
+  path: ["confirmPassword"]
+});
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { email, password } = schema.parse(req.body);
+    const client = await clientPromise;
+    
+    const existingUser = await client.db()
+      .collection('users')
+      .findOne({ email });
+    
+    if (existingUser) {
+      return res.status(409).json({ 
+        error: 'User already exists' 
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+    const { insertedId } = await client.db()
+      .collection('users')
+      .insertOne({
+        email,
+        password: hashedPassword,
+        role: 'user',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        emailVerified: null
+      });
+
+    return res.status(201).json({ 
+      success: true,
+      userId: insertedId 
+    });
+
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({
+        error: 'Validation failed',
+        details: error.errors
+      });
+    }
+    console.error('Registration error:', error);
+    return res.status(500).json({ 
+      error: 'Internal server error' 
+    });
+  }
+}
+```
