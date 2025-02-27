@@ -1,3 +1,4 @@
+import BetaBanner from "@/components/_components/beta-banner";
 import ExternalLink from "@/components/_components/external-link";
 import ThemeToggle from "@/registry/src/default/theam-toggler";
 import { githubUrl } from "@/utils/project-link";
@@ -46,7 +47,9 @@ export default function Header({ docHeader = false }: { docHeader?: boolean }) {
             className="hidden dark:block"
           />
         </Link>
+
         <div className="flex items-center gap-4 sm:gap-8">
+          <BetaBanner />
           <ExternalLink text="GitHub" href={githubUrl} />
           <ExternalLink text="Follow us" href={githubUrl} />
           <ThemeToggle />
