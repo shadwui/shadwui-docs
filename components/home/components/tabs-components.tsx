@@ -43,9 +43,10 @@ export const AuthTab = () => {
       <TheamBorder />
       <div className="py-12">
         <CodePreview
-          sourcePath="src/auth/login"
-          componentName={"login-form-01"}
+          sourcePath="src/blocks/login"
+          componentName={"login-01"}
           minimumCodeHeight="500px"
+          codeBlockMaximumHeight="500px"
           copyButton={true}
         />
       </div>

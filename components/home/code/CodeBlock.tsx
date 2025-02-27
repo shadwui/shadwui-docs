@@ -5,10 +5,12 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
 import { createHighlighter } from "shiki";
 import { convertRegistryPaths } from "@/lib/utils";
+import CopyButton from "./CopyButton";
 
 interface CodeBlockProps {
   code: string;
   language: string;
+  copyButton?: boolean;
   maximumHeight?: string;
   highlightedLines?: number[];
   minimumCodeHeight?: string;
@@ -17,6 +19,7 @@ interface CodeBlockProps {
 const CodeBlock = ({
   code,
   language,
+  copyButton,
   highlightedLines = [],
   maximumHeight = "250px",
   minimumCodeHeight,
@@ -41,8 +44,8 @@ const CodeBlock = ({
           lang: language,
           theme: shikiTheme,
         });
-        
-        const convertedPath = convertRegistryPaths(html || "")
+
+        const convertedPath = convertRegistryPaths(html || "");
 
         const parser = new DOMParser();
         const doc = parser.parseFromString(convertedPath, "text/html");
@@ -74,6 +77,12 @@ const CodeBlock = ({
         isDark ? "bg-gray-900" : "bg-gray-100"
       }`}
     >
+      {copyButton && (
+        <CopyButton
+          componentSource={code}
+          className="absolute top-0 h-fit p-3"
+        />
+      )}
       <div
         style={{ maxHeight }}
         className={`overflow-auto transition-all min-h-[${

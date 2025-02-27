@@ -74,14 +74,14 @@ const CodePreview = async ({
 
           <CardTitle
             className={`text-base font-heading ${
-              copyButton ? "ml-20" : "-ml-20"
+              copyButton ? "ml-8" : "-ml-20"
             }`}
           >
             {cardComponentName}
           </CardTitle>
           <div className="flex items-center justify-center gap-x-2">
             {copyButton && <CopyCode packageCode={packageSource!} />}
-            <CopyButton componentSource={sourceCode!} />
+            {!copyButton && <CopyButton componentSource={sourceCode!} />}
           </div>
         </CardHeader>
 
@@ -117,6 +117,7 @@ const CodePreview = async ({
               code={sourceCode!}
               maximumHeight={codeBlockMaximumHeight}
               language="javascript"
+              copyButton={copyButton}
             />
           </TabsContent>
         </CardContent>
