@@ -108,7 +108,7 @@ export const InfiniteMovingCards = ({
                   <Image
                     height={100}
                     width={100}
-                    src={item.image || "/owner.jpg"}
+                    src={item.image || "/owner.avif"}
                     alt={item.name}
                     className="w-10 h-10 rounded-full border-2 object-cover border-fd-accent"
                   />

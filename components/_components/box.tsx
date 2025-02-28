@@ -1,25 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type BoxProps = {
+export interface BoxProps {
+  isComing?: boolean;
+  image?: string;
   slug: string;
   name: string;
-  componentsCount?: number;
-  isEasing?: boolean;
-  image?: string;
-};
+  componentsType?:
+    | "components"
+    | "blocks"
+    | "auths"
+    | "templates"
+    | "typography";
+  components?: {
+    name: string;
+  }[];
+}
 
 export function Box({
   slug,
   image,
   name,
-  componentsCount,
-  isEasing = false,
+  componentsType,
+  components,
+  isComing = false,
 }: BoxProps) {
   const href = `/${slug}`;
   const imageBasePath = `/thumbs/${image}`;
-  const alt = isEasing ? "Tailwind CSS easing classes" : `${name} components`;
-  const isComingSoon = image === "coming";
+  const alt = `${name} components`;
+  const isComingSoon = isComing;
+  const componentsCount = components?.length;
 
   return (
     <div className="space-y-3 text-center">
@@ -45,6 +55,7 @@ export function Box({
           <ImageComponent imageBasePath={imageBasePath} alt={alt} />
         </div>
       )}
+
       <div className="[&_a]:peer-hover:underline">
         <h2>
           {!isComingSoon ? (
@@ -56,13 +67,23 @@ export function Box({
           )}
         </h2>
         <p className="text-muted-foreground text-[13px]">
-          {isEasing
-            ? "29 Examples"
-            : !isComingSoon
+          {isComing
+            ? "-"
+            : componentsType === "components"
             ? `${componentsCount} ${
                 componentsCount === 1 ? "Component" : "Components"
               }`
-            : "-"}
+            : componentsType === "blocks"
+            ? `${componentsCount} ${componentsCount === 1 ? "Block" : "Blocks"}`
+            : componentsType === "auths"
+            ? `${componentsCount} ${componentsCount === 1 ? "Auth" : "Auths"}`
+            : componentsType === "typography"
+            ? `${componentsCount} ${
+                componentsCount === 1 ? "Typography" : "Typographies"
+              }`
+            : `${componentsCount} ${
+                componentsCount === 1 ? "Template" : "Templates"
+              }`}
         </p>
       </div>
     </div>
@@ -79,14 +100,14 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
     <>
       <Image
         className="w-full dark:hidden"
-        src={`${imageBasePath}.png`}
+        src={`${imageBasePath}.avif`}
         alt={alt}
         width={268}
         height={198}
       />
       <Image
         className="hidden w-full dark:block"
-        src={`${imageBasePath}-dark.png`}
+        src={`${imageBasePath}-dark.avif`}
         alt={`${alt} dark`}
         width={268}
         height={198}
@@ -95,26 +116,19 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
   );
 }
 
-interface ItemProps {
-  items: {
-    name: string;
-    slug: string;
-    components?: string;
-    image?: string;
-  }[];
-}
-
-export function BoxGridLayout({ items }: ItemProps) {
+export function BoxGridLayout({ items }: { items: BoxProps[] }) {
   return (
     <div className="relative my-8">
       <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {items.map((item) => (
+        {items.map((item: BoxProps) => (
           <Box
             key={item.name}
             slug={item.slug}
             name={item.name}
-            componentsCount={item.components?.length}
+            components={item.components}
             image={item.image}
+            isComing={item.isComing}
+            componentsType={item.componentsType}
           />
         ))}
       </div>

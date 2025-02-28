@@ -1,59 +1,48 @@
-export interface ComponentBlock {
-  slug: string;
-  name: string;
-  image: string;
-  components: { name: string }[];
-}
+import { BoxProps } from "@/components/_components/box";
 
 const mainSlug = "docs/blocks";
 
-export const blocks: ComponentBlock[] = [
+export const blocks: BoxProps[] = [
   {
-    image: "accordion",
-    slug: "accordion",
-    name: "Accordion",
-    components: [
-      { name: "comp-334" },
-      { name: "comp-335" },
-      { name: "comp-336" },
-      { name: "comp-337" },
-      { name: "comp-338" },
-      { name: "comp-339" },
-      { name: "comp-340" },
-      { name: "comp-341" },
-    ],
+    image: "preview",
+    name: "Hero Page",
+    slug: `${mainSlug}/accordion`,
+    componentsType: "blocks",
+    isComing: true,
+    components: [],
   },
-  {
-    image: "alert",
-    slug: "accordion",
-    name: "Alert",
-    components: [
-      { name: "comp-267" },
-      { name: "comp-268" },
-      { name: "comp-269" },
-    ],
-  },
-  {
-    image: "coming",
-    name: "Landing",
-    slug: "accordion",
 
-    components: [{ name: "comp-413" }],
-  },
   {
-    image: "view",
-    name: "View All",
+    image: "preview",
+    name: "Login",
+    slug: `${mainSlug}/accordion`,
+    componentsType: "blocks",
+    components: [{ name: "login-01" }, { name: "login-02" }],
+  },
+
+  {
+    image: "preview",
+    name: "Footer",
+    slug: `${mainSlug}/accordion`,
+    isComing: true,
+    componentsType: "blocks",
+    components: [],
+  },
+
+  {
     slug: `${mainSlug}`,
+    name: "View All",
+    image: "view",
+    componentsType: "blocks",
     components: [
-      { name: "comp-390" },
-      { name: "comp-391" },
-
-      { name: "comp-392" },
-      { name: "comp-393" },
+      { name: "Hero Page" },
+      { name: "Header" },
+      { name: "Login" },
+      { name: "footer" },
     ],
   },
 ];
 
-export function getBlock(slug: string): ComponentBlock | undefined {
+export function getBlock(slug: string): BoxProps | undefined {
   return blocks.find((block) => block.slug === slug);
 }

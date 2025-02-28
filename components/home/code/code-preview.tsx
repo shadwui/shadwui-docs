@@ -125,8 +125,8 @@ const CodePreview = async ({
             {imagePreview ? (
               <Image
                 src={imageUrl}
-                height={800}
-                width={800}
+                height={1000}
+                width={1000}
                 className="object-contain w-full h-full object-center"
                 alt="no image"
                 loading="lazy"

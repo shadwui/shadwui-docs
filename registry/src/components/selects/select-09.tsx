@@ -21,7 +21,7 @@ export default function SelectDemo() {
           <span className="flex items-center gap-2">
             <Image
               className="size-10 rounded-full"
-              src={"/avatars/profile-female-1.png"}
+              src={"/avatars/profile-female-1.avif"}
               alt="Jenny Hamilton"
               width={40}
               height={40}
@@ -38,7 +38,7 @@ export default function SelectDemo() {
           <span className="flex items-center gap-2">
             <Image
               className="size-10 rounded-full"
-              src={"/avatars/profile-female-1.png"}
+              src={"/avatars/profile-female-1.avif"}
               alt="Paul Smith"
               width={40}
               height={40}
@@ -55,7 +55,7 @@ export default function SelectDemo() {
           <span className="flex items-center gap-2">
             <Image
               className="size-10 rounded-full"
-              src={"/avatars/profile-female-1.png"}
+              src={"/avatars/profile-female-1.avif"}
               alt="Luna Wen"
               width={40}
               height={40}

@@ -1,36 +1,21 @@
 import React from "react";
 
-import { BoxGridLayout } from "@/components/_components/box";
-
-import { categories } from "@/utils/components";
-import CodePreview from "../code/code-preview";
-import { auths } from "@/utils/auths";
-import { blocks } from "@/utils/blocks";
-import { Heading } from "@/registry/src/components/ui/heading";
 import TheamBorder from "@/registry/src/premium/components/theam-border";
+import { Heading } from "@/registry/src/components/ui/heading";
+import { BoxGridLayout } from "@/components/_components/box";
+import { components } from "@/utils/components";
+import CodePreview from "../code/code-preview";
+import { blocks } from "@/utils/blocks";
+import { auths } from "@/utils/auths";
 
 export const BoxTab = () => {
-  return (
-    <BoxGridLayout
-      items={categories.map((category) => ({
-        ...category,
-        components: category.components
-          ?.map((component) => component.name)
-          .join(", "),
-      }))}
-    />
-  );
+  return <BoxGridLayout items={components} />;
 };
 
 export const AuthTab = () => {
   return (
     <div className="mb-10">
-      <BoxGridLayout
-        items={auths.map((auth) => ({
-          ...auth,
-          components: auth.components?.map((auth) => auth.name).join(", "),
-        }))}
-      />
+      <BoxGridLayout items={auths} />
 
       <TheamBorder />
       <div className="py-10">
@@ -73,7 +58,7 @@ export const BlockTab = () => {
           minimumCodeHeight="500px"
           copyButton={true}
           imagePreview={true}
-          imageUrl="/assets/blocks/hero-01.png"
+          imageUrl="/blocks/hero-01.avif"
         />
       </div>
 
@@ -85,18 +70,13 @@ export const BlockTab = () => {
           minimumCodeHeight="500px"
           copyButton={true}
           imagePreview={true}
-          imageUrl="/assets/blocks/hero-02.png"
+          imageUrl="/blocks/hero-02.avif"
         />
       </div>
 
       <TheamBorder />
 
-      <BoxGridLayout
-        items={blocks.map((block) => ({
-          ...block,
-          components: block.components?.map((block) => block.name).join(", "),
-        }))}
-      />
+      <BoxGridLayout items={blocks} />
     </div>
   );
 };
@@ -111,7 +91,7 @@ export const TemplateTab = () => {
           minimumCodeHeight="500px"
           copyButton={false}
           imagePreview={true}
-          imageUrl="/assets/blocks/sketch-ui.png"
+          imageUrl="/blocks/sketch-ui.avif"
           github={true}
           githubName="Sketch UI"
         />
@@ -125,7 +105,7 @@ export const TemplateTab = () => {
           minimumCodeHeight="500px"
           copyButton={false}
           imagePreview={true}
-          imageUrl="/assets/blocks/case-ui.png"
+          imageUrl="/blocks/case-ui.avif"
           github={true}
           githubName="Case Cobra UI"
         />

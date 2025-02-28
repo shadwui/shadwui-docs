@@ -1,52 +1,48 @@
-export interface ComponentAuth {
-  slug: string;
-  name: string;
-  image: string;
-  components: { name: string }[];
-}
+import { BoxProps } from "@/components/_components/box";
 
 const mainSlug = "docs/authentication";
 
-export const auths: ComponentAuth[] = [
+export const auths: BoxProps[] = [
   {
-    slug: "docs/authentication/mongodb/database",
-    name: "MongoDb",
-    image: "accordion",
-    components: [
-      { name: "comp-334" },
-      { name: "comp-335" },
-      { name: "comp-336" },
-    ],
-  },
-  {
-    slug: "docs/authentication/neon/database",
-    name: "Neon",
-    image: "alert",
-    components: [
-      { name: "comp-267" },
-      { name: "comp-268" },
-      { name: "comp-269" },
-    ],
+    image: "preview",
+    name: "Mongodb",
+    slug: `${mainSlug}/accordion`,
+    componentsType: "auths",
+
+    components: [{ name: "mongodb" }],
   },
 
   {
-    slug: "coming",
-    image: "coming",
-    name: "Prisma",
-    components: [{ name: "comp-413" }],
+    image: "preview",
+    name: "Neon",
+    isComing: true,
+    slug: `${mainSlug}/accordion`,
+    componentsType: "auths",
+    components: [],
   },
+
+  {
+    image: "preview",
+    name: "Prisma",
+    slug: `${mainSlug}/accordion`,
+    isComing: true,
+    componentsType: "auths",
+    components: [],
+  },
+
   {
     slug: `${mainSlug}`,
     name: "View All",
     image: "view",
+    componentsType: "auths",
     components: [
-      { name: "comp-390" },
-      { name: "comp-391" },
-      { name: "comp-392" },
+      { name: "mongodb" }, 
+      { name: "neon" }, 
+      { name: "prisma" }
     ],
   },
 ];
 
-export function getAuth(slug: string): ComponentAuth | undefined {
+export function getAuth(slug: string): BoxProps | undefined {
   return auths.find((auth) => auth.slug === slug);
 }

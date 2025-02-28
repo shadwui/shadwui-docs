@@ -4,16 +4,16 @@ import React from "react";
 
 const people = [
   {
-    name: "John Doe",
-    image: "/owner.jpg",
+    name: "Sahil Kumar",
+    image: "/owner.avif",
   },
   {
-    name: "no-content",
-    image: "/avatars/profile-female-3.png",
+    name: "No Contributors",
+    image: "/avatars/no-avatar.avif",
   },
   {
-    name: "no-no-content",
-    image: "/avatars/male.png",
+    name: "No Contributors",
+    image: "/avatars/no-avatar.avif",
   },
 ];
 

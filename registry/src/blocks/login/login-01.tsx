@@ -4,6 +4,7 @@ import { Button } from "@/registry/src/components/ui/button";
 import { Card, CardContent } from "@/registry/src/components/ui/card";
 import { Input } from "@/registry/src/components/ui/input";
 import { Label } from "@/registry/src/components/ui/label";
+import Image from "next/image";
 
 const LoginForm = () => {
   return (
@@ -84,8 +85,10 @@ const LoginForm = () => {
           </div>
         </form>
         <div className="relative hidden bg-muted md:block">
-          <img
-            src="/placeholder.svg"
+          <Image
+            width={100}
+            height={100}
+            src="/thumbs/preview.avif"
             alt="Image"
             className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
           />

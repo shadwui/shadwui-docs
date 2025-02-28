@@ -5,7 +5,7 @@ const socialTestimonials = [
   {
     name: "Sarah Thompson",
     username: "@TechGuruSarah",
-    image: "/avatars/male.png",
+    image: "/avatars/male.avif",
     socialMedia: "youtube",
     description:
       "Just hit 10K followers using this platform&apos;s analytics tools 🚀 The audience insights helped me double my engagement rate in 3 weeks! #GameChanger",
@@ -13,7 +13,7 @@ const socialTestimonials = [
   {
     name: "Priya K.",
     username: "@CodeWithPriya",
-    image: "/avatars/profile-female-3.png",
+    image: "/avatars/profile-female-3.avif",
     socialMedia: "linkedin",
     description:
       "Collaboration features helped me partner with 15+ developers worldwide 🌍 Finally a platform that understands tech creators&apos; needs!",
@@ -21,7 +21,7 @@ const socialTestimonials = [
   {
     name: "Michael Chen",
     username: "@DesignMike_",
-    image: "/owner.jpg",
+    image: "/owner.avif",
     socialMedia: "x",
     description:
       "From 500 to 50K followers in 6 months! The content scheduler is a lifesaver for managing multiple client accounts. Best investment I&apos;ve made 💯",
@@ -29,7 +29,7 @@ const socialTestimonials = [
   {
     name: "Emily R.",
     username: "@HealthNutEmily",
-    image: "/avatars/profile-female-1.png",
+    image: "/avatars/profile-female-1.avif",
     socialMedia: "linkedin",
     description:
       "The community features helped me connect with 200+ wellness creators. Finally found a platform that actually supports growth, not just vanity metrics 🌱",
@@ -37,7 +37,7 @@ const socialTestimonials = [
   {
     name: "James O&apos;kumar",
     username: "@TravelWithJames",
-    image: "/avatars/profile-female-2.png",
+    image: "/avatars/profile-female-2.avif",
     socialMedia: "instagram",
     description:
       "Went viral TWICE this month using the trend prediction tools 📈 1M+ views on my latest travel reel! Never going back to manual posting.",
@@ -46,7 +46,7 @@ const socialTestimonials = [
     name: "Alex Dubois",
     username: "@FoodieAlex95",
     socialMedia: "instagram",
-    image: "/avatars/profile-female-4.png",
+    image: "/avatars/profile-female-4.avif",
     description:
       "500K foodies in my network and counting! The recipe video builder boosted my content quality 10x 🍳 Don&apos;t sleep on this platform!",
   },

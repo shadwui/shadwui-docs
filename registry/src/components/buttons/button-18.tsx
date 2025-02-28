@@ -9,7 +9,7 @@ export default function ButtonDemo() {
     <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
       <Image
         className="rounded-full"
-        src={"/avatars/profile-female-1.png"}
+        src={"/avatars/profile-female-1.avif"}
         alt="Profile image"
         width={40}
         height={40}
