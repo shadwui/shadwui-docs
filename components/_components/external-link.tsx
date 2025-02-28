@@ -10,7 +10,7 @@ export default async function ExternalLink({
 }) {
   return (
     <Link
-      className="inline-flex gap-0.5 text-sm hover:underline items-center"
+      className="inline-flex gap-0.5 text-sm hover:underline items-center hover:text-muted-foreground"
       href={href}
       target="_blank"
     >

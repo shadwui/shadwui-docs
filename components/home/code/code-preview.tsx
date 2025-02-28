@@ -18,23 +18,39 @@ import { DotPattern } from "@/registry/src/components/ui/dot-pattern";
 import { Separator } from "@radix-ui/react-separator";
 import CopyCode from "./copy-code";
 import { readComponentSource, readComponentPath } from "@/utils/read-component";
+import ExternalLink from "@/components/_components/external-link";
+import Image from "next/image";
 
 interface CodePreviewProps {
+  imageUrl?: string;
   sourcePath: string;
+  imageHref?: string;
   copyButton?: boolean;
   packageSource?: string;
   componentName: string;
-  codeBlockMaximumHeight?: string;
+  imagePreview?: boolean;
   minimumCodeHeight?: string;
+  codeBlockMaximumHeight?: string;
+
+  github?: boolean;
+  githubUrl?: string;
+  githubName?: string;
 }
 
 const CodePreview = async ({
   sourcePath,
   componentName,
-  minimumCodeHeight = "500px",
   copyButton = false,
+  minimumCodeHeight = "500px",
+  imagePreview = false,
+  imageHref = "/",
   codeBlockMaximumHeight = "500px",
   packageSource = "npx default code",
+  imageUrl = "/assets/blocks/hero-02.png",
+
+  github = false,
+  githubUrl = "/",
+  githubName,
 }: CodePreviewProps) => {
   if (!sourcePath || !componentName) {
     return (
@@ -64,24 +80,34 @@ const CodePreview = async ({
             >
               Preview
             </TabsTrigger>
-            <TabsTrigger
-              value="code"
-              className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
-            >
-              Code
-            </TabsTrigger>
+            {!github && (
+              <TabsTrigger
+                value="code"
+                className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
+              >
+                Code
+              </TabsTrigger>
+            )}
           </TabsList>
 
           <CardTitle
-            className={`text-base font-heading ${
-              copyButton ? "ml-8" : "-ml-20"
-            }`}
+            className={`text-base font-heading 
+              ${copyButton ? "ml-0" : "-ml-20"}
+              ${github && "ml-14"}
+            `}
           >
-            {cardComponentName}
+            {github ? githubName : cardComponentName}
           </CardTitle>
-          <div className="flex items-center justify-center gap-x-2">
+          <div className="flex items-center justify-center gap-x-3">
+            {imagePreview && <ExternalLink href={imageHref} text="Preview" />}
             {copyButton && <CopyCode packageCode={packageSource!} />}
-            {!copyButton && <CopyButton componentSource={sourceCode!} />}
+            {github && <ExternalLink href={githubUrl} text="Source Code" />}
+            {!copyButton && (
+              <CopyButton
+                componentSource={sourceCode!}
+                className={`${github ? "hidden" : ""}`}
+              />
+            )}
           </div>
         </CardHeader>
 
@@ -96,30 +122,48 @@ const CodePreview = async ({
               // maxHeight: codeBlockMaximumHeight,
             }}
           >
-            <DotPattern
-              className={cn(
-                "absolute [mask-image:radial-gradient(250px_circle_at_center,white,transparent)]"
-              )}
-              height={20}
-              width={20}
-            />
-            <div
-              className="w-full backdrop-blur-[1.5px] bg-slate-100 dark:bg-transparent dark:border-gray-800/10 flex items-center justify-center p-10"
-              style={{ minHeight: minimumCodeHeight }}
-            >
-              <Component />
-            </div>
+            {imagePreview ? (
+              <Image
+                src={imageUrl}
+                height={800}
+                width={800}
+                className="object-contain w-full h-full object-center"
+                alt="no image"
+                loading="lazy"
+              />
+            ) : (
+              <>
+                <DotPattern
+                  className={cn(
+                    "absolute backdrop-blur-[1.5px] [mask-image:radial-gradient(250px_circle_at_center,white,transparent)]"
+                  )}
+                  height={20}
+                  width={20}
+                />
+
+                <div
+                  className={
+                    "w-full bg-slate-100 dark:bg-transparent dark:border-gray-800/10 flex items-center justify-center p-10 backdrop-blur-[1.5px]"
+                  }
+                  style={{ minHeight: minimumCodeHeight }}
+                >
+                  <Component />
+                </div>
+              </>
+            )}
           </TabsContent>
 
-          <TabsContent value="code" className="p-0 mt-0">
-            <CodeBlock
-              minimumCodeHeight={minimumCodeHeight}
-              code={sourceCode!}
-              maximumHeight={codeBlockMaximumHeight}
-              language="javascript"
-              copyButton={copyButton}
-            />
-          </TabsContent>
+          {!github && (
+            <TabsContent value="code" className="p-0 mt-0">
+              <CodeBlock
+                minimumCodeHeight={minimumCodeHeight}
+                code={sourceCode!}
+                maximumHeight={codeBlockMaximumHeight}
+                language="javascript"
+                copyButton={copyButton}
+              />
+            </TabsContent>
+          )}
         </CardContent>
       </Card>
     </Tabs>

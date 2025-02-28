@@ -6,7 +6,6 @@ import { categories } from "@/utils/components";
 import CodePreview from "../code/code-preview";
 import { auths } from "@/utils/auths";
 import { blocks } from "@/utils/blocks";
-import { templates } from "@/utils/templates";
 import { Heading } from "@/registry/src/components/ui/heading";
 import TheamBorder from "@/registry/src/premium/components/theam-border";
 
@@ -54,10 +53,10 @@ export const AuthTab = () => {
       <TheamBorder />
       <div className="pt-10">
         <CodePreview
-          sourcePath="src/auth/register"
-          componentName={"register-form-01"}
+          sourcePath="src/default"
+          componentName={"coming-soon"}
           minimumCodeHeight="500px"
-          copyButton={true}
+          copyButton={false}
         />
       </div>
     </div>
@@ -73,6 +72,8 @@ export const BlockTab = () => {
           componentName={"footer-01"}
           minimumCodeHeight="500px"
           copyButton={true}
+          imagePreview={true}
+          imageUrl="/assets/blocks/hero-01.png"
         />
       </div>
 
@@ -83,6 +84,8 @@ export const BlockTab = () => {
           componentName={"header-01"}
           minimumCodeHeight="500px"
           copyButton={true}
+          imagePreview={true}
+          imageUrl="/assets/blocks/hero-02.png"
         />
       </div>
 
@@ -103,20 +106,28 @@ export const TemplateTab = () => {
     <div>
       <div className="pb-10 pt-6">
         <CodePreview
-          sourcePath="src/templates/testimonials"
-          componentName={"testimonial-01"}
+          sourcePath="src/default"
+          componentName={"coming-soon"}
           minimumCodeHeight="500px"
-          copyButton={true}
+          copyButton={false}
+          imagePreview={true}
+          imageUrl="/assets/blocks/sketch-ui.png"
+          github={true}
+          githubName="Sketch UI"
         />
       </div>
 
       <TheamBorder />
       <div className="py-10">
         <CodePreview
-          sourcePath="src/templates/testimonials"
-          componentName={"testimonial-02"}
+          sourcePath="src/default"
+          componentName={"coming-soon"}
           minimumCodeHeight="500px"
-          copyButton={true}
+          copyButton={false}
+          imagePreview={true}
+          imageUrl="/assets/blocks/case-ui.png"
+          github={true}
+          githubName="Case Cobra UI"
         />
       </div>
 
@@ -124,23 +135,12 @@ export const TemplateTab = () => {
 
       <div className="py-10">
         <CodePreview
-          sourcePath="src/templates/landings"
-          componentName={"landing-01"}
+          sourcePath="src/default"
+          componentName={"coming-soon"}
           minimumCodeHeight="500px"
-          copyButton={true}
+          copyButton={false}
         />
       </div>
-
-      <TheamBorder />
-
-      <BoxGridLayout
-        items={templates.map((template) => ({
-          ...template,
-          components: template.components
-            ?.map((template) => template.name)
-            .join(", "),
-        }))}
-      />
     </div>
   );
 };
