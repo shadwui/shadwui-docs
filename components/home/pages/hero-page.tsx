@@ -9,11 +9,11 @@ const people = [
   },
   {
     name: "No Contributors",
-    image: "/avatars/no-avatar.avif",
+    image: "/avatars/no-profile.avif",
   },
   {
     name: "No Contributors",
-    image: "/avatars/no-avatar.avif",
+    image: "/avatars/no-profile.avif",
   },
 ];
 

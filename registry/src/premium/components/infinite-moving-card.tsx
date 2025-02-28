@@ -1,9 +1,21 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/registry/src/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+} from "@/registry/src/components/ui/card";
 import { cn } from "@/registry/src/lib/utils";
 import Image from "next/image";
 import React, { useLayoutEffect, useState } from "react";
+
+export interface TestimonialProps {
+  socialMedia?: string;
+  description: string;
+  name: string;
+  username: string;
+  image?: string;
+}
 
 export const InfiniteMovingCards = ({
   items,
@@ -12,13 +24,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    socialMedia?: string;
-    description: string;
-    name: string;
-    username: string;
-    image?: string;
-  }[];
+  items: TestimonialProps[];
   direction?: "up" | "down";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
