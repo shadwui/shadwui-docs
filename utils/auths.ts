@@ -4,7 +4,7 @@ const mainSlug = "docs/authentication";
 
 export const auths: BoxProps[] = [
   {
-    image: "preview",
+    image: "mongo",
     name: "Mongodb",
     slug: `${mainSlug}/accordion`,
     componentsType: "auths",
@@ -13,7 +13,7 @@ export const auths: BoxProps[] = [
   },
 
   {
-    image: "preview",
+    image: "neon",
     name: "Neon",
     isComing: true,
     slug: `${mainSlug}/accordion`,
@@ -22,7 +22,7 @@ export const auths: BoxProps[] = [
   },
 
   {
-    image: "preview",
+    image: "prisma",
     name: "Prisma",
     slug: `${mainSlug}/accordion`,
     isComing: true,

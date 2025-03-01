@@ -10,7 +10,7 @@ import Image from "next/image";
 import React, { useLayoutEffect, useState } from "react";
 
 export interface TestimonialProps {
-  socialMedia?: string;
+  socialMedia: "linkedin" | "instagram" | "x" | "youtube";
   description: string;
   name: string;
   username: string;

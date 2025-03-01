@@ -1,6 +1,6 @@
 import { TestimonialProps } from "@/registry/src/premium/components/infinite-moving-card";
 
-export const testimonials = [
+export const testimonials : TestimonialProps[] = [
   {
     name: "Lovish Bansal",
     username: "@LovishBansal",
@@ -67,6 +67,7 @@ export const testimonials = [
     name: "Ishrat Iqbal",
     username: "@IshratIqbal",
     image: "/avatars/no-profile.avif",
+    socialMedia: "linkedin",
     description:
       "Congrats on launching ShadwUI! Love the light & dark themes and pre-built components—impressive work! ✨ #Shadwui",
   },

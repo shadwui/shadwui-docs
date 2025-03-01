@@ -122,7 +122,7 @@ export const components: BoxProps[] = [
   },
 
   {
-    image: "preview",
+    image: "heading",
     name: "Heading",
     slug: `${mainSlug}/heading`,
     componentsType: "typography",
@@ -136,7 +136,7 @@ export const components: BoxProps[] = [
     ],
   },
   {
-    image: "preview",
+    image: "description",
     name: "Description",
     slug: `${mainSlug}/description`,
     componentsType: "typography",
