@@ -28,7 +28,38 @@ export const metadata: Metadata = {
     "Shadwui UI - Beautiful UI components built with Tailwind CSS and React",
   description:
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
-  icons: {},
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "ShadwUI - UI Components",
+  description:
+    "ShadwUI is a modern component library for Next.js, React, and Vite.",
+  url: "https://shadwui.com/",
+  home: {
+    "@type": "Home",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Installation",
+        item: "https://shadwui.com/docs/installation/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "components",
+        item: "https://shadwui.com/docs/components/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Dark Mode",
+        item: "https://shadwui.com/docs/dark-mode/",
+      },
+    ],
+  },
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -49,7 +80,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           defer
           data-domain="shadwui.com"
           src="https://plausible.io/js/script.js"
-        ></script>
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
