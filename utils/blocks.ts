@@ -6,7 +6,7 @@ export const blocks: BoxProps[] = [
   {
     image: "hero",
     name: "Hero Page",
-    slug: `${mainSlug}/accordion`,
+    slug: `${mainSlug}/hero`,
     componentsType: "blocks",
     isComing: true,
     components: [],
@@ -15,7 +15,8 @@ export const blocks: BoxProps[] = [
   {
     image: "header",
     name: "Header",
-    slug: `${mainSlug}/accordion`,
+    slug: `${mainSlug}/header`,
+    isComing: true,
     componentsType: "blocks",
     components: [{ name: "header-01" }, { name: "header-02" }],
   },
@@ -23,7 +24,7 @@ export const blocks: BoxProps[] = [
   {
     image: "footer",
     name: "Footer",
-    slug: `${mainSlug}/accordion`,
+    slug: `${mainSlug}/footer`,
     isComing: true,
     componentsType: "blocks",
     components: [],
@@ -35,7 +36,7 @@ export const blocks: BoxProps[] = [
     image: "view",
     componentsType: "blocks",
     components: [
-      { name: "Hero Page" },
+      { name: "Hero" },
       { name: "Header" },
       { name: "Login" },
       { name: "footer" },

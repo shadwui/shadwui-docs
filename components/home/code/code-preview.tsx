@@ -35,13 +35,14 @@ interface CodePreviewProps {
   github?: boolean;
   githubUrl?: string;
   githubName?: string;
+  target?: boolean;
 }
 
 const CodePreview = async ({
   sourcePath,
   componentName,
   copyButton = false,
-  minimumCodeHeight = "500px",
+  minimumCodeHeight,
   imagePreview = false,
   imageHref = "/",
   codeBlockMaximumHeight = "500px",
@@ -51,6 +52,8 @@ const CodePreview = async ({
   github = false,
   githubUrl = "/",
   githubName,
+
+  target = true,
 }: CodePreviewProps) => {
   if (!sourcePath || !componentName) {
     return (
@@ -101,7 +104,13 @@ const CodePreview = async ({
           <div className="flex items-center justify-center gap-x-3">
             {imagePreview && <ExternalLink href={imageHref} text="Preview" />}
             {copyButton && <CopyCode packageCode={packageSource!} />}
-            {github && <ExternalLink href={githubUrl} text="Source Code" />}
+            {github && (
+              <ExternalLink
+                target={target}
+                href={githubUrl}
+                text="Source Code"
+              />
+            )}
             {!copyButton && (
               <CopyButton
                 componentSource={sourceCode!}
@@ -127,7 +136,7 @@ const CodePreview = async ({
                 src={imageUrl}
                 height={1000}
                 width={1000}
-                className="object-contain w-full h-full object-center"
+                className="object-contain w-full h-full object-center code-img"
                 alt="no image"
                 loading="lazy"
               />

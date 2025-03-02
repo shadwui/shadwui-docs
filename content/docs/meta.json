@@ -1,5 +1,5 @@
 {
-  "title": "Docs Meta json",
+  "title": "Documentation",
   "pages": [
     "---Getting Started---",
     "index",
@@ -14,8 +14,8 @@
 
     "---Authentication---",
     "authentication/mongodb",
-    "authentication/neon",
-    "authentication/prisma",
+    "!authentication/neon",
+    "!authentication/prisma",
 
 
     "---Typography---",
@@ -24,7 +24,9 @@
 
 
     "---Components---",
+    "!components/accordion",
     "components/alert",
+    "!components/avatar",
     "components/badge",
     "components/banner",
     "components/breadcrumb",
@@ -41,15 +43,15 @@
 
     
     "---Block---",
-    "blocks/hero",
-    "blocks/login",
-    "blocks/navbar",
-    "blocks/footer",
+    "blocks/auth",
+    "!blocks/hero",
+    "!blocks/header",
+    "!blocks/footer",
 
 
     "---Templates---",
     "templates/template-01",
-    "templates/template-02",
+    "!templates/template-02",
 
 
     

@@ -124,7 +124,7 @@ export const components: BoxProps[] = [
   {
     image: "heading",
     name: "Heading",
-    slug: `${mainSlug}/heading`,
+    slug: `docs/typography/heading`,
     componentsType: "typography",
     components: [
       { name: "heading-01" },
@@ -138,7 +138,7 @@ export const components: BoxProps[] = [
   {
     image: "description",
     name: "Description",
-    slug: `${mainSlug}/description`,
+    slug: `docs/typography/description`,
     componentsType: "typography",
     components: [
       { name: "description-01" },
