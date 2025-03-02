@@ -4,10 +4,35 @@
   "homepage": "https://acme.com",
   "items": [
     {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "files": [
+        {
+          "path": "registry/src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/shadwui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
+      "title": "Breadcrumb",
+      "files": [
+        {
+          "path": "registry/src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/shadwui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
       "name": "button",
-      "type": "registry:block",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
       "title": "Button",
-      "description": "A simple button UI component.",
       "files": [
         {
           "path": "registry/src/components/ui/button.tsx",
@@ -17,15 +42,127 @@
       ]
     },
     {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "files": [
+        {
+          "path": "registry/src/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/shadwui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "title": "Checkbox",
+      "files": [
+        {
+          "path": "registry/src/components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/shadwui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "type": "registry:ui",
+      "title": "Description",
+      "files": [
+        {
+          "path": "registry/src/components/ui/description.tsx",
+          "type": "registry:ui",
+          "target": "components/shadwui/description.tsx"
+        }
+      ]
+    },
+    {
       "name": "heading",
-      "type": "registry:block",
+      "type": "registry:ui",
       "title": "Heading",
-      "description": "A Collection of Responsive Headings",
       "files": [
         {
           "path": "registry/src/components/ui/heading.tsx",
-          "type": "registry:component",
+          "type": "registry:ui",
           "target": "components/shadwui/heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "files": [
+        {
+          "path": "registry/src/components/ui/input.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-label"],
+      "title": "Label",
+      "files": [
+        {
+          "path": "registry/src/components/ui/label.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-radio-group"],
+      "title": "RadioGroup",
+      "files": [
+        {
+          "path": "registry/src/components/ui/radio-group.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-select"],
+      "title": "Select",
+      "files": [
+        {
+          "path": "registry/src/components/ui/select.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-switch"],
+      "title": "Switch",
+      "files": [
+        {
+          "path": "registry/src/components/ui/switch.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "files": [
+        {
+          "path": "registry/src/components/ui/textarea.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/textarea.tsx"
         }
       ]
     }
