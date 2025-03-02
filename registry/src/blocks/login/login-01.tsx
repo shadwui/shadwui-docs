@@ -84,13 +84,13 @@ const LoginForm = () => {
             </div>
           </div>
         </form>
-        <div className="relative hidden bg-muted md:block">
+        <div className="flex bg-muted items-center justify-center">
           <Image
-            width={100}
-            height={100}
-            src="/thumbs/preview.avif"
+            width={200}
+            height={200}
+            src="/thumbs/placeholder.avif"
             alt="Image"
-            className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+            className="inset-0 object-cover dark:brightness-[0.2] dark:grayscale"
           />
         </div>
       </CardContent>
@@ -99,15 +99,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-// <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
-//       <div className="w-full max-w-sm md:max-w-3xl">
-//         <div className="flex flex-col gap-6">
-
-//           <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary">
-//             By clicking continue, you agree to our{" "}
-//             <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-//           </div>
-//         </div>
-//       </div>
-//     </div>

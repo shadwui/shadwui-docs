@@ -4,7 +4,7 @@ const mainSlug = "docs/blocks";
 
 export const blocks: BoxProps[] = [
   {
-    image: "preview",
+    image: "hero",
     name: "Hero Page",
     slug: `${mainSlug}/accordion`,
     componentsType: "blocks",
@@ -13,15 +13,15 @@ export const blocks: BoxProps[] = [
   },
 
   {
-    image: "preview",
-    name: "Login",
+    image: "header",
+    name: "Header",
     slug: `${mainSlug}/accordion`,
     componentsType: "blocks",
-    components: [{ name: "login-01" }, { name: "login-02" }],
+    components: [{ name: "header-01" }, { name: "header-02" }],
   },
 
   {
-    image: "preview",
+    image: "footer",
     name: "Footer",
     slug: `${mainSlug}/accordion`,
     isComing: true,
