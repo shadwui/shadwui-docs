@@ -28,9 +28,7 @@ export const metadata: Metadata = {
     "Shadwui UI - Beautiful UI components built with Tailwind CSS and React",
   description:
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
-    icons:{
-      
-    }
+  icons: {},
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -47,6 +45,11 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           <RootProvider>{children}</RootProvider>
         </ThemeProvider>
+        <script
+          defer
+          data-domain="shadwui.com"
+          src="https://plausible.io/js/script.js"
+        ></script>
       </body>
     </html>
   );
