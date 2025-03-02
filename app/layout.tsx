@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
 import type { Metadata, Viewport } from "next";
 import { Outfit as FontHeading, Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://shadwui.com"),
   title:
-    "Shadwui UI - Beautiful UI components built with Tailwind CSS and React",
+    "Shadw-UI - Beautiful UI components built with Tailwind CSS and React",
   description:
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
 };
@@ -76,13 +77,14 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           <RootProvider>{children}</RootProvider>
         </ThemeProvider>
-        <script
+        <Script
           defer
           data-domain="shadwui.com"
           src="https://plausible.io/js/script.js"
         />
 
-        <script
+        <Script
+          id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
