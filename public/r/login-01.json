@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-01",
+  "type": "registry:block",
+  "title": "Login_01",
+  "registryDependencies": [
+    "https://shadwui.com/r/input.json",
+    "https://shadwui.com/r/label.json",
+    "https://shadwui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/src/blocks/login/login-01.tsx",
+      "content": "import React from \"react\";\r\n\r\nimport { Button } from \"@/registry/src/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/src/components/ui/card\";\r\nimport { Input } from \"@/registry/src/components/ui/input\";\r\nimport { Label } from \"@/registry/src/components/ui/label\";\r\n\r\nconst Login_01 = () => {\r\n  return (\r\n    <Card>\r\n      <CardHeader>\r\n        <CardTitle className=\"text-2xl\">Login</CardTitle>\r\n        <CardDescription>\r\n          Enter your email below to login to your account\r\n        </CardDescription>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <form>\r\n          <div className=\"flex flex-col gap-6\">\r\n            <div className=\"grid gap-2\">\r\n              <Label htmlFor=\"email\">Email</Label>\r\n              <Input\r\n                id=\"email\"\r\n                type=\"email\"\r\n                placeholder=\"m@example.com\"\r\n                required\r\n              />\r\n            </div>\r\n            <div className=\"grid gap-2\">\r\n              <div className=\"flex items-center\">\r\n                <Label htmlFor=\"password\">Password</Label>\r\n                <a\r\n                  href=\"#\"\r\n                  className=\"ml-auto inline-block text-sm underline-offset-4 hover:underline\"\r\n                >\r\n                  Forgot your password?\r\n                </a>\r\n              </div>\r\n              <Input id=\"password\" type=\"password\" required />\r\n            </div>\r\n            <Button type=\"submit\" className=\"w-full\">\r\n              Login\r\n            </Button>\r\n            <Button variant=\"outline\" className=\"w-full\">\r\n              Login with Google\r\n            </Button>\r\n          </div>\r\n          <div className=\"mt-4 text-center text-sm\">\r\n            Don&apos;t have an account?{\" \"}\r\n            <a href=\"#\" className=\"underline underline-offset-4\">\r\n              Sign up\r\n            </a>\r\n          </div>\r\n        </form>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Login_01;\r\n",
+      "type": "registry:component",
+      "target": "components/shadwui/login-01.tsx"
+    }
+  ]
+}

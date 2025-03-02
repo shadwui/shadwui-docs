@@ -18,7 +18,9 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
       "title": "Breadcrumb",
       "files": [
         {
@@ -31,7 +33,9 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
       "title": "Button",
       "files": [
         {
@@ -56,7 +60,9 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-checkbox"],
+      "dependencies": [
+        "@radix-ui/react-checkbox"
+      ],
       "title": "Checkbox",
       "files": [
         {
@@ -105,7 +111,9 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-label"],
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
       "title": "Label",
       "files": [
         {
@@ -118,7 +126,9 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-radio-group"],
+      "dependencies": [
+        "@radix-ui/react-radio-group"
+      ],
       "title": "RadioGroup",
       "files": [
         {
@@ -131,7 +141,9 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-select"],
+      "dependencies": [
+        "@radix-ui/react-select"
+      ],
       "title": "Select",
       "files": [
         {
@@ -144,7 +156,9 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-switch"],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
       "title": "Switch",
       "files": [
         {
@@ -163,6 +177,41 @@
           "path": "registry/src/components/ui/textarea.tsx",
           "type": "registry:component",
           "target": "components/shadwui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-01",
+      "type": "registry:block",
+      "title": "Login_01",
+      "registryDependencies": [
+        "https://shadwui.com/r/input.json",
+        "https://shadwui.com/r/label.json",
+        "https://shadwui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/login/login-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/login-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-02",
+      "type": "registry:block",
+      "title": "Login_02",
+      "registryDependencies": [
+        "https://shadwui.com/r/input.json",
+        "https://shadwui.com/r/label.json",
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/login/login-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/login-02.tsx"
         }
       ]
     }
