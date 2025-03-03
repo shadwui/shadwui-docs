@@ -169,6 +169,21 @@
       ]
     },
     {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "title": "Separator",
+      "files": [
+        {
+          "path": "registry/src/components/ui/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
@@ -213,6 +228,25 @@
           "path": "registry/src/blocks/login/login-02.tsx",
           "type": "registry:component",
           "target": "components/shadwui/login-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "register-01",
+      "type": "registry:block",
+      "title": "Register_01",
+      "registryDependencies": [
+        "https://shadwui.com/r/input.json",
+        "https://shadwui.com/r/label.json",
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/card.json",
+        "https://shadwui.com/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/login/register-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/register-01.tsx"
         }
       ]
     }

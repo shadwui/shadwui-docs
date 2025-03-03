@@ -1,6 +1,6 @@
 import React from "react";
 
-import TheamBorder from "@/registry/src/premium/components/theam-border"; 
+import TheamBorder from "@/registry/src/premium/components/theam-border";
 import { BoxGridLayout } from "@/components/_components/box";
 import { components } from "@/utils/components";
 import CodePreview from "../code/code-preview";
@@ -25,6 +25,7 @@ export const AuthTab = () => {
           componentName={"login-01"}
           minimumCodeHeight="500px"
           codeBlockMaximumHeight="500px"
+          packageSource="pnpm dlx shadcn@latest add https://shadwui.com/r/login-01.json"
           copyButton={true}
         />
       </div>
@@ -32,10 +33,12 @@ export const AuthTab = () => {
       <TheamBorder />
       <div className="pt-10">
         <CodePreview
-          sourcePath="src/default"
-          componentName={"coming-soon"}
+          sourcePath="src/blocks/login"
+          componentName={"register-01"}
           minimumCodeHeight="500px"
-          copyButton={false}
+          codeBlockMaximumHeight="500px"
+          packageSource="pnpm dlx shadcn@latest add https://shadwui.com/r/register-01.json"
+          copyButton={true}
         />
       </div>
     </div>
@@ -58,11 +61,11 @@ export const BlockTab = () => {
       <TheamBorder />
       <div className="py-10">
         <CodePreview
-           sourcePath="src/blocks/login"
-           componentName={"login-02"}
-           minimumCodeHeight="500px"
-           codeBlockMaximumHeight="500px"
-           copyButton={true}
+          sourcePath="src/blocks/login"
+          componentName={"login-02"}
+          minimumCodeHeight="500px"
+          codeBlockMaximumHeight="500px"
+          copyButton={true}
         />
       </div>
 
