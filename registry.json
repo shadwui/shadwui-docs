@@ -249,6 +249,24 @@
           "target": "components/shadwui/register-01.tsx"
         }
       ]
+    },
+    {
+      "name": "register-02",
+      "type": "registry:block",
+      "title": "Register_02",
+      "registryDependencies": [
+        "https://shadwui.com/r/input.json",
+        "https://shadwui.com/r/label.json",
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/login/register-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadwui/register-02.tsx"
+        }
+      ]
     }
   ]
 }

@@ -54,7 +54,7 @@ const Register_01 = () => {
               />
             </div>
             <Button type="submit" className="w-full">
-              Login
+              Register
             </Button>
           </div>
         </form>
