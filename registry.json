@@ -11,7 +11,7 @@
         {
           "path": "registry/src/components/ui/badge.tsx",
           "type": "registry:ui",
-          "target": "components/shadwui/badge.tsx"
+          "target": "components/ui/badge.tsx"
         }
       ]
     },
@@ -26,7 +26,7 @@
         {
           "path": "registry/src/components/ui/breadcrumb.tsx",
           "type": "registry:ui",
-          "target": "components/shadwui/breadcrumb.tsx"
+          "target": "components/ui/breadcrumb.tsx"
         }
       ]
     },
@@ -41,7 +41,7 @@
         {
           "path": "registry/src/components/ui/button.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/button.tsx"
+          "target": "components/ui/button.tsx"
         }
       ]
     },
@@ -53,7 +53,7 @@
         {
           "path": "registry/src/components/ui/card.tsx",
           "type": "registry:ui",
-          "target": "components/shadwui/card.tsx"
+          "target": "components/ui/card.tsx"
         }
       ]
     },
@@ -68,7 +68,7 @@
         {
           "path": "registry/src/components/ui/checkbox.tsx",
           "type": "registry:ui",
-          "target": "components/shadwui/checkbox.tsx"
+          "target": "components/ui/checkbox.tsx"
         }
       ]
     },
@@ -104,7 +104,7 @@
         {
           "path": "registry/src/components/ui/input.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/input.tsx"
+          "target": "components/ui/input.tsx"
         }
       ]
     },
@@ -119,7 +119,7 @@
         {
           "path": "registry/src/components/ui/label.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/label.tsx"
+          "target": "components/ui/label.tsx"
         }
       ]
     },
@@ -134,7 +134,7 @@
         {
           "path": "registry/src/components/ui/radio-group.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/radio-group.tsx"
+          "target": "components/ui/radio-group.tsx"
         }
       ]
     },
@@ -149,7 +149,7 @@
         {
           "path": "registry/src/components/ui/select.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/select.tsx"
+          "target": "components/ui/select.tsx"
         }
       ]
     },
@@ -164,7 +164,7 @@
         {
           "path": "registry/src/components/ui/switch.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/switch.tsx"
+          "target": "components/ui/switch.tsx"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "path": "registry/src/components/ui/textarea.tsx",
           "type": "registry:component",
-          "target": "components/shadwui/textarea.tsx"
+          "target": "components/ui/textarea.tsx"
         }
       ]
     },
@@ -187,7 +187,8 @@
       "registryDependencies": [
         "https://shadwui.com/r/input.json",
         "https://shadwui.com/r/label.json",
-        "https://shadwui.com/r/button.json"
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/card.json"
       ],
       "files": [
         {

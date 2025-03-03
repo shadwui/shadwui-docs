@@ -6,7 +6,8 @@
   "registryDependencies": [
     "https://shadwui.com/r/input.json",
     "https://shadwui.com/r/label.json",
-    "https://shadwui.com/r/button.json"
+    "https://shadwui.com/r/button.json",
+    "https://shadwui.com/r/card.json"
   ],
   "files": [
     {
