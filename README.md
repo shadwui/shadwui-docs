@@ -2,11 +2,14 @@
 
 **Beautiful UI components built with Tailwind CSS and React.**
 
-Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new designs.
+ShadwUI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new designs.
 
-**Demo** → [https://shadwui.com](https://shadwui.com)
+**Live** → [https://shadwui.com](https://shadwui.com)
 
-# Here I got image |||
+## Banner
+![ShadwUI](/public/banner-dark.png)
+
+![ShadwUI](/public/banner.png)
 
 ## Getting Started
 
@@ -23,8 +26,8 @@ After completing these steps, you can copy and use the components in your projec
 Our UI library has been updated to Tailwind CSS v4 as of February 25, 2025. Legacy components built with v3 remain available by adding `/legacy/` to the component URL:
 
 ```bash
-# v3 legacy component
-pnpm dlx shadcn@latest add https://originui.com/r/legacy/comp-01.json
+# v3 component
+pnpm dlx shadcn@latest add https://shadwui.com/r/input.json
 ```
 
 Note: New components will only be developed for Tailwind v4.
@@ -90,6 +93,6 @@ Thank you for contributing to our project!
 
 ## License
 
-Licensed under the [MIT License](https://github.com/).
+Licensed under the [MIT License](https://github.com/shadwui/shadwui-docs/blob/master/LICENSE.MD).
 
-If you have any questions or just want to say hi, feel free to reach out to us on Linkedin 👉 [@sahilkumardev](https://linkedin.com).
+If you have any questions or just want to say hi, feel free to reach out to us on Linkedin 👉 [@sahilkumardev](https://www.linkedin.com/in/sahil-kumar-dev/)
