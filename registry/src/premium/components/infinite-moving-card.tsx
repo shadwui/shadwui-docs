@@ -23,12 +23,14 @@ export const InfiniteMovingCards = ({
   speed = "normal",
   pauseOnHover = true,
   className,
+  onMobile = false,
 }: {
   items: TestimonialProps[];
   direction?: "up" | "down";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  onMobile?: boolean;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -93,17 +95,20 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 h-[500px] overflow-hidden",
+        "scroller relative z-20 overflow-hidden h-[500px]",
         "[mask-image:linear-gradient(to_bottom,transparent_2%,white_15%,white_85%,transparent_98%)]",
+        onMobile ? "h-0 md:h-[500px]" : "",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex flex-col gap-8",
+          "gap-8",
+          onMobile ? "hidden md:flex md:flex-col" : "flex flex-col",
           start && "animate-scroll-infinite",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
+          // className
         )}
       >
         {items.map((item, idx) => (

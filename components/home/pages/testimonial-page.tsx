@@ -7,6 +7,7 @@ const TestimonialPage = () => {
   const shuffledTestimonials_one = getRandomTestimonials();
   const shuffledTestimonials_two = getRandomTestimonials();
   const shuffledTestimonials_three = getRandomTestimonials();
+
   return (
     <>
       <TheamBorder />
@@ -22,13 +23,19 @@ const TestimonialPage = () => {
         </div>
 
         <div className="grid grid-cols-1 items-start gap-8 overflow-hidden sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
-          <InfiniteMovingCards items={shuffledTestimonials_one} />
+          <InfiniteMovingCards
+            items={shuffledTestimonials_one}
+            onMobile={true}
+          />
           <InfiniteMovingCards
             items={shuffledTestimonials_two}
             direction="down"
             speed="fast"
           />
-          <InfiniteMovingCards items={shuffledTestimonials_three} />
+          <InfiniteMovingCards
+            items={shuffledTestimonials_three}
+            onMobile={true}
+          />
         </div>
       </div>
 

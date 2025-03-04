@@ -48,6 +48,14 @@
     "!blocks/header",
     "!blocks/footer",
 
+    "---Illustration---",
+    "illustration/general",
+    "illustration/e-commerce",
+    "illustration/workplace",
+    "illustration/technology",
+    "illustration/security",
+    "illustration/education",
+
 
     "---Templates---",
     "templates/template-01",

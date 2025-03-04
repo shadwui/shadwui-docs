@@ -11,7 +11,7 @@ export default function CopyCode({ packageCode }: { packageCode: string }) {
     <div className="relative">
       <Input
         ref={inputRef}
-        className="pe-9 focus:outline-none focus-visible:ring-[0px] focus-visible:border-ring-hidden w-40 bg-fd-border border-fd-muted"
+        className="pe-9 focus:outline-none focus-visible:ring-[0px] focus-visible:border-ring-hidden w-20 md:w-40 bg-fd-border border-fd-muted"
         type="text"
         defaultValue={packageCode}
         readOnly

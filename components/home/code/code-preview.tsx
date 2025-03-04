@@ -20,6 +20,7 @@ import CopyCode from "./copy-code";
 import { readComponentSource, readComponentPath } from "@/utils/read-component";
 import ExternalLink from "@/components/_components/external-link";
 import Image from "next/image";
+import { RiCodeSSlashLine } from "@remixicon/react";
 
 interface CodePreviewProps {
   imageUrl?: string;
@@ -88,13 +89,16 @@ const CodePreview = async ({
                 value="code"
                 className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
               >
-                Code
+                <span className="md:hidden">
+                  <RiCodeSSlashLine />
+                </span>
+                <span className="hidden md:block">Code</span>
               </TabsTrigger>
             )}
           </TabsList>
 
           <CardTitle
-            className={`text-base font-heading 
+            className={`text-base font-heading line-clamp-1 
               ${copyButton ? "ml-0" : "-ml-20"}
               ${github && "ml-14"}
             `}
@@ -102,14 +106,10 @@ const CodePreview = async ({
             {github ? githubName : cardComponentName}
           </CardTitle>
           <div className="flex items-center justify-center gap-x-3">
-            {imagePreview && <ExternalLink href={imageHref} text="Preview" />}
+            {imagePreview && <ExternalLink href={imageHref} text="Live" />}
             {copyButton && <CopyCode packageCode={packageSource!} />}
             {github && (
-              <ExternalLink
-                target={target}
-                href={githubUrl}
-                text="Source Code"
-              />
+              <ExternalLink target={target} href={githubUrl} text="Code" />
             )}
             {!copyButton && (
               <CopyButton

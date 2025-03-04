@@ -39,7 +39,7 @@ const PreviewPage = () => {
     <>
       <Tabs defaultValue="Authentication">
         <NavbarLayout>
-          <TabsList className="bg-opacity-0 px-0 h-12 gap-x-2 ">
+          <TabsList className="bg-opacity-0 px-0 h-12 gap-x-2 overflow-x-auto w-full justify-start [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {tabListData.map((item, idx) => (
               <TabsTrigger
                 key={idx}
