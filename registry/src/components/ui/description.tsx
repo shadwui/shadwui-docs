@@ -25,7 +25,7 @@ export const Description = ({
   const Tag = variant === "underline" ? "span" : variant;
 
   const variantClasses = {
-    p: "leading-7 [&:not(:first-child)]:mt-6",
+    p: "leading-7 text-base",
     blockquote: "mt-6 border-l-2 pl-6 italic",
     underline: "font-medium text-primary underline underline-offset-4",
   };

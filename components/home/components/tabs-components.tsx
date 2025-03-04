@@ -50,8 +50,9 @@ export const BlockTab = () => {
     <div>
       <div className="pb-10 pt-6">
         <CodePreview
-          sourcePath="src/blocks/login"
-          componentName={"login-01"}
+          packageSource="pnpm dlx shadcn@latest add https://shadwui.com/r/hero-01.json"
+          sourcePath="src/blocks/hero"
+          componentName={"hero-01"}
           minimumCodeHeight="500px"
           codeBlockMaximumHeight="500px"
           copyButton={true}
@@ -59,10 +60,12 @@ export const BlockTab = () => {
       </div>
 
       <TheamBorder />
+
       <div className="py-10">
         <CodePreview
+          packageSource="pnpm dlx shadcn@latest add https://shadwui.com/r/login-01.json"
           sourcePath="src/blocks/login"
-          componentName={"login-02"}
+          componentName={"login-01"}
           minimumCodeHeight="500px"
           codeBlockMaximumHeight="500px"
           copyButton={true}

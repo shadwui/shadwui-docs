@@ -8,8 +8,7 @@ export const blocks: BoxProps[] = [
     name: "Hero Page",
     slug: `${mainSlug}/hero`,
     componentsType: "blocks",
-    isComing: true,
-    components: [],
+    components: [{ name: "hero-01" }, { name: "hero-02" }],
   },
 
   {
