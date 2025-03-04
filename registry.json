@@ -267,6 +267,42 @@
           "target": "components/shadwui/register-02.tsx"
         }
       ]
+    },
+    {
+      "name": "hero-01",
+      "type": "registry:block",
+      "title": "Hero_01",
+      "registryDependencies": [
+        "https://shadwui.com/r/description.json",
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/badge.json",
+        "https://shadwui.com/r/heading.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/hero/hero-01.tsx",
+          "type": "registry:block",
+          "target": "components/shadwui/blocks/hero-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-02",
+      "type": "registry:block",
+      "title": "Hero_02",
+      "registryDependencies": [
+        "https://shadwui.com/r/description.json",
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/badge.json",
+        "https://shadwui.com/r/heading.json"
+      ],
+      "files": [
+        {
+          "path": "registry/src/blocks/hero/hero-02.tsx",
+          "type": "registry:block",
+          "target": "components/shadwui/blocks/hero-02.tsx"
+        }
+      ]
     }
   ]
 }

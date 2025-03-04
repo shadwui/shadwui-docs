@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-01",
+  "type": "registry:block",
+  "title": "Hero_01",
+  "registryDependencies": [
+    "https://shadwui.com/r/description.json",
+    "https://shadwui.com/r/button.json",
+    "https://shadwui.com/r/badge.json",
+    "https://shadwui.com/r/heading.json"
+  ],
+  "files": [
+    {
+      "path": "registry/src/blocks/hero/hero-01.tsx",
+      "content": "import React from \"react\";\r\nimport { Heading } from \"@/registry/src/components/ui/heading\";\r\nimport { Button } from \"@/registry/src/components/ui/button\";\r\nimport { Badge } from \"@/registry/src/components/ui/badge\";\r\nimport { Description } from \"@/registry/src/components/ui/description\";\r\n\r\nconst Hero_01 = () => {\r\n  return (\r\n    <section className=\"text-center space-y-7 py-14\">\r\n      <div className=\"w-full flex items-center justify-center\">\r\n        <div className=\"bg-white/50 rounded-full px-2.5 py-1 border border-white w-fit text-xs\">\r\n          <Badge>New</Badge> 🚀 Shadwui launch today...\r\n        </div>\r\n      </div>\r\n      <div className=\"space-y-3\">\r\n        <Heading variant=\"h1\">We invest in the world’s potential</Heading>\r\n        <div className=\"flex items-center justify-center\">\r\n          <Description\r\n            variant=\"p\"\r\n            className=\"text-fd-muted-foreground text-xl leading-0.5 max-w-4xl\"\r\n          >\r\n            Here at shadwui we focus on markets where technology, innovation,\r\n            and capital can unlock long-term value and drive economic growth.\r\n          </Description>\r\n        </div>\r\n      </div>\r\n      <div className=\"space-x-4\">\r\n        <Button>Get started</Button>\r\n        <Button variant=\"outline\">Learn more</Button>\r\n      </div>\r\n      <div className=\"flex gap-6 items-center justify-center mt-6\">\r\n        <div className=\"text-4xl\">Image 1</div>\r\n        <div className=\"text-4xl\">Image 2</div>\r\n        <div className=\"text-4xl\">Image 3</div>\r\n        <div className=\"text-4xl\">Image 4</div>\r\n        <div className=\"text-4xl\">Image 5</div>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default Hero_01;\r\n",
+      "type": "registry:block",
+      "target": "components/shadwui/blocks/hero-01.tsx"
+    }
+  ]
+}
