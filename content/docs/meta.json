@@ -50,11 +50,11 @@
 
     "---Illustration---",
     "illustration/general",
-    "illustration/e-commerce",
-    "illustration/workplace",
-    "illustration/technology",
-    "illustration/security",
-    "illustration/education",
+    "!illustration/e-commerce",
+    "!illustration/workplace",
+    "!illustration/technology",
+    "!illustration/security",
+    "!illustration/education",
 
 
     "---Templates---",
