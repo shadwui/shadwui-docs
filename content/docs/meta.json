@@ -48,8 +48,7 @@
     "!blocks/header",
     "!blocks/footer",
 
-    "---Illustration---",
-    "illustration/general",
+    "!illustration/general",
     "!illustration/e-commerce",
     "!illustration/workplace",
     "!illustration/technology",
