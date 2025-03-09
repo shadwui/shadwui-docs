@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-01",
+  "type": "registry:block",
+  "title": "Header_01",
+  "registryDependencies": [
+    "https://shadwui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/src/blocks/header/header-01.tsx",
+      "content": "import Link from \"next/link\";\r\nimport React from \"react\";\r\nimport { Button } from \"@/registry/src/components/ui/button\";\r\n\r\nconst navItem = [\r\n  {\r\n    title: \"Home\",\r\n    href: \"/\",\r\n  },\r\n  {\r\n    title: \"About\",\r\n    href: \"/about\",\r\n  },\r\n  {\r\n    title: \"Contact\",\r\n    href: \"/contact\",\r\n  },\r\n  {\r\n    title: \"Blog\",\r\n    href: \"/blog\",\r\n  },\r\n];\r\n\r\nconst Header_01 = () => {\r\n  return (\r\n    <header className=\"flex justify-between items-center w-full border-b-[0.5px] border-b-muted-foreground py-3 pl-2 shadow-xs\">\r\n      <Link href=\"/\" className=\"flex items-center\">\r\n        <span className=\"self-center text-xl font-semibold whitespace-nowrap dark:text-white\">\r\n          Shadwui\r\n        </span>\r\n      </Link>\r\n\r\n      <div className=\"hidden justify-between items-center w-full lg:flex lg:w-auto\">\r\n        <ul className=\"flex items-center justify-center gap-x-2\">\r\n          {navItem.map((item) => (\r\n            <li key={item.title} className=\"px-2.5\">\r\n              {item.title}\r\n            </li>\r\n          ))}\r\n        </ul>\r\n      </div>\r\n\r\n      <div className=\"flex items-center gap-x-2.5\">\r\n        <Button>Log in</Button>\r\n        <Button variant={\"ghost\"}>Get started</Button>\r\n      </div>\r\n    </header>\r\n  );\r\n};\r\n\r\nexport default Header_01;\r\n",
+      "type": "registry:block",
+      "target": "components/shadwui/blocks/header-01.tsx"
+    }
+  ]
+}

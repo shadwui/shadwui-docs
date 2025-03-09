@@ -2,6 +2,90 @@
 title: Header 01
 ---
 
-import ComingSoon from "../../../components/coming-soon"
+import {
+  Tab,
+  DocTabs,
+  Tabs,
+  TabsList,
+  TabsContent,
+  TabsTrigger,
+  Step,
+  Steps,
+  CodeBlock,
+  Separator,
+  BannerDemo,
+  CodePreview,
+  ComponentPage,
+  CodeBlockWrapper,
+} from "../../../components/index";
 
-<ComingSoon />
+## Preview
+
+<CodePreview
+  sourcePath="src/blocks/header"
+  componentName={"header-01"}
+  minimumCodeHeight="300px"
+  imageUrl="/blocks/header-01.png"
+  imagePreview={true}
+  imageHref="/preview/header-01"
+/>
+
+## Installation 
+<Tabs defaultValue="cli">
+  <TabsList className="pb-0 h-10 rounded-md bg-hidden">
+    <TabsTrigger
+      value="cli"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
+    >
+      CLI
+    </TabsTrigger>
+    <TabsTrigger
+      value="manual"
+      className="relative rounded-t-sm px-2 py-0 data-[state=active]:text-chai data-[state=active]:shadow-none data-[state=active]:bg-hidden hover:cursor-pointer before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-[4px] before:bg-chai before:rounded-t-lg data-[state=active]:before:scale-x-100 before:scale-x-0 before:transition-transform before:duration-300"
+    >
+      Manual
+    </TabsTrigger>
+  </TabsList>
+  <Separator />
+  <TabsContent value="cli" className="p-0 mt-0">
+    <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
+      <Tab value="pnpm">
+        ```bash
+        pnpm dlx shadcn@latest add https://shadwui.com/r/header-01.json
+        ```
+      </Tab>
+      <Tab value="npm">
+        ```bash
+        npx shadcn@latest add https://shadwui.com/r/header-01.json
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        npx shadcn@latest add https://shadwui.com/r/header-01.json
+        ```
+      </Tab>
+      <Tab value="bun">
+        ```bash
+        bunx --bun shadcn@latest add https://shadwui.com/r/header-01.json
+        ```
+      </Tab>
+    </DocTabs>
+  </TabsContent>
+
+   
+  <TabsContent value="manual" className="p-0 mt-0 flex items-center justify-center">
+    **Copy from the preview right button**
+  </TabsContent>
+
+</Tabs>
+
+## Usage
+```jsx
+import Header_01 from "@/components/shadwui/blocks/header-01"
+```
+
+```jsx
+<Header_01 />
+```
+
+## All Done!

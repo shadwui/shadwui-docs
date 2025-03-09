@@ -45,7 +45,7 @@
     "---Block---",
     "blocks/auth",
     "blocks/hero",
-    "!blocks/header",
+    "blocks/header",
     "!blocks/footer",
 
     "!illustration/general",
