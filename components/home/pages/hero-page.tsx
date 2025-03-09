@@ -1,6 +1,7 @@
 import CustomButton from "@/components/_components/custom-button";
 import { AnimatedAvatar } from "@/registry/src/premium/components/animated-avatar";
 import React from "react";
+import ProductHunt from "../components/product-hunt";
 
 const people = [
   {
@@ -33,6 +34,7 @@ const HeroPage = () => {
         <div className="flex flex-row items-center justify-center">
           <AnimatedAvatar items={people} />
         </div>
+        <ProductHunt />
       </div>
     </div>
   );
