@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "env-mongodb",
+  "type": "registry:file",
+  "title": "env",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/env/.env.local",
+      "content": "MONGODB_URI=\n\nNEXTAUTH_URL=http://localhost:3000 # For the development environment chnage it to production url\nNEXTAUTH_SECRET=\n\nGOOGLE_CLIENT_ID=\nGOOGLE_CLIENT_SECRET=",
+      "type": "registry:file",
+      "target": "~/.env.local"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-mongodb",
+  "type": "registry:file",
+  "title": "Context",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/context/auth-provider.tsx",
+      "content": "\"use client\"\r\n\r\nimport { SessionProvider } from \"next-auth/react\";\r\nimport React from \"react\";\r\n\r\nconst AuthProvider = ({ children }: { children: React.ReactNode }) => {\r\n  return <SessionProvider>{children}</SessionProvider>;\r\n};\r\n\r\nexport default AuthProvider;\r\n",
+      "type": "registry:file",
+      "target": "context/auth-provider.tsx"
+    }
+  ]
+}

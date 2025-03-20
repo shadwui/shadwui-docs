@@ -318,6 +318,276 @@
           "target": "components/shadwui/blocks/header-01.tsx"
         }
       ]
+    },
+    {
+      "name": "sign-up-route-mongodb",
+      "type": "registry:file",
+      "title": "Sign Up Route",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/routes/sign-up.ts",
+          "type": "registry:file",
+          "target": "app/api/sign-up/route.ts"
+        }
+      ]
+    },
+    {
+      "name": "sign-in-route-mongodb",
+      "type": "registry:file",
+      "title": "Sign In Route",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/routes/sign-in.ts",
+          "type": "registry:file",
+          "target": "app/api/auth/[...nextauth]/route.ts"
+        }
+      ]
+    },
+    {
+      "name": "sign-in-route-options-mongodb",
+      "type": "registry:file",
+      "title": "Sign In Route options",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/routes/options.ts",
+          "type": "registry:file",
+          "target": "app/api/auth/[...nextauth]/options.ts"
+        }
+      ]
+    },
+    {
+      "name": "sign-in-page-mongodb",
+      "type": "registry:block",
+      "title": "Sign In Page",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/pages/sign-in.tsx",
+          "type": "registry:block",
+          "target": "app/(auth)/sign-in/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sign-up-page-mongodb",
+      "type": "registry:block",
+      "title": "Sign Up Page",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/pages/sign-up.tsx",
+          "type": "registry:block",
+          "target": "app/(auth)/sign-up/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "db-connect-mongodb",
+      "type": "registry:lib",
+      "title": "Database connection",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/lib/db-connect.ts",
+          "type": "registry:lib",
+          "target": "lib/db-connect.ts"
+        }
+      ]
+    },
+    {
+      "name": "db-model-mongodb",
+      "type": "registry:file",
+      "title": "Database model",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/model/user.ts",
+          "type": "registry:file",
+          "target": "model/user.ts"
+        }
+      ]
+    },
+    {
+      "name": "schema-mongodb",
+      "type": "registry:file",
+      "title": "schema",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/schemas/auth-schema.ts",
+          "type": "registry:file",
+          "target": "schemas/auth-schema.ts"
+        }
+      ]
+    },
+    {
+      "name": "types-api-mongodb",
+      "type": "registry:file",
+      "title": "Types",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/types/api-response.ts",
+          "type": "registry:file",
+          "target": "types/api-response.ts"
+        }
+      ]
+    },
+    {
+      "name": "types-next-auth-mongodb",
+      "type": "registry:file",
+      "title": "Types",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/types/next-auth.d.ts",
+          "type": "registry:file",
+          "target": "types/next-auth.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "context-mongodb",
+      "type": "registry:file",
+      "title": "Context",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/context/auth-provider.tsx",
+          "type": "registry:file",
+          "target": "context/auth-provider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "middleware-mongodb",
+      "type": "registry:file",
+      "title": "Middleware",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/middleware/middleware.ts",
+          "type": "registry:file",
+          "target": "middleware.ts"
+        }
+      ]
+    },
+    {
+      "name": "env-mongodb",
+      "type": "registry:file",
+      "title": "env",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/env/.env.local",
+          "type": "registry:file",
+          "target": "~/.env.local"
+        }
+      ]
+    },
+    {
+      "name": "form-mongodb",
+      "type": "registry:component",
+      "title": "form",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/form.tsx",
+          "type": "registry:component",
+          "target": "components/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "goggle-button-mongodb",
+      "type": "registry:component",
+      "title": "goggle-button",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/goggle-button.tsx",
+          "type": "registry:component",
+          "target": "components/goggle-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "layout-mongodb",
+      "type": "registry:component",
+      "title": "layout",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/layout.tsx",
+          "type": "registry:component",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-mongodb",
+      "type": "registry:component",
+      "title": "sonner",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/ui/sonner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-mongodb",
+      "type": "registry:component",
+      "title": "profile",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/profile.tsx",
+          "type": "registry:component",
+          "target": "components/profile.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-mongodb",
+      "type": "registry:component",
+      "title": "Page",
+      "files": [
+        {
+          "path": "registry/src/auth/code/mongodb/components/page.tsx",
+          "type": "registry:component",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mongodb",
+      "type": "registry:file",
+      "title": "Mongodb",
+      "registryDependencies": [
+        "https://shadwui.com/r/profile-mongodb.json",
+        "https://shadwui.com/r/sonner-mongodb.json",
+        "https://shadwui.com/r/page-mongodb.json",
+        "https://shadwui.com/r/layout-mongodb.json",
+        "https://shadwui.com/r/form-mongodb.json",
+        "https://shadwui.com/r/env-mongodb.json",
+        "https://shadwui.com/r/middleware-mongodb.json",
+        "https://shadwui.com/r/context-mongodb.json",
+        "https://shadwui.com/r/types-next-auth-mongodb.json",
+        "https://shadwui.com/r/types-api-mongodb.json",
+        "https://shadwui.com/r/schema-mongodb.json",
+        "https://shadwui.com/r/db-model-mongodb.json",
+        "https://shadwui.com/r/db-connect-mongodb.json",
+        "https://shadwui.com/r/sign-up-page-mongodb.json",
+        "https://shadwui.com/r/sign-in-page-mongodb.json",
+        "https://shadwui.com/r/sign-in-route-options-mongodb.json",
+        "https://shadwui.com/r/sign-in-route-mongodb.json",
+        "https://shadwui.com/r/sign-up-route-mongodb.json",
+        "https://shadwui.com/r/goggle-button-mongodb.json",
+        
+        "https://shadwui.com/r/button.json",
+        "https://shadwui.com/r/input.json",
+        "https://shadwui.com/r/label.json",
+        "https://shadwui.com/r/card.json"
+      ],
+      "dependencies": [
+        "zod",
+        "axios",
+        "sonner",
+        "mongoose",
+        "bcryptjs",
+        "next-auth",
+        "next-themes",
+        "react-hook-form",
+        "@hookform/resolvers"
+      ]
     }
   ]
 }

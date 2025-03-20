@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-mongodb",
+  "type": "registry:component",
+  "title": "profile",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/components/profile.tsx",
+      "content": "import { useSession } from \"next-auth/react\";\r\n\r\nconst Profile = () => {\r\n  const { data: session } = useSession();\r\n\r\n  return (\r\n    <div>\r\n      {session?.user && (\r\n        <>\r\n          <p>User ID: {session.user._id}</p>\r\n          <p>Username: {session.user.username}</p>\r\n          <p>Email: {session.user.email}</p>\r\n          <p>Role: {session.user.role}</p>\r\n        </>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Profile",
+      "type": "registry:component",
+      "target": "components/profile.tsx"
+    }
+  ]
+}

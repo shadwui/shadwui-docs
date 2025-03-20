@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "db-connect-mongodb",
+  "type": "registry:lib",
+  "title": "Database connection",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/lib/db-connect.ts",
+      "content": "import mongoose from \"mongoose\";\r\n\r\ntype ConnectionObject = {\r\n  isConnected?: number;\r\n};\r\n\r\nconst alreadyHaveMongoUri = process.env.MONGODB_URI!;\r\n\r\nif (!alreadyHaveMongoUri) {\r\n  console.log(\"Please Provide Mongodb Uri\");\r\n}\r\n\r\nconst connection: ConnectionObject = {};\r\n\r\nasync function dbConnect(): Promise<void> {\r\n  if (connection.isConnected) {\r\n    console.log(\"Already Connected to database\");\r\n    return;\r\n  }\r\n\r\n  try {\r\n    const db = await mongoose.connect(alreadyHaveMongoUri, {});\r\n\r\n    connection.isConnected = db.connections[0].readyState;\r\n\r\n    console.log(\"Database connected successfully\");\r\n  } catch (error) {\r\n    console.log(\"Data Connection field\", error);\r\n\r\n    process.exit(1);\r\n  }\r\n}\r\n\r\nexport default dbConnect;\r\n",
+      "type": "registry:lib",
+      "target": "lib/db-connect.ts"
+    }
+  ]
+}

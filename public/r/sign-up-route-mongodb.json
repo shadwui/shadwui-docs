@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sign-up-route-mongodb",
+  "type": "registry:file",
+  "title": "Sign Up Route",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/routes/sign-up.ts",
+      "content": "import bcrypt from \"bcryptjs\";\r\nimport dbConnect from \"@/registry/src/auth/code/mongodb/lib/db-connect\";\r\nimport UserModel from \"@/model/user\";\r\n\r\nexport async function POST(request: Request) {\r\n  await dbConnect();\r\n  try {\r\n    const { username, email, password } = await request.json();\r\n\r\n    const existingUserByEmail = await UserModel.findOne({\r\n      email,\r\n    });\r\n\r\n    if (existingUserByEmail) {\r\n      return Response.json(\r\n        {\r\n          success: false,\r\n          message: \"User already exist with this email.\",\r\n        },\r\n        { status: 300 }\r\n      );\r\n    } else {\r\n      const hashedPassword = await bcrypt.hash(password, 10);\r\n\r\n      const newUser = new UserModel({\r\n        username,\r\n        email,\r\n        password: hashedPassword,\r\n        role: \"user\",\r\n      });\r\n\r\n      await newUser.save();\r\n    }\r\n\r\n    return Response.json(\r\n      {\r\n        success: true,\r\n        message: \"user Register successfully verify your email\",\r\n      },\r\n      { status: 201 }\r\n    );\r\n  } catch (error) {\r\n    console.error(\"Error while registering user \", error);\r\n    return Response.json(\r\n      {\r\n        success: false,\r\n        message: \"Error registering user\",\r\n      },\r\n      {\r\n        status: 500,\r\n      }\r\n    );\r\n  }\r\n}\r\n",
+      "type": "registry:file",
+      "target": "app/api/sign-up/route.ts"
+    }
+  ]
+}

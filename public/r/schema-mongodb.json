@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "schema-mongodb",
+  "type": "registry:file",
+  "title": "schema",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/schemas/auth-schema.ts",
+      "content": "import { z } from \"zod\";\r\n\r\nexport const signUpSchema = z.object({\r\n  email: z.string().email({ message: \"Please enter a valid email address\" }),\r\n  password: z\r\n    .string()\r\n    .min(6, { message: \"Password must be at least 8 characters\" }),\r\n  username: z.string(),\r\n});\r\n\r\nexport const signInSchema = z.object({\r\n  identifier: z.string(),\r\n  password: z.string(),\r\n});\r\n\r\n\r\nexport const verifySchema = z.object({\r\n  code: z\r\n    .string()\r\n    .length(6, { message: \"Password must be at least 8 characters\" }),\r\n});\r\n",
+      "type": "registry:file",
+      "target": "schemas/auth-schema.ts"
+    }
+  ]
+}

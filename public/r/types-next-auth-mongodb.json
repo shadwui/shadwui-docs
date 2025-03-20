@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "types-next-auth-mongodb",
+  "type": "registry:file",
+  "title": "Types",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/types/next-auth.d.ts",
+      "content": "import \"next-auth\";\r\nimport { DefaultSession } from \"next-auth\";\r\n\r\ndeclare module \"next-auth\" {\r\n  interface User {\r\n    _id?: string;\r\n    username?: string;\r\n    email?: string;\r\n    role?: string;\r\n  }\r\n  interface Session {\r\n    user: {\r\n      _id?: string;\r\n      username?: string;\r\n      email?: string;\r\n      role?: string;\r\n    } & DefaultSession[\"user\"];\r\n  }\r\n}\r\n\r\ndeclare module \"next-auth/jwt\" {\r\n  interface JWT {\r\n    _id?: string;\r\n    username?: string;\r\n    email?: string;\r\n    role?: string;\r\n  }\r\n}\r\n",
+      "type": "registry:file",
+      "target": "types/next-auth.d.ts"
+    }
+  ]
+}

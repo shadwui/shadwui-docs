@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "middleware-mongodb",
+  "type": "registry:file",
+  "title": "Middleware",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/middleware/middleware.ts",
+      "content": "import { NextResponse, NextRequest } from \"next/server\";\r\nimport { getToken } from \"next-auth/jwt\";\r\n\r\nexport async function middleware(request: NextRequest) {\r\n  const token = await getToken({\r\n    req: request,\r\n    secret: process.env.NEXTAUTH_SECRET,\r\n  });\r\n  const url = request.nextUrl;\r\n\r\n  // Extract role from token\r\n  const role = token?.role || \"user\"; // Default to \"user\" if no role is found\r\n\r\n  // 🛑 Prevent authenticated users from accessing auth pages\r\n  if (token && [\"/sign-in\", \"/sign-up\", \"/verify\"].includes(url.pathname)) {\r\n    return NextResponse.redirect(new URL(\"/\", request.url));\r\n  }\r\n\r\n  // 🔒 Restrict dashboard access to authenticated users only\r\n  if (!token && url.pathname.startsWith(\"/dashboard\")) {\r\n    return NextResponse.redirect(new URL(\"/sign-in\", request.url));\r\n  }\r\n\r\n  // 🔒 Restrict admin pages (`/admin`) to users with the \"admin\" role\r\n  if (url.pathname.startsWith(\"/admin\") && role !== \"admin\") {\r\n    return NextResponse.redirect(new URL(\"/\", request.url)); // Redirect non-admin users to home\r\n  }\r\n\r\n  return NextResponse.next(); // Continue to the requested page\r\n}\r\n\r\nexport const config = {\r\n  matcher: [\r\n    \"/sign-in\",\r\n    \"/sign-up\",\r\n    \"/verify\",\r\n    \"/dashboard/:path*\",\r\n    \"/admin/:path*\",\r\n  ],\r\n};\r\n",
+      "type": "registry:file",
+      "target": "middleware.ts"
+    }
+  ]
+}

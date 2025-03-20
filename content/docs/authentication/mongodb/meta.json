@@ -1,7 +1,8 @@
 {
-  "title": "MongoDB",
+  "title": "Mongo-db",
   "pages": [
     "introduction",
+    "cli",
     "setup",
     "database",
     "api",

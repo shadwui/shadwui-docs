@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sign-in-route-mongodb",
+  "type": "registry:file",
+  "title": "Sign In Route",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/routes/sign-in.ts",
+      "content": "import NextAuth from \"next-auth\";\r\nimport { authOptions } from \"./options\";\r\n \r\nconst handler = NextAuth(authOptions);\r\nexport { handler as GET, handler as POST };\r\n",
+      "type": "registry:file",
+      "target": "app/api/auth/[...nextauth]/route.ts"
+    }
+  ]
+}

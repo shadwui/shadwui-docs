@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mongodb",
+  "type": "registry:file",
+  "title": "Mongodb",
+  "dependencies": [
+    "zod",
+    "axios",
+    "sonner",
+    "mongoose",
+    "bcryptjs",
+    "next-auth",
+    "next-themes",
+    "react-hook-form",
+    "@hookform/resolvers"
+  ],
+  "registryDependencies": [
+    "https://shadwui.com/r/profile-mongodb.json",
+    "https://shadwui.com/r/sonner-mongodb.json",
+    "https://shadwui.com/r/page-mongodb.json",
+    "https://shadwui.com/r/layout-mongodb.json",
+    "https://shadwui.com/r/form-mongodb.json",
+    "https://shadwui.com/r/env-mongodb.json",
+    "https://shadwui.com/r/middleware-mongodb.json",
+    "https://shadwui.com/r/context-mongodb.json",
+    "https://shadwui.com/r/types-next-auth-mongodb.json",
+    "https://shadwui.com/r/types-api-mongodb.json",
+    "https://shadwui.com/r/schema-mongodb.json",
+    "https://shadwui.com/r/db-model-mongodb.json",
+    "https://shadwui.com/r/db-connect-mongodb.json",
+    "https://shadwui.com/r/sign-up-page-mongodb.json",
+    "https://shadwui.com/r/sign-in-page-mongodb.json",
+    "https://shadwui.com/r/sign-in-route-options-mongodb.json",
+    "https://shadwui.com/r/sign-in-route-mongodb.json",
+    "https://shadwui.com/r/sign-up-route-mongodb.json",
+    "https://shadwui.com/r/goggle-button-mongodb.json",
+    "https://shadwui.com/r/button.json",
+    "https://shadwui.com/r/input.json",
+    "https://shadwui.com/r/label.json",
+    "https://shadwui.com/r/card.json"
+  ],
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/components/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { useSession, signOut } from \"next-auth/react\";\r\nimport Link from \"next/link\";\r\nimport Profile from \"@/registry/src/auth/code/mongodb/components/profile\";\r\nimport { Button } from \"@/registry/src/components/ui/button\";\r\nimport GoogleSignInButton from \"@/registry/src/auth/code/mongodb/components/goggle-button\";\r\n\r\nconst Home = () => {\r\n  const { status } = useSession();\r\n\r\n  if (status === \"authenticated\") {\r\n    return (\r\n      <div className=\"flex items-center h-screen justify-center\">\r\n        <Profile />\r\n        <Button\r\n          onClick={() => signOut()}\r\n          className=\"w-full md:w-auto bg-slate-100 text-black\"\r\n          variant=\"outline\"\r\n        >\r\n          Logout\r\n        </Button>\r\n      </div>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <div className=\"flex gap-10 h-screen w-full items-center justify-center text-2xl font-bold\">\r\n      <Link href=\"/sign-in\">\r\n        <Button>Sign In</Button>\r\n      </Link>\r\n      <Link href=\"/sign-up\">\r\n        <Button>Sign Up</Button>\r\n      </Link>\r\n      <GoogleSignInButton />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Home;\r\n",
+      "type": "registry:file",
+      "target": "app/page.tsx"
+    }
+  ]
+}

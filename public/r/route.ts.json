@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "route.ts",
+  "type": "registry:file",
+  "title": "Route Sign in",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/routes/sign-up.ts",
+      "content": "try {\r\n  const haiKoi = true;\r\n  console.log(haiKoi);\r\n} catch {\r\n  console.log(\"error hai koi.\");\r\n}\r\n",
+      "type": "registry:file",
+      "target": "app/api/sign-up/route.ts"
+    }
+  ]
+}

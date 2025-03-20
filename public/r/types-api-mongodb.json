@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "types-api-mongodb",
+  "type": "registry:file",
+  "title": "Types",
+  "files": [
+    {
+      "path": "registry/src/auth/code/mongodb/types/api-response.ts",
+      "content": "export interface ApiResponse {\r\n  success: boolean;\r\n  message: string;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "types/api-response.ts"
+    }
+  ]
+}
