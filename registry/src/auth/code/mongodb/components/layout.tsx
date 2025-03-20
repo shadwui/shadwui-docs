@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
 import { Toaster } from "@/registry/src/auth/code/mongodb/components/ui/sonner";
 import AuthProvider from "@/registry/src/auth/code/mongodb/context/auth-provider";
  
