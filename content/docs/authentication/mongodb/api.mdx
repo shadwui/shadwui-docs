@@ -1,12 +1,11 @@
 ---
-title: Api
+title: API
 ---
 
 ## API Documentation
 
-
-## Login Form
-Add to this path `src/pages/api/auth/[...nextauth].ts`
+## Login API Path
+Add to this path `src/api/auth/[...nextauth]/route.ts`
 
 ```tsx
 import NextAuth, { type DefaultSession } from 'next-auth';
@@ -64,8 +63,8 @@ export default NextAuth({
         if (!result.success) return null;
         
         const client = await clientPromise;
-        const user = await client.db().collection('users').findOne({ 
-          email: result.data.email 
+        const user = await client.db().collection('users').findOne({
+          email: result.data.email
         });
         
         if (!user?.password) return null;
@@ -115,7 +114,6 @@ export default NextAuth({
 });
 ```
 
-
 ## Register Form
 Add to this path `src/pages/api/register.ts`
 
@@ -155,8 +153,8 @@ export default async function handler(
       .findOne({ email });
     
     if (existingUser) {
-      return res.status(409).json({ 
-        error: 'User already exists' 
+      return res.status(409).json({
+        error: 'User already exists'
       });
     }
 
@@ -172,9 +170,9 @@ export default async function handler(
         emailVerified: null
       });
 
-    return res.status(201).json({ 
+    return res.status(201).json({
       success: true,
-      userId: insertedId 
+      userId: insertedId
     });
 
   } catch (error) {
@@ -185,9 +183,10 @@ export default async function handler(
       });
     }
     console.error('Registration error:', error);
-    return res.status(500).json({ 
-      error: 'Internal server error' 
+    return res.status(500).json({
+      error: 'Internal server error'
     });
   }
 }
 ```
+

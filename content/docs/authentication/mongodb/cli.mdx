@@ -7,7 +7,76 @@ import {
   Tab
 } from "../../../components/index"
 
-## CLI
+## Overview
+You have to run the following command to install the complete mongodb setup.
+
+## Project Setup 
+- Start from the scratch by initializing a new Next.js project using the following command.
+
+```bash
+npx create-next-app@latest
+```
+
+```bash
+- Project name : my-app(default)
+- Use TypeScript: Yes
+- Use ESLint: Yes
+- Use Tailwind CSS: Yes
+- Use src/ directory: Yes/no // Your choice.
+- Use App Router: Yes
+- Use Turbopack: Yes
+- Customize the default import alias (@/*): No
+```
+
+### Explain
+- `my-app`: The name of your project directory. Replace this with your desired project name.
+- `typescript`: Initializes the project with TypeScript configuration.
+- `eslint`: Sets up ESLint for linting your code.
+- `tailwind`: Includes Tailwind CSS for styling.
+- `src-dir`: Creates a src/ directory and places your application code inside it.
+- `router`: Enables the App Router feature.
+- `alias`: Customizes the default import alias (@/*) to a custom path.
+
+## Install Required Packages
+To apply the Authentication feature, you will need the following packages:
+- `next-auth`
+- `react-hook-form`
+- `zod`
+- `mongoose`
+- `bcryptjs`
+- `sonner`
+- `next-themes`
+- `@hookform/resolvers`
+- `axios`
+
+Install the required packages by running the following command:
+
+<DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm install next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm i next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bun add next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+</DocTabs>
+
+## Run This CLI
+- To install the setup complete authentication in nextjs.
+
 <DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
   <Tab value="pnpm">
     ```bash
@@ -31,4 +100,30 @@ import {
   </Tab>
 </DocTabs>
 
-**Run this cli to install the complete mongodb setup.**
+**Now you get full authentication setup done.**
+
+## ENV Setup
+Already have a `.env.local` file in the root of your project.
+
+```bash
+MONGODB_URI= #Paste you mongodb uri here
+
+NEXTAUTH_URL=http://localhost:3000 # For the development environment change it to production url
+NEXTAUTH_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+### mongodb
+You can get the mongodb uri from the [mongodb atlas](https://www.mongodb.com/).
+
+### Google
+You can get it from the [Google Developer Console](https://console.developers.google.com/).
+
+**Note:** You can also use other providers like `facebook`, `github`, `twitter`, `discord`, `twitch`, `slack`, `okta`, `twitch`, `auth0`, `cognito`, `identity-server`, `credentials`, `email`, `etc`.
+Check the [next-auth](https://next-auth.js.org/) documentation for more information.
+
+
+## Done
+**Now the full authentication setup done**

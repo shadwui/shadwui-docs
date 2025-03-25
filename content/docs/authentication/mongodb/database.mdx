@@ -1,6 +1,6 @@
 ---
 title: Database
-description: Step to setup a mongodb database in your project.
+description: Steps to set up a MongoDB database in your project.
 ---
 
 import { Step, Steps } from "fumadocs-ui/components/steps";
@@ -11,55 +11,108 @@ MongoDB is a NoSQL database that stores data in a JSON-like format. It is a popu
 
 ## Database Connection Setup
 
-
 ## Installation
 To install MongoDB, you can use the following command:
 
-```code
+```bash
 npm install mongodb
 ```
 
-
 ## Database Setup
-To connect to the MongoDB database, you need to create a connection string. 
-You can do this by following these steps:
+To connect to the MongoDB database, follow these steps:
 
 1. Create a new file called `database.js` in your project root.
-2. Add the following code to the file:
+2. Path to the file: `./lib/database.js`
+3. Add the following code to the file:
 
-```tsx
-import { MongoClient } from 'mongodb';
+```ts
+import mongoose from "mongoose";
 
-const uri = process.env.MONGODB_URI!;
-const options = {};
+type ConnectionObject = {
+  isConnected?: boolean;
+};
 
-declare global {
-  var _mongoClientPromise: Promise<MongoClient>;
+const mongoUri = process.env.MONGO_URI;
+
+if (!mongoUri) {
+  console.error("Please provide MongoDB URI");
 }
 
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
+const connection: ConnectionObject = {};
 
-if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
+async function dbConnect(): Promise<void> {
+  if (connection.isConnected) {
+    console.log("Already connected to database");
+    return;
   }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(uri, options);
-  clientPromise = client.connect();
+
+  try {
+    const db = await mongoose.connect(mongoUri!, {});
+    connection.isConnected = db.connections[0].readyState === 1;
+    console.log("Database connected successfully");
+  } catch (error) {
+    console.error("Database connection failed", error);
+    process.exit(1);
+  }
 }
 
-export default clientPromise;
+export default dbConnect;
+```
+
+## Example with Mongoose
+To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), create a user model:
+
+```ts
+import mongoose, { Schema } from "mongoose";
+
+export interface User {
+  _id?: string;
+  username: string;
+  email: string;
+  password?: string;
+  role: "user" | "admin";
+  createdAt?: Date;
+}
+
+const UserSchema: Schema<User> = new Schema({
+  username: {
+    type: String,
+    required: [true, "Username is required"],
+  },
+  email: {
+    type: String,
+    required: [true, "Email is required"],
+    unique: true,
+    match: [/.+\@.+\..+/, "Please use a valid email address"],
+  },
+  password: {
+    type: String,
+  },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const UserModel =
+  mongoose.models.User ||
+  mongoose.model<User>("User", UserSchema) as mongoose.Model<User>;
+
+export default UserModel;
 ```
 
 ## Mongoose Setup
-To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), you need to create a connection string. You can do this by following these steps:
+To connect to the MongoDB database using [Mongoose](https://www.mongodb.com/), follow these steps:
 
-1. Open a mongoose and create a cluster and get the connection string.
-2. Add the following string in the `.env.local` file to root directory of project:-
+1. Open MongoDB Atlas, create a cluster, and obtain the connection string.
+2. Add the following string in the `.env.local` file in the root directory of your project:
 
 ```.env.local
 MONGO_URI=<Paste Your Connection String>
 ```
+

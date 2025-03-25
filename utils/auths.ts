@@ -6,7 +6,7 @@ export const auths: BoxProps[] = [
   {
     image: "mongo",
     name: "Mongodb",
-    slug: `${mainSlug}/mongodb/introduction`,
+    slug: `${mainSlug}/mongodb/cli`,
     componentsType: "auths",
     components: [{ name: "mongodb" }],
   },

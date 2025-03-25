@@ -2,6 +2,11 @@
 title: Setup
 ---
 
+import { 
+  DocTabs,
+  Tab
+} from "../../../components/index";
+
 ## Initialize Next.js Project
 Start from the scratch by initializing a new Next.js project using the following command:
 
@@ -33,10 +38,28 @@ npx create-next-app@latest
 - To Apply the Authentication feature with `next-auth`, `mongodb` and `zod`. 
 - We need to install the required packages by running the following command.
 
-```bash
-npm install next-auth @next-auth/mongodb-adapter mongodb bcrypt zod @hookform/resolvers react-hook-form swr
-npm install -D @types/bcrypt @types/node
-```
+<DocTabs items={["pnpm", "npm", "yarn", "bun"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm install next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm i next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bun add next-auth react-hook-form zod mongoose bcryptjs sonner next-themes @hookform/resolvers axios
+    ```
+  </Tab>
+</DocTabs>
 
 ## Setup .env credentials
 Create a new file named `.env.local` in the root of the project and add the following configuration.
@@ -49,8 +72,6 @@ NEXTAUTH_SECRET=your-secure-secret # Generate using: openssl rand -base64 32
 MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/dbname?retryWrites=true&w=majority
 
 # OAuth Providers
-GITHUB_ID=your_github_id
-GITHUB_SECRET=your_github_secret
 GOOGLE_CLIENT_ID=your_google_id
 GOOGLE_CLIENT_SECRET=your_google_secret
 ```
